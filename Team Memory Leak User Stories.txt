@@ -1,0 +1,321 @@
+﻿User Stories 
+Team C - Memory Leak
+Nathan Tran, Lina Kang, Michael Duenas, Jeff Purdy, Nathan Kim
+Team Name: Memory Leak
+Team Members: Nathan Kim, Nathan Tran, Michael Duenas, Lina Kang, Jeff Purdy
+
+
+Product Owner: Nathan Tran
+Scrum Master: Nathan Kim
+
+
+Team Rules:
+1. Code should be thoroughly tested before presenting to scrum master and product owner.
+2. When someone finishes a story the product owner must verify that it meets the standard of the user story.
+3. Be on time to team meetings to ensure everybody is on the same page.
+4. Collaborate and ask for help when needed.
+5. Suggestions and improvements to the software should be discussed during team meetings where every group member could have a say.
+6. Conflicts within the team will be discussed as a team.
+7. If an assigned story is not finished on time, priority will be set high till complete and another team member will be assigned to help you.
+8. If an assigned story is finished early, you will be reassigned to another active story (will be assisting another member of the team).
+
+
+Coding Standards:
+1. For every block of code (if...else.., for(), while(), etc.), put a block comment above that generally describes what that block of code is supposed to do.
+2. Every function should have a general description of what it achieves along with specifying the outcome after it runs.
+3. Variable names should be specific and should be significant to the purpose that they serve.
+4. Constant variables should be all caps and should also be significant to the purpose that they serve.
+5. Global variables should not be used to avoid confusion during debugging.
+
+
+Definition of Done for Sprint 1 
+1. There is a data structure that contains cities, their corresponding food items, and their prices.
+2. There is an interface in place that allows ease of usage
+3. Admin will be able to manipulate the data in the data structures
+
+
+
+
+Which stories will be assigned to Sprint 1
+* Story 1, Story 2, Story 9, Story 10
+* Design stories: UML class diagrams, use cases, activity diagrams.
+
+
+Baseline Story
+* Story 1
+
+
+
+
+User Story #1: 
+1. Statement: 
+1. As an administrator, I would like to create a data structure that can store at least 30 cities, along with their respective local food items.
+2. Description: 
+   1. The data structure will be able to contain 30 objects or more. The rest of the project will be able to access this data structure.
+3. Tasks: 
+   1. Declare the data structure (QList)
+   2. Set up an input function.
+   3. Use this input function to store the data into the data structure 
+4. Tests: 
+   1. Verify the input function works by output statements which verify whether the data got transferred properly.
+   2. Verify that the data structure (QList) stored the data properly by outputting the data elements within the QList.
+5. Assignee: 
+1. Nathan Kim 
+
+
+6. Story Point: Baseline
+7. Priority: High
+8. Done: 
+1. 30 (or more) cities and their corresponding foods will be displayed on the GUI
+2. Segment of code will be shown to Product Owner and Scrum Master
+3. All tests are passed
+4. Coding Standards are met
+5. Merged with the main branch on GitHub
+
+
+
+
+
+
+User Story #2: 
+1. Statement:  
+   1. As a developer, I want to create a class (City) that stores the data for each city.
+2. Description:
+1. The objects within the QList data structure will be instances of this class.
+3. Tasks: 
+   1. Create a class (City) with the necessary data members (location, local food items).
+   2. Write member functions (getters, setters)
+4. Tests: 
+   1. Verify that the class functions are working. 
+5. Assignee: 
+   1. Lina Kang
+6. Story Point: 1 point
+7. Priority: Medium
+8. Done:
+1. A city will have its corresponding data (local foods, location) displayed on the GUI
+2. Segment of code will be shown to Scrum Master
+3. All tests are passed
+4. Coding Standards are met
+5. Merged with the main branch on GitHub
+
+
+
+
+
+
+User Story #3 //no trip only display
+1. Statement: 
+   1. As a prospective traveler, I want to be able to see all the cities’s distances from Berlin.
+2. Description: 
+1. The traveler will be able to see the cities they wish to travel to (from Berlin) in a list.
+      B. Tasks:
+1. Display a list of cities to select from
+2. Store the list of cities selected by user
+3. Output the cities.
+      C. Tests:
+1. Output the list of selects cities to ensure they are saved 
+
+
+      D. Assignee: 
+1. Nathan Kim
+      E.  Story Point: 3 points
+      F.   Priority: Medium
+      G.  Done:
+1. The cities will be displayed to the GUI
+2. Code adhered to coding standard
+3. Product Owner verified
+4. All tests passed
+5. Merged on main branch on Github
+
+
+
+
+
+
+User Story #4:
+9. Statement: As a Travel planner I would like to offer an option to plan the shortest trip starting at Paris.
+10. Description: 
+   1. The traveler will be able to select any amount of cities they would like to visit and be given the total distance traveled as well was the list of cities to be traveled to in order
+   2. Traveler will be able to purchase traditional foods at any given city when visited
+   3. Recursively calculate shortest distance from one city to another
+11. Tasks: 
+   1. Display a list of cities for the traveler to select any 
+   2. Plan an efficient trip based off those cities and display the order and distance traveled
+12. Tests: 
+   1. Output the distance traveled and the list of cities being traveled to in the order of efficiency
+   2. Ensure the list of cities selected by traveler are maintained via output
+   3. Manually check distances and verify with output
+13. Assignee:
+   1. Michael Duenas
+14. Story Point: 3 points
+15. Priority: Medium
+16. Done:
+1. Variety of plan options are shown on the UI sorted by distances from shortest to longest
+2. Code adhered to coding standard
+3. Product Owner verified
+4. All tests passed
+5. Merged to the main branch on Github
+
+
+User Story #5
+1. Statement
+1. As a prospective traveler, I want to be able to keep track of the food items I have purchased along with a receipt of the money I have spent.
+B. Description:
+1. The user can select the desired food items.
+2. The user can see a receipt for what they have purchased.
+C. Tasks:
+1. The food items must be stored as well as their prices
+2. The price will be calculated
+3. The receipt will be displayed
+D. Tests:
+1. Verify that the selected food items are stored.
+2. Verify that the price calculated is correct.
+3. Verify that the receipt is appropriately displayed in a clean format.
+E. Assignee: Lina Kang
+F. Story Point: 2 points
+G. Priority: Medium
+H. Done: 
+1. Purchased food items and their corresponding records will be shown on the GUI
+2. Code adhered to coding standard
+3. Product Owner and Scrum master verified
+4. All tests passed
+5. Merged to the main branch on Github
+
+
+
+
+
+
+User Story #6
+1. Statement:
+   1.  As an administrator, I want to be able to enter a password to access any administrator function to ensure that the application is secure.
+2. Description:
+   1. There will be a login that is password protected that will enable access to administrator functions. 
+3. Backlog:
+   1. Select a log-in from the file dropdown that brings up a log-in screen that allows the administrator to log-in if necessary.
+   2. Create a database for approved administrator usernames and passwords.
+   3. Once the admin has successfully logged in, display the administrator functions on the UI.
+4. Tests:
+   1. Verify that the log-in button brings up a log-in screen.
+   2. Verify only username and password from the database allows for a successful log-in.
+   3. Verify that once the admin has successfully logged in, display the administrator functions on the UI.
+5. Assignee:
+   1. Jeff, develop the UI features as well as database for usernames and passwords.
+6. Story Point: 3
+7. Priority: Low
+8. Done:
+   1. User will be able to see a separate login screen that will allow for administrator access using a username and a password
+   2. The code is well commented.
+   3. All tests are passed.
+   4. Coding Standards are met and confirmed by the scrum master and product owner 
+   5. Merged with the main branch on GitHub
+
+
+User Story #7 
+3. Statement: 
+   1. As a prospective traveler, I want to be able to plan a trip starting at Berlin to any of 13 european cities and have it be planned in the most efficient way.
+4. Description: 
+2. The traveler will be able to select any cities they wish to travel to from a list and have the trip be planned out for them in the most efficient way to travel the least distance.
+      B. Tasks:
+4. Display a list of cities to select from
+5. Store the list of cities selected by user
+6. Calculate the combined distance
+7. Output the order in which cities will be traveled to, as well as the calculated distance.
+      C. Tests:
+2. Output the list of selects cities to ensure they are saved
+3. Output the sorted list based on travel efficiency 
+4. Output calculated distance
+      D. Assignee:
+1. Michael Duenas
+      E.  Story Point: 3 points
+      F.   Priority: Low
+      G.  Done:
+1. From Berlin, the total distance traveled, this distance being calculated with respect to Berlin, will be displayed to the GUI
+2. Code adhered to coding standard
+3. Product Owner verified
+4. All tests passed
+5. Merged on Github
+
+
+
+
+User Story #8
+1. Statement:
+   1. As a prospective traveler, I want to be able to customize the starting and ending cities of my itinerary.
+2. Description: 
+   1. The user can select the starting city of their trip.
+   2. The user can select if they would like to end their trip at a specific city.
+3. Tasks: 
+   1. Implement a simple interface to allow for easy selection of starting city and final city.
+   2. Develop back end functions to rearrange the itinerary after starting city and final city have been changed.
+4. Tests: 
+   1. Select a starting city and then output the new itinerary. 
+   2. Select a final city and then output the new itinerary.
+5. Assignee: 
+   1. Nathan Kim
+
+
+6. Story Point: 2 points 
+7. Priority: Low
+8. Done:
+   1. Verify that a user can change the starting and ending cities for their tri (changes will be displayed to the screen)
+   2. The code is well commented.
+   3. All tests are passed.
+   4. Coding Standards are met and confirmed by the scrum master and product owner 
+   5. Merged with the main branch on GitHub
+
+
+User Story #9
+1. Statement: 
+1. As a prospective traveler, I want to have a clean and easy to use interface, so that I can navigate the application and use all it’s features.
+2. Description:
+   1. A traveler can clearly navigate the interface.
+   2. The traveler will be able to easily create a custom travel plan and purchase foods easily.
+3. Tasks:
+   1. As a prospective traveler, I will be able to easily navigate the application.
+   2. As a prospective traveler, it will be easy to create a custom travel plan and purchase foods from European cities.
+4. Tests:
+   1. Verify that the application can be navigated easily without confusion.
+   2. Verify that the custom plan interface is simple and easy to use.
+5. Assignee: 
+1. Nathan Tran - Implement a basic menu that allows the user to navigate the many features of the app.
+6. Story Point: 5 points
+7. Priority: Medium
+8. Done: 
+1. The GUI will have a menu of buttons to navigate between the list of cities and their foods.
+2. The interface will allow the traveler to navigate to their custom plan and edit it.
+3. The code is well commented
+4. The user interface loads up and the traveler is able to navigate through all the features of the application without the application crashing.
+5. All features display their corresponding menus correctly.
+
+
+
+
+
+
+
+
+
+
+User Story #10
+1. Statement:
+   1. As an administrator, I want to be able to access and maintain the data so that I can add new European cities and their corresponding food items. 
+2. Description:
+   1. The administrator can access the data structure and add new European cities and their respective foods.
+   2. 3. Tasks:
+   1.  As an administrator, I can access the data structure and add new European cities.
+   2.  As an administrator, I can add/edit the foods in each European city and their corresponding prices.
+4. Tests:
+   1. Verify that European cities are actually added in the data structure.
+   2. Verify that Each European city can have their list of foods edited.
+5. Assignee: 
+1. Jeff Purdy - Implement a feature that allows the administrator to easily add another European city and their corresponding food item in the database.
+6. Story Point: 3 points
+7. Priority: Low
+8. Done: 
+1. Changes to cities, or their child data (food, locations, etc.) can be visually seen on the GUI
+2. Code is verified by the scrum master and product owner.
+3. The code is well documented.
+4. The administrator will be allowed to edit the data structure after logging in with a password
+5. The administrator is able to add in European cities and their corresponding foods into the data structure.
+6. Newly added European cities are saved and can be accessed by the traveler when they create a new custom travel plan.
