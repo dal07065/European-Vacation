@@ -5,7 +5,7 @@ City::City()
     cityName = "Berlin";
     QPair<QString, double> input;
     input.first = "Pretzels";
-    input.second = 4.00;
+    input.second = 4.00; //The price of the food
 
     foodInfo.push_front(input);
 
@@ -35,3 +35,10 @@ QVector<QPair<QString, double>> City::getAllFood()
 {
     return foodInfo;
 }
+
+ QString City::getCityName()
+ {
+     return cityName;
+ }
+
+

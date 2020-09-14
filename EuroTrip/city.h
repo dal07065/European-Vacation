@@ -13,6 +13,7 @@ public:
     void setCityName(QString newName);
     void addNewFoodItem(QString foodName, double foodCost);
     QVector<QPair<QString, double>> getAllFood();
+    QString getCityName();
 
 private:
     QString cityName;
