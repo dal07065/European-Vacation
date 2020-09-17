@@ -21,6 +21,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    void readData();
     ~MainWindow();
 
 private slots:
@@ -35,8 +36,11 @@ private slots:
 
 //    void on_pushButton_clicked();
 
+    void on_buttonGenerate_clicked();
+
 private:
     Ui::MainWindow *ui;
-    QVector<City> *cityListData;
+    QVector<City> cityListData;
+    QString currentDataFilePath;
 };
 #endif // MAINWINDOW_H

@@ -8,9 +8,60 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // Read Data In and Display on UI
+    // Please use this to change the file path according to your computers
+    currentDataFilePath = ":/Files/EuropeanDistancesandFoods.txt";
 
-    QFile file("C:/Users/dal07/Documents/Fall 2020/CS1D - Extra/CS1D-Memory-Leak-European-Vacation/EuroTrip/EuropeanDistancesAndFoods.txt");
+    ui->cityList->append("Click \"File\" and \"Load\" to start...");
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+void MainWindow::on_actionExit_triggered()
+{
+    QApplication::quit();
+}
+
+void MainWindow::on_actionAdmin_triggered()
+{
+    login logWindow;
+    connect(&logWindow, &login::userIsAdmin, this, &MainWindow::userIsAdmin);
+    logWindow.setModal(true);
+    logWindow.exec();
+}
+
+void MainWindow::userIsAdmin()
+{
+
+    QMessageBox::information(this, "Login", "Username and Password is Correct");
+   // ui->adminFuncs->setVisible(true);
+
+}
+
+void MainWindow::on_actionLoad_triggered()
+{
+    ui->cityList->clear();
+    readData();
+    //ui->cityList->setText(in.readAll());
+}
+
+/*
+void MainWindow::on_pushButton_clicked()
+{
+    QFile file("E:\\gitRepositories\\CS1D-Memory-Leak-European-Vacation\\EuroTrip\\European Distances and Foods");
+    if(!file.open(QIODevice::ReadOnly))
+    {
+        QMessageBox::information(0, "info", file.errorString());
+    }
+    QTextStream in(&file);
+
+}*/
+
+// Read Data In and Display on UI
+void MainWindow::readData()
+{
+    QFile file(currentDataFilePath);
 
     if(!file.open(QIODevice::ReadOnly))
     {
@@ -18,7 +69,6 @@ MainWindow::MainWindow(QWidget *parent)
     }
     QTextStream in(&file);
 
-    cityListData = new QVector<City>;
     City *cityInfo;             // city variable used to input cities into the city vector
     bool moreCities= true;
     bool moreFood = true;
@@ -54,7 +104,8 @@ MainWindow::MainWindow(QWidget *parent)
                     moreFood = false;
                 }
             }
-            cityListData->push_back(*cityInfo); //this adds the city object into the vector array
+            cityListData.push_back(*cityInfo); //this adds the city object into the vector array
+            ui->comboBoxCities->addItem(cityName);
             moreFood = true;
         }
         else
@@ -63,9 +114,11 @@ MainWindow::MainWindow(QWidget *parent)
         }
     }
 
-    for(int loop= 0; loop < cityListData->size(); loop++)//this loops through the main city vecotr to print the info on each city.
+    // Print data on UI
+    for(int loop= 0; loop < cityListData.size(); loop++)//this loops through the main city vecotr to print the info on each city.
     {
-        *cityInfo = cityListData->value(loop);
+
+        *cityInfo = cityListData.value(loop);
         ui->cityList->append(cityInfo->getCityName()); //this is supposed to display the city name onto the cityList text box on the gui.
         for(int j = 0;j < cityInfo->getAllFood().size(); j++) //this loops through out the food vector array in each city object to print the food and price.
         {
@@ -74,57 +127,10 @@ MainWindow::MainWindow(QWidget *parent)
         }
         ui->cityList->append("");
     }
-
-
+    ui->comboBoxCities->addItem("Select...");
 }
 
-MainWindow::~MainWindow()
+void MainWindow::on_buttonGenerate_clicked()
 {
-    delete ui;
+    // This will create a new window with all the possible travel plans
 }
-
-
-void MainWindow::on_actionExit_triggered()
-{
-    QApplication::quit();
-}
-
-void MainWindow::on_actionAdmin_triggered()
-{
-    login logWindow;
-    connect(&logWindow, &login::userIsAdmin, this, &MainWindow::userIsAdmin);
-    logWindow.setModal(true);
-    logWindow.exec();
-}
-
-void MainWindow::userIsAdmin()
-{
-
-    QMessageBox::information(this, "Login", "Username and Password is Correct");
-   // ui->adminFuncs->setVisible(true);
-
-}
-
-void MainWindow::on_actionLoad_triggered()
-{
-    QFile file("E:\\gitRepositories\\CS1D-Memory-Leak-European-Vacation\\EuroTrip\\European Distances and Foods.txt");
-    if(!file.open(QIODevice::ReadOnly))
-    {
-        QMessageBox::information(0, "info", file.errorString());
-    }
-    QTextStream in(&file);
-
-    ui->cityList->setText(in.readAll());
-}
-/*
-void MainWindow::on_pushButton_clicked()
-{
-    QFile file("E:\\gitRepositories\\CS1D-Memory-Leak-European-Vacation\\EuroTrip\\European Distances and Foods");
-    if(!file.open(QIODevice::ReadOnly))
-    {
-        QMessageBox::information(0, "info", file.errorString());
-    }
-    QTextStream in(&file);
-
-}
-*/

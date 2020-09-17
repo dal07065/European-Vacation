@@ -34,4 +34,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    C:/Users/natra/Desktop/Speech sources/European Distances and Foods.txt
+    C:/Users/natra/Desktop/Speech sources/European Distances and Foods.txt \
+    European Distances and Foods.txt
+
+RESOURCES += \
+    Resources.qrc
