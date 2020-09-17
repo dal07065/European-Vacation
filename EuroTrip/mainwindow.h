@@ -1,6 +1,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "login.h"
+#include "city.h"
+#include <QString>
+#include <QFile>
+#include <QTextStream>
+#include <QMessageBox>
+#include <iomanip>
+#include <QDebug>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -29,5 +37,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QVector<City> *cityListData;
 };
 #endif // MAINWINDOW_H

@@ -1,12 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "login.h"
-#include "city.h"
-#include <QString>
-#include <QFile>
-#include <QTextStream>
-#include <QMessageBox>
-#include <iomanip>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,17 +8,18 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QFile file("C:\\Users\\natra\\Desktop\\European Distances and Foods.txt");
+    // Read Data In and Display on UI
+
+    QFile file("C:/Users/dal07/Documents/Fall 2020/CS1D - Extra/CS1D-Memory-Leak-European-Vacation/EuroTrip/EuropeanDistancesAndFoods.txt");
+
     if(!file.open(QIODevice::ReadOnly))
     {
         QMessageBox::information(0, "info", file.errorString());
     }
     QTextStream in(&file);
 
-
-
-    QVector<City> cityListData; // vector to hold city information
-    City cityInfo;              // city variable used to input cities into the city vector
+    cityListData = new QVector<City>;
+    City *cityInfo;             // city variable used to input cities into the city vector
     bool moreCities= true;
     bool moreFood = true;
     QString cityName;
@@ -35,45 +30,52 @@ MainWindow::MainWindow(QWidget *parent)
     //reads in the input from the file
     while(moreCities)
     {
+        cityInfo = new City;
         //if the line read is NOT a new line character, cityname equals the readline(which is city name) and moves on to the next loop
         //if the line read IS A new line character, the loop exits.
-        if((cityName = in.readLine()) != '\n')
+        cityName = in.readLine();
+        if((!cityName.isEmpty()))
         {
-            cityInfo.setCityName(cityName);
+            cityInfo->setCityName(cityName);
 
             //reads in input for the food name and price
             while(moreFood)
             {
                 //if the line read is NOT a new line character, foodname equals the readline(which is the food name) and moves on to read in the price.
                 //if the line read IS A new line character, the loop exits to read in the next city.
-                if((foodName = in.readLine()) != '\n')
+                foodName = in.readLine();
+                if(!foodName.isEmpty())
                 {
                     foodPrice = in.readLine().toDouble();        //Converts the read in string into a double value
-                    cityInfo.addNewFoodItem(foodName, foodPrice);//adds the food name and price into the vector array inside the city's vector array for food and price lol.
+                    cityInfo->addNewFoodItem(foodName, foodPrice);//adds the food name and price into the vector array inside the city's vector array for food and price lol.
                 }
                 else
                 {
                     moreFood = false;
                 }
             }
+            cityListData->push_back(*cityInfo); //this adds the city object into the vector array
+            moreFood = true;
         }
         else
         {
             moreCities = false;
         }
-        cityListData.push_back(cityInfo); //this adds the city object into the vector array
     }
 
-    for(int loop= 0; loop < cityListData.size(); loop++)//this loops through the main city vecotr to print the info on each city.
+    for(int loop= 0; loop < cityListData->size(); loop++)//this loops through the main city vecotr to print the info on each city.
     {
-        ui->cityList->append(cityInfo.getCityName()); //this is supposed to display the city name onto the cityList text box on the gui.
-        for(int loop = 0;loop < cityInfo.getAllFood().size(); loop++) //this loops through out the food vector array in each city object to print the food and price.
+        *cityInfo = cityListData->value(loop);
+        ui->cityList->append(cityInfo->getCityName()); //this is supposed to display the city name onto the cityList text box on the gui.
+        for(int j = 0;j < cityInfo->getAllFood().size(); j++) //this loops through out the food vector array in each city object to print the food and price.
         {
-            ui->cityList->append(cityInfo.getAllFood().at(loop).first);//append is supposed to allow you to print multiple lines of text on the gui without it refreshing. first is food name
-            price = QString::number(cityInfo.getAllFood().at(loop).second);//second is food price.
-            ui->cityList->append(price);
+            price = QString::number(cityInfo->getAllFood().value(j).second);//second is food price.
+            ui->cityList->append(cityInfo->getAllFood().value(j).first + ": $" + price);//append is supposed to allow you to print multiple lines of text on the gui without it refreshing. first is food name
         }
+        ui->cityList->append("");
     }
+
+
 }
 
 MainWindow::~MainWindow()
