@@ -23,6 +23,10 @@ private slots:
     void userIsAdmin();
 
 
+    void on_actionLoad_triggered();
+
+//    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
