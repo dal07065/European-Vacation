@@ -106,7 +106,7 @@
      <x>60</x>
      <y>10</y>
      <width>281</width>
-     <height>61</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -119,13 +119,15 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>img/Memory_Leak_Logo.png</pixmap>
+    <pixmap resource="Resources.qrc">:/Images/img/Memory_Leak_Logo.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

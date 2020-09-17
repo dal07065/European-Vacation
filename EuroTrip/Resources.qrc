@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>img/Memory_Leak_Logo.png</file>
+    </qresource>
+    <qresource prefix="/Files">
+        <file>EuropeanDistancesandFoods.txt</file>
+    </qresource>
+</RCC>
