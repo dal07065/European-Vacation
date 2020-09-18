@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    this->setWindowTitle("Euro Trip");
     // Please use this to change the file path according to your computers
     currentDataFilePath = ":/Files/EuropeanDistancesandFoods.txt";
 
