@@ -38,6 +38,7 @@ void MainWindow::userIsAdmin()
     QMessageBox::information(this, "Login", "Username and Password is Correct");
     ui->adminFuncs->setVisible(true);
 
+
 }
 
 void MainWindow::on_actionLoad_triggered()
@@ -107,6 +108,7 @@ void MainWindow::readData()
             }
             cityListData.push_back(*cityInfo); //this adds the city object into the vector array
             ui->comboBoxCities->addItem(cityName);
+            ui->comboBox_SelectCityAddFood->addItem(cityName);
             moreFood = true;
         }
         else
@@ -142,4 +144,5 @@ void MainWindow::on_pushButton_AddCity_clicked()
     City newCity;
     newCity.setCityName(cityName);
     cityListData.push_back(newCity);
+    ui->lineEdit_AddCity->clear();
 }
