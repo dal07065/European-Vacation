@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("Euro Trip");
+    ui->adminFuncs->setVisible(false);
     // Please use this to change the file path according to your computers
     currentDataFilePath = ":/Files/EuropeanDistancesandFoods.txt";
 
@@ -35,7 +36,7 @@ void MainWindow::userIsAdmin()
 {
 
     QMessageBox::information(this, "Login", "Username and Password is Correct");
-   // ui->adminFuncs->setVisible(true);
+    ui->adminFuncs->setVisible(true);
 
 }
 
@@ -133,4 +134,9 @@ void MainWindow::readData()
 void MainWindow::on_buttonGenerate_clicked()
 {
     // This will create a new window with all the possible travel plans
+}
+
+void MainWindow::on_pushButton_AddCity_clicked()
+{
+
 }

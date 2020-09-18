@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>321</width>
+    <width>554</width>
     <height>499</height>
    </rect>
   </property>
@@ -55,14 +55,43 @@
      </item>
     </layout>
    </widget>
+   <widget class="QGroupBox" name="adminFuncs">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>100</y>
+      <width>151</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_addCity">
+       <property name="text">
+        <string>Add New City</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_AddCity"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_AddCity">
+       <property name="text">
+        <string>Enter</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>321</width>
-     <height>26</height>
+     <width>554</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
