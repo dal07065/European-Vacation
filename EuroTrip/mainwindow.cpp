@@ -138,5 +138,8 @@ void MainWindow::on_buttonGenerate_clicked()
 
 void MainWindow::on_pushButton_AddCity_clicked()
 {
-
+    QString cityName = ui->lineEdit_AddCity->text();
+    City newCity;
+    newCity.setCityName(cityName);
+    cityListData.push_back(newCity);
 }
