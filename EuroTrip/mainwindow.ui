@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>554</width>
-    <height>499</height>
+    <width>642</width>
+    <height>535</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -58,10 +58,10 @@
    <widget class="QGroupBox" name="adminFuncs">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>100</y>
-      <width>151</width>
-      <height>101</height>
+      <x>330</x>
+      <y>200</y>
+      <width>281</width>
+      <height>231</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -78,7 +78,30 @@
      <item>
       <widget class="QPushButton" name="pushButton_AddCity">
        <property name="text">
-        <string>Enter</string>
+        <string>Add City</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Select City to Add Food</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_SelectCityAddFood"/>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="textEdit"/>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>AddFood</string>
        </property>
       </widget>
      </item>
@@ -90,7 +113,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>554</width>
+     <width>642</width>
      <height>21</height>
     </rect>
    </property>
