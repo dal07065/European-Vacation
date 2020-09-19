@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setWindowTitle("Euro Trip");
     ui->adminFuncs->setVisible(false);
+    ui->actionLog_Out->setVisible(false);
     // Please use this to change the file path according to your computers
     currentDataFilePath = ":/Files/EuropeanDistancesandFoods.txt";
 
@@ -33,13 +34,17 @@ void MainWindow::on_actionAdmin_triggered()
     logWindow.exec();
 }
 
+void MainWindow::on_actionLog_Out_triggered()
+{
+    ui->adminFuncs->setVisible(false);
+    ui->actionLog_Out->setVisible(false);
+}
+
 void MainWindow::userIsAdmin()
 {
-
     QMessageBox::information(this, "Login", "Username and Password is Correct");
     ui->adminFuncs->setVisible(true);
-
-
+    ui->actionLog_Out->setVisible(true);
 }
 
 void MainWindow::on_actionLoad_triggered()
@@ -219,3 +224,5 @@ void MainWindow::on_pushButton_clicked()
     }
     // TESTING STUFF
 }
+
+
