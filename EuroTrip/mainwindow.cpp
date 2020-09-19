@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+//#include <QDebug>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -46,6 +47,12 @@ void MainWindow::on_actionLoad_triggered()
     ui->cityList->clear();
     readData();
     //ui->cityList->setText(in.readAll());
+
+    // Loads all of current QVector cityListData into Admin
+
+    for(int i = 0; i < cityListData.size(); ++i){
+        ui->comboBox_SelectCityAddFood->addItem(cityListData[i].getCityName());
+    }
 }
 
 /*
@@ -181,8 +188,34 @@ void MainWindow::on_buttonGenerate_clicked()
 void MainWindow::on_pushButton_AddCity_clicked()
 {
     QString cityName = ui->lineEdit_AddCity->text();
-    City newCity;
-    newCity.setCityName(cityName);
-    cityListData.push_back(newCity);
-    ui->lineEdit_AddCity->clear();
+    if(cityName.size() > 2)
+    {
+        City newCity;
+        newCity.setCityName(cityName);
+        cityListData.push_back(newCity);
+        ui->lineEdit_AddCity->clear();
+    }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    QString cityName = ui->comboBox_SelectCityAddFood->currentText();
+    QString foodName = ui->lineEdit_FoodName->text();
+    double  foodCost = ui->doubleSpinBox_FoodCost->value();
+
+    int count = 0;
+    while(count < cityListData.size() - 1 && cityListData[count].getCityName() != cityName)
+    {
+        count++;
+    }
+    cityListData[count].addNewFoodItem(foodName, foodCost);
+
+    // TESTING STUFF
+    qDebug() << "City: " << cityListData[count].getCityName();
+    QVector<QPair<QString, double>> foodInfo = cityListData[count].getAllFood();
+    qDebug() << "Food: ";
+    for(int i = 0; i < foodInfo.size(); ++i){
+        qDebug() << foodInfo[i].first << "  $" << foodInfo[i].second;
+    }
+    // TESTING STUFF
 }

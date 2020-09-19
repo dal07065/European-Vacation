@@ -4,15 +4,11 @@ City::City()
 {
     cityName = "NONE";
     QPair<QString, double> input;
-    input.first = "NONE";
-    input.second = 0.00; //The price of the food
+
     distanceToParis = 0;
     distanceToBerlin = 0;
     coordinates.setLatitude(0.0);
     coordinates.setLongitude(0.0);
-
-    foodInfo.push_front(input);
-
 }
 
 City::City(QString name, QString foodName, double foodCost, double distParis, double distBerlin, double tempLatitude, double tempLongitude)

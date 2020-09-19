@@ -58,10 +58,10 @@
    <widget class="QGroupBox" name="adminFuncs">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>200</y>
-      <width>281</width>
-      <height>231</height>
+      <x>320</x>
+      <y>180</y>
+      <width>261</width>
+      <height>251</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -93,15 +93,29 @@
       <widget class="QComboBox" name="comboBox_SelectCityAddFood"/>
      </item>
      <item>
-      <widget class="QTextEdit" name="textEdit"/>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Food Name:</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+      <widget class="QLineEdit" name="lineEdit_FoodName"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Food Cost</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_FoodCost"/>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton">
        <property name="text">
-        <string>AddFood</string>
+        <string>Add Food</string>
        </property>
       </widget>
      </item>
