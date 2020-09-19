@@ -79,6 +79,22 @@ void MainWindow::readData()
     QString price;
     double  foodPrice;
 
+    double longitude;
+    double latitude;
+
+    QString tempLong;
+    QString tempLat;
+
+    QString tempLongDir;
+    QString tempLatDir;
+
+    QGeoCoordinate berlin;
+    berlin.setLatitude(52.5200);
+    berlin.setLongitude(13.4050);
+
+    QString berlinDist;
+
+
     //reads in the input from the file
     while(moreCities)
     {
@@ -88,7 +104,22 @@ void MainWindow::readData()
         cityName = in.readLine();
         if((!cityName.isEmpty()))
         {
+
             cityInfo->setCityName(cityName);
+
+            latitude = in.readLine().toDouble();
+            longitude = in.readLine().toDouble();
+            /////EDIT////////////////////////////
+            cityInfo->setLatitude(latitude);
+            cityInfo->setLongitude(longitude);
+
+            tempLatDir = in.readLine();
+            tempLongDir = in.readLine();
+
+            cityInfo->setLatDir(tempLatDir);
+            cityInfo->setLongDir(tempLongDir);
+
+            //////END EDIT///////////////////////////
 
             //reads in input for the food name and price
             while(moreFood)
@@ -108,7 +139,6 @@ void MainWindow::readData()
             }
             cityListData.push_back(*cityInfo); //this adds the city object into the vector array
             ui->comboBoxCities->addItem(cityName);
-            ui->comboBox_SelectCityAddFood->addItem(cityName);
             moreFood = true;
         }
         else
@@ -123,6 +153,16 @@ void MainWindow::readData()
 
         *cityInfo = cityListData.value(loop);
         ui->cityList->append(cityInfo->getCityName()); //this is supposed to display the city name onto the cityList text box on the gui.
+
+        /////EDIT////////////////////////////////////////////
+        tempLat = QString::number(cityInfo->getLatitude());
+        tempLong = QString::number(cityInfo->getLongitude());
+
+        ui->cityList->append(tempLat + cityInfo->getLatDir() + ", " + tempLong + cityInfo->getLongDir());
+         ////END EDIT/////////////////////////////////////////
+        berlinDist = QString::number((cityInfo->getCoordinates().distanceTo(berlin) / 1000));
+       ui->cityList->append("Distance from Berlin: " + berlinDist + "km");
+
         for(int j = 0;j < cityInfo->getAllFood().size(); j++) //this loops through out the food vector array in each city object to print the food and price.
         {
             price = QString::number(cityInfo->getAllFood().value(j).second);//second is food price.

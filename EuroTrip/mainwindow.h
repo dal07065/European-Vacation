@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <QDebug>
 #include <QMainWindow>
+#include <QGeoCoordinate>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
