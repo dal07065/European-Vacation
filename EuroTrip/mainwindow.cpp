@@ -205,6 +205,8 @@ void MainWindow::on_pushButton_AddCity_clicked()
 
         cityListData.push_back(newCity);
         ui->lineEdit_AddCity->clear();
+        ui->lineEdit_Latitude->clear();
+        ui->lineEdit_Longitude->clear();
     }
 }
 
@@ -220,6 +222,9 @@ void MainWindow::on_pushButton_clicked()
         count++;
     }
     cityListData[count].addNewFoodItem(foodName, foodCost);
+
+    ui->lineEdit_FoodName->clear();
+    ui->doubleSpinBox_FoodCost->clear();
 
     // TESTING STUFF
     qDebug() << "City: " << cityListData[count].getCityName();
