@@ -59,9 +59,9 @@
     <property name="geometry">
      <rect>
       <x>320</x>
-      <y>180</y>
-      <width>261</width>
-      <height>251</height>
+      <y>120</y>
+      <width>271</width>
+      <height>311</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -74,6 +74,26 @@
      </item>
      <item>
       <widget class="QLineEdit" name="lineEdit_AddCity"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Latitude</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_Latitude"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Longitude</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_Longitude"/>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_AddCity">

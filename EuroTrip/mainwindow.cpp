@@ -193,10 +193,16 @@ void MainWindow::on_buttonGenerate_clicked()
 void MainWindow::on_pushButton_AddCity_clicked()
 {
     QString cityName = ui->lineEdit_AddCity->text();
+    QString lati     = ui->lineEdit_Latitude->text();
+    QString longi    = ui->lineEdit_Longitude->text();
+
     if(cityName.size() > 2)
     {
         City newCity;
         newCity.setCityName(cityName);
+        newCity.setLatitude(lati.toDouble());
+        newCity.setLongitude(longi.toDouble());
+
         cityListData.push_back(newCity);
         ui->lineEdit_AddCity->clear();
     }
