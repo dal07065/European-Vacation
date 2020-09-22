@@ -11,8 +11,10 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowTitle("Euro Trip");
     ui->adminFuncs->setVisible(false);
     ui->actionLog_Out->setVisible(false);
-    // Please use this to change the file path according to your computers
+    ui->actionLoad_Extended->setVisible(false);
+
     currentDataFilePath = ":/Files/EuropeanDistancesandFoods.txt";
+    ui->comboBoxCities->addItem("Select...");
 
     ui->cityList->append("Click \"File\" and \"Load\" to start...");
 }
@@ -45,21 +47,36 @@ void MainWindow::userIsAdmin()
     QMessageBox::information(this, "Login", "Username and Password is Correct");
     ui->adminFuncs->setVisible(true);
     ui->actionLog_Out->setVisible(true);
+    ui->actionLoad_Extended->setVisible(true);
 }
 
 void MainWindow::on_actionLoad_triggered()
 {
     ui->cityList->clear();
-    readData();
-    //ui->cityList->setText(in.readAll());
+
+    currentDataFilePath = ":/Files/EuropeanDistancesandFoods.txt";
+    readData(currentDataFilePath);
 
     // Loads all of current QVector cityListData into Admin
 
+    ui->comboBox_SelectCityAddFood->clear();
     for(int i = 0; i < cityListData.size(); ++i){
         ui->comboBox_SelectCityAddFood->addItem(cityListData[i].getCityName());
     }
 }
+void MainWindow::on_actionLoad_Extended_triggered()
+{
+    ui->cityList->clear();
+    currentDataFilePath = ":/Files/EuropeanDistancesandFoodsExt.txt";
+    readData(currentDataFilePath);
 
+    // Loads all of current QVector cityListData into Admin
+
+    ui->comboBox_SelectCityAddFood->clear();
+    for(int i = 0; i < cityListData.size(); ++i){
+        ui->comboBox_SelectCityAddFood->addItem(cityListData[i].getCityName());
+    }
+}
 /*
 void MainWindow::on_pushButton_clicked()
 {
@@ -71,11 +88,24 @@ void MainWindow::on_pushButton_clicked()
     QTextStream in(&file);
 
 }*/
-
-// Read Data In and Display on UI
-void MainWindow::readData()
+// When reading in file, checks if city is already an exisiting city
+bool MainWindow::alreadyExistingCity(QString checkCity)
 {
-    QFile file(currentDataFilePath);
+    City *cityInfo = new City;
+    for(int i = 0; i < cityListData.size(); i++)
+    {
+        *cityInfo = cityListData.value(i);
+        if(cityInfo->getCityName() == checkCity)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+// Read Data In and Display on UI
+void MainWindow::readData(QString dataFile)
+{
+    QFile file(dataFile);
 
     if(!file.open(QIODevice::ReadOnly))
     {
@@ -114,6 +144,12 @@ void MainWindow::readData()
         //if the line read is NOT a new line character, cityname equals the readline(which is city name) and moves on to the next loop
         //if the line read IS A new line character, the loop exits.
         cityName = in.readLine();
+        if(alreadyExistingCity(cityName))
+        {
+            cityName = in.readLine();
+            while(!cityName.isEmpty())
+                cityName = in.readLine();
+        }
         if((!cityName.isEmpty()))
         {
 
@@ -182,7 +218,6 @@ void MainWindow::readData()
         }
         ui->cityList->append("");
     }
-    ui->comboBoxCities->addItem("Select...");
 }
 
 void MainWindow::on_buttonGenerate_clicked()
@@ -208,6 +243,7 @@ void MainWindow::on_pushButton_AddCity_clicked()
         ui->lineEdit_Latitude->clear();
         ui->lineEdit_Longitude->clear();
     }
+
 }
 
 void MainWindow::on_pushButton_clicked()

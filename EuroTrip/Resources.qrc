@@ -4,5 +4,6 @@
     </qresource>
     <qresource prefix="/Files">
         <file>EuropeanDistancesandFoods.txt</file>
+        <file>EuropeanDistancesandFoodsExt.txt</file>
     </qresource>
 </RCC>

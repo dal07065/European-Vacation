@@ -1,0 +1,23 @@
+Stockholm
+59.3293
+18.0686
+N
+E
+Raggmunk
+6.75
+Gravad lax
+13.76
+husmanskost
+7.98
+
+Vienna
+48.2082
+16.3738
+N
+E
+Wiener Schnitzel
+4.94
+Kaiserschmarrn
+7.53
+Sachertorte
+5.85

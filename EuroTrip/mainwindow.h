@@ -22,7 +22,10 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    void readData();
+
+    void printData();
+    bool alreadyExistingCity(QString str);
+    void readData(QString);
     ~MainWindow();
 
 private slots:
@@ -34,6 +37,8 @@ private slots:
 
 
     void on_actionLoad_triggered();
+
+    void on_actionLoad_Extended_triggered();
 
 //    void on_pushButton_clicked();
 

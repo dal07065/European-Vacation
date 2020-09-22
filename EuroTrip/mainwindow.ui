@@ -148,7 +148,7 @@
      <x>0</x>
      <y>0</y>
      <width>642</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -156,6 +156,7 @@
      <string>File</string>
     </property>
     <addaction name="actionLoad"/>
+    <addaction name="actionLoad_Extended"/>
     <addaction name="actionAdmin"/>
     <addaction name="actionExit"/>
     <addaction name="actionLog_Out"/>
@@ -184,6 +185,11 @@
   <action name="actionLog_Out">
    <property name="text">
     <string>Log Out</string>
+   </property>
+  </action>
+  <action name="actionLoad_Extended">
+   <property name="text">
+    <string>Load Extended</string>
    </property>
   </action>
  </widget>
