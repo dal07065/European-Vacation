@@ -40,6 +40,7 @@ void MainWindow::on_actionLog_Out_triggered()
 {
     ui->adminFuncs->setVisible(false);
     ui->actionLog_Out->setVisible(false);
+    ui->actionLoad_Extended->setVisible(false);
 }
 
 void MainWindow::userIsAdmin()
