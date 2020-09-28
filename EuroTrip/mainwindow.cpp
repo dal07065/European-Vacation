@@ -275,6 +275,7 @@ void MainWindow::on_pushButton_clicked()
     // TESTING STUFF
 }
 
+
 void MainWindow::on_customPlanButton_clicked()
 {
     customPlan customTravel;
@@ -295,4 +296,49 @@ void MainWindow::on_customPlanButton_clicked()
     customTravel.setupMenu();
 
     customTravel.exec();
+
+void MainWindow::on_OptimalTravel_clicked()
+{
+    City start = cityListData[1]; //start = berlin
+    QVector<City> sorted; //empty vector
+    QVector<City> cities = cityListData;
+    sorted = recursivePathing(start,cities,sorted);
+
+    for(int i = 0; i < sorted.size(); i++){
+        ui->cityList->append(sorted[i].getCityName());
+    }
+}
+
+//recursive function to find optimal travel plan based off distances
+//start is the city we are traveling from
+//cities is the list of cities we can travel to
+//sorted is the final product which has the most optimal travel plan
+QVector<City> MainWindow::recursivePathing(City start,QVector<City> &cities,QVector<City> &sorted ){
+    //deletes starting city from the list of cities
+    QVector<City>::iterator it = cities.begin();
+    for(int i = 0; i < cities.size(); i++)
+    {
+        if(start.getCityName() == cities[i].getCityName()){
+            cities.erase(it);
+        }
+        it++;
+    }
+
+    //find the closest city to the start city
+    City* closest = &cities[0];
+    for(int i = 0; i < cities.size();i++){
+        if(cities[i].getCoordinates().distanceTo(start.getCoordinates()) < closest->getCoordinates().distanceTo(start.getCoordinates()))
+        {
+            closest = &cities[i];
+        }
+    }
+    //add to sorted
+    sorted.push_back(*closest);
+
+    //if more than 1 city remains then recurse
+    if(cities.size() > 1){
+      recursivePathing(*closest,cities,sorted);
+    }
+    return sorted;
+
 }
