@@ -35,7 +35,6 @@ private slots:
 
     void userIsAdmin();
 
-
     void on_actionLoad_triggered();
 
     void on_actionLoad_Extended_triggered();
@@ -50,6 +49,9 @@ private slots:
 
     void on_actionLog_Out_triggered();
 
+    void on_OptimalTravel_clicked();
+
+    QVector<City> recursivePathing(City start,QVector<City> &cities,QVector<City> &sorted);
 private:
     Ui::MainWindow *ui;
     QVector<City> cityListData;
