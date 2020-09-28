@@ -50,6 +50,8 @@ private slots:
 
     void on_actionLog_Out_triggered();
 
+    void on_customPlanButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QVector<City> cityListData;
