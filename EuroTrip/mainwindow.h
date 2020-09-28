@@ -49,9 +49,14 @@ private slots:
 
     void on_actionLog_Out_triggered();
 
+
+    void on_customPlanButton_clicked();
+
+
     void on_OptimalTravel_clicked();
 
     QVector<City> recursivePathing(City start,QVector<City> &cities,QVector<City> &sorted);
+
 private:
     Ui::MainWindow *ui;
     QVector<City> cityListData;

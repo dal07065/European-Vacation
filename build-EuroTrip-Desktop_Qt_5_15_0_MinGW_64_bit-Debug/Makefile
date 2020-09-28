@@ -250,9 +250,11 @@ Makefile: ../EuroTrip/EuroTrip.pro A:/Qt/5.15.0/mingw81_64/mkspecs/win32-g++/qma
 		../EuroTrip/EuroTrip.pro \
 		A:/Qt/5.15.0/mingw81_64/lib/Qt5Widgets.prl \
 		A:/Qt/5.15.0/mingw81_64/lib/Qt5Gui.prl \
+		A:/Qt/5.15.0/mingw81_64/lib/Qt5Positioning.prl \
 		A:/Qt/5.15.0/mingw81_64/lib/Qt5Core.prl \
 		A:/Qt/5.15.0/mingw81_64/lib/qtmain.prl \
-		A:/Qt/5.15.0/mingw81_64/mkspecs/features/build_pass.prf
+		A:/Qt/5.15.0/mingw81_64/mkspecs/features/build_pass.prf \
+		../EuroTrip/Resources.qrc
 	$(QMAKE) -o Makefile ..\EuroTrip\EuroTrip.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 A:/Qt/5.15.0/mingw81_64/mkspecs/features/spec_pre.prf:
 A:/Qt/5.15.0/mingw81_64/mkspecs/qdevice.pri:
@@ -434,9 +436,11 @@ A:/Qt/5.15.0/mingw81_64/mkspecs/features/lex.prf:
 ../EuroTrip/EuroTrip.pro:
 A:/Qt/5.15.0/mingw81_64/lib/Qt5Widgets.prl:
 A:/Qt/5.15.0/mingw81_64/lib/Qt5Gui.prl:
+A:/Qt/5.15.0/mingw81_64/lib/Qt5Positioning.prl:
 A:/Qt/5.15.0/mingw81_64/lib/Qt5Core.prl:
 A:/Qt/5.15.0/mingw81_64/lib/qtmain.prl:
 A:/Qt/5.15.0/mingw81_64/mkspecs/features/build_pass.prf:
+../EuroTrip/Resources.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\EuroTrip\EuroTrip.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 

@@ -11,6 +11,8 @@ class City
 public:
     City();
     City(QString name, QString foodName, double foodCost, double distParis, double distBerlin, double tempLatitude, double tempLongitude);
+    //City(City &otherCity);
+    //void operator=(City otherCity);
     void setCityName(QString newName);
     void setDistToParis(double dist);
     void setDistToBerlin(double dist);
@@ -31,7 +33,7 @@ public:
     double getDistToBerlin();
     double getDistToParis();
 
-     QGeoCoordinate getCoordinates();
+    QGeoCoordinate getCoordinates();
 
 private:
     QString cityName;
