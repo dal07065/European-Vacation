@@ -20,7 +20,7 @@
       <x>10</x>
       <y>10</y>
       <width>301</width>
-      <height>461</height>
+      <height>421</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -53,22 +53,15 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QPushButton" name="customPlanButton">
-       <property name="text">
-        <string>Create Custom Plan With Selected City</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
    <widget class="QGroupBox" name="adminFuncs">
     <property name="geometry">
      <rect>
       <x>320</x>
-      <y>90</y>
+      <y>120</y>
       <width>271</width>
-      <height>341</height>
+      <height>311</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -169,7 +162,6 @@
      <y>0</y>
      <width>642</width>
      <height>21</height>
-
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

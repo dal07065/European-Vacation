@@ -22,36 +22,7 @@ City::City(QString name, QString foodName, double foodCost, double distParis, do
 
     foodInfo.push_front(input);
 }
-/*
-City::City(City &otherCity)
-{
-    cityName = otherCity.cityName;
-    for(int loop = 0; loop < otherCity.foodInfo.size(); loop++)
-    {
-        foodInfo.push_back(otherCity.foodInfo[loop]);
-    }
-    distanceToParis = otherCity.distanceToParis;
-    distanceToBerlin = otherCity.distanceToBerlin;
-    longDir = otherCity.longDir;
-    latDir  = otherCity.latDir;
-    coordinates = otherCity.coordinates;
-}
-*/
-/*
-void City::operator=(City otherCity)
-{
-    cityName = otherCity.cityName;
-    for(int loop = 0; loop < otherCity.foodInfo.size(); loop++)
-    {
-        foodInfo.push_back(otherCity.foodInfo[loop]);
-    }
-    distanceToParis = otherCity.distanceToParis;
-    distanceToBerlin = otherCity.distanceToBerlin;
-    longDir = otherCity.longDir;
-    latDir  = otherCity.latDir;
-    coordinates = otherCity.coordinates;
-}
-*/
+
 void City::setCityName(QString newName)
 {
     cityName = newName;
