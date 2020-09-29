@@ -52,6 +52,8 @@ private slots:
     void on_OptimalTravel_clicked();
 
     QVector<City> recursivePathing(City start,QVector<City> &cities,QVector<City> &sorted);
+    void on_customPlan_clicked();
+
 private:
     Ui::MainWindow *ui;
     QVector<City> cityListData;

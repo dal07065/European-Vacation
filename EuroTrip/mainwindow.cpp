@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "customplan.h"
+
 //#include <QDebug>
 
 
@@ -316,4 +318,26 @@ QVector<City> MainWindow::recursivePathing(City start,QVector<City> &cities,QVec
       recursivePathing(*closest,cities,sorted);
     }
     return sorted;
+}
+
+void MainWindow::on_customPlan_clicked()
+{
+    customPlan customTravel;
+    QVector<City> customCityPlan(cityListData);
+    City startingCity;
+
+    //This line sucks. I couldnt do startingCity = ui->comboBoxCities->currentData() for some reason
+    //Which wouldve been better but oh well. - Nathan Tran
+    //This line of code gets the information of the city selected in the drop down menu.
+    startingCity = customCityPlan[(ui->comboBoxCities->currentIndex() - 1)];
+
+    //Deletes the starting city from the custom city vector so it wont be selected again
+    //inside the custom plan generator.
+    customCityPlan.removeAt(ui->comboBoxCities->currentIndex() - 1);
+
+    customTravel.addCity(startingCity);
+    customTravel.addCustomCityData(customCityPlan);
+    customTravel.setupMenu();
+
+    customTravel.exec();
 }

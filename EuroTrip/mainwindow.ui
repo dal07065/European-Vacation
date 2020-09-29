@@ -20,7 +20,7 @@
       <x>10</x>
       <y>10</y>
       <width>301</width>
-      <height>421</height>
+      <height>471</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -50,6 +50,20 @@
       <widget class="QPushButton" name="buttonGenerate">
        <property name="text">
         <string>Generate</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="OptimalTravel">
+       <property name="text">
+        <string>Optimal Travel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="customPlan">
+       <property name="text">
+        <string>Create Custom Plan</string>
        </property>
       </widget>
      </item>
@@ -141,19 +155,6 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="OptimalTravel">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>440</y>
-      <width>301</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Optimal Travel</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -161,7 +162,7 @@
      <x>0</x>
      <y>0</y>
      <width>642</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
