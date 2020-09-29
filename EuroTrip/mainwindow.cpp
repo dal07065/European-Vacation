@@ -277,14 +277,24 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_OptimalTravel_clicked()
 {
+    if(cityListData.empty()) return; //must load file first
+
     City start = cityListData[1]; //start = berlin
     QVector<City> sorted; //empty vector
+    sorted.push_back(start);
     QVector<City> cities = cityListData;
     sorted = recursivePathing(start,cities,sorted);
+    double totalDistance = 0;
 
+    //ouput sorted list and total distance traveled
     for(int i = 0; i < sorted.size(); i++){
         ui->cityList->append(sorted[i].getCityName());
+        if(i+1 < sorted.size()){
+            totalDistance += (sorted[i].getCoordinates().distanceTo(sorted[i+1].getCoordinates()));
+        }
     }
+     QString Distance = QString::number(totalDistance/1000);
+     ui->cityList->append("Total Distance Traveled:" + Distance + "km");
 }
 
 //recursive function to find optimal travel plan based off distances
