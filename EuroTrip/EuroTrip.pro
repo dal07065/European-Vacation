@@ -13,6 +13,7 @@ QT += positioning
 SOURCES += \
     city.cpp \
     customplan.cpp \
+    foodplanner.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -21,12 +22,14 @@ SOURCES += \
 HEADERS += \
     city.h \
     customplan.h \
+    foodplanner.h \
     login.h \
     mainwindow.h \
     user.h
 
 FORMS += \
     customplan.ui \
+    foodplanner.ui \
     login.ui \
     mainwindow.ui
 

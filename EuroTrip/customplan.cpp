@@ -33,6 +33,17 @@ void customPlan::setupMenu()
     }
 }
 
+void customPlan::getSelectedCities()
+{
+
+
+}
+
+void findMostEfficientPath()
+{
+
+}
+
 customPlan::~customPlan()
 {
     delete ui;
