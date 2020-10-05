@@ -42,6 +42,8 @@ private slots:
 
     void on_backButton_clicked();
 
+    void on_exitButton_clicked();
+
 private:
     Ui::foodPlanner *ui;
     QVector<City> travelPlan;

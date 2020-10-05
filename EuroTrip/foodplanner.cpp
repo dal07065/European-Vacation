@@ -143,3 +143,8 @@ void foodPlanner::on_backButton_clicked()
         setupUi();
     }
 }
+
+void foodPlanner::on_exitButton_clicked()
+{
+    close();
+}
