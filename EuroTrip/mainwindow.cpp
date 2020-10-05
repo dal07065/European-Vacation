@@ -275,6 +275,7 @@ void MainWindow::on_pushButton_clicked()
     // TESTING STUFF
 }
 
+//Function for starting a trip beginning at Berlin
 void MainWindow::on_OptimalTravel_clicked()
 {
     ui->cityListOptimalTravel->clear();
@@ -351,4 +352,28 @@ void MainWindow::on_customPlan_clicked()
     customTravel.setupMenu();
 
     customTravel.exec();
+}
+
+//Function for starting a trip beginning at Paris
+void MainWindow::on_OptimalTravel_2_clicked()
+{
+    ui->cityListOptimalTravel->clear();
+    if(cityListData.empty()) return; //must load file first
+
+    City start = cityListData[8]; //start = Paris
+    QVector<City> sorted; //empty vector
+    sorted.push_back(start);
+    QVector<City> cities = cityListData;
+    sorted = recursivePathing(start,cities,sorted);
+    double totalDistance = 0;
+
+    //ouput sorted list and total distance traveled
+    for(int i = 0; i < sorted.size(); i++){
+        ui->cityListOptimalTravel->append(sorted[i].getCityName());
+        if(i+1 < sorted.size()){
+            totalDistance += (sorted[i].getCoordinates().distanceTo(sorted[i+1].getCoordinates()));
+        }
+    }
+     QString Distance = QString::number(totalDistance/1000);
+     ui->cityListOptimalTravel->append("Total Distance Traveled:" + Distance + "km");
 }

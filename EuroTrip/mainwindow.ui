@@ -20,7 +20,7 @@
       <x>10</x>
       <y>10</y>
       <width>301</width>
-      <height>471</height>
+      <height>481</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -56,7 +56,14 @@
      <item>
       <widget class="QPushButton" name="OptimalTravel">
        <property name="text">
-        <string>Optimal Travel</string>
+        <string>Berlin Travel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="OptimalTravel_2">
+       <property name="text">
+        <string>Paris Travel</string>
        </property>
       </widget>
      </item>
@@ -185,7 +192,7 @@
      <x>0</x>
      <y>0</y>
      <width>642</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

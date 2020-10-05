@@ -49,10 +49,12 @@ private slots:
 
     void on_actionLog_Out_triggered();
 
-    void on_OptimalTravel_clicked();
+    void on_OptimalTravel_clicked();//Starting at Berlin
 
     QVector<City> recursivePathing(City start,QVector<City> &cities,QVector<City> &sorted);
     void on_customPlan_clicked();
+
+    void on_OptimalTravel_2_clicked();//Starting at Paris
 
 private:
     Ui::MainWindow *ui;
