@@ -16,6 +16,9 @@ public:
     explicit foodPlanner(QWidget *parent = nullptr);
     void addCity(City data);
     void addTravelPlanData(QVector<City> data);
+
+    void setupUi();
+    bool correctFood(QString);
     //This will add the travel plan created by the custom plan ui to the
     //food planner ui vector named travelPlan - Nathan Tran
 
@@ -30,9 +33,24 @@ public:
 
     ~foodPlanner();
 
+private slots:
+    void on_addItem_clicked();
+
+    void on_removeItem_clicked();
+
+    void on_nextButton_clicked();
+
+    void on_backButton_clicked();
+
 private:
     Ui::foodPlanner *ui;
     QVector<City> travelPlan;
+
+    int currentCity;
+    QVector<QPair<QString, double>> foodList;
+    QVector<QPair<QString, double>> cartList;
+    int cartCount;
+    int tableCount;
 };
 
 #endif // FOODPLANNER_H

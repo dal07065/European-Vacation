@@ -28,11 +28,14 @@ public:
     //This function is used to get the most efficient path from the starting city to the selected cities.
     //this will input that plan into the cityPlan class data member which will serve as the created main custom plan
     //and will be passed into the foodplanner ui. - Nathan Tran
+    QVector<City> recursivePathingCustomPlan(City start,QVector<City> &cities,QVector<City> &sorted);
 
     ~customPlan();
 
 private slots:
     void on_generate_clicked();
+
+    void on_startTrip_clicked();
 
 private:
     Ui::customPlan *ui;

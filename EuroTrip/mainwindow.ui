@@ -63,7 +63,7 @@
      <item>
       <widget class="QPushButton" name="customPlan">
        <property name="text">
-        <string>Create Custom Plan</string>
+        <string>Create Plan</string>
        </property>
       </widget>
      </item>
@@ -72,10 +72,10 @@
    <widget class="QGroupBox" name="adminFuncs">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>120</y>
-      <width>271</width>
-      <height>311</height>
+      <x>330</x>
+      <y>290</y>
+      <width>301</width>
+      <height>201</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -154,6 +154,29 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QTextBrowser" name="cityListOptimalTravel">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>48</y>
+      <width>299</width>
+      <height>241</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>10</y>
+      <width>299</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Optimal Travel Plan:</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

@@ -48,7 +48,7 @@ void MainWindow::on_actionLog_Out_triggered()
 void MainWindow::userIsAdmin()
 {
     QMessageBox::information(this, "Login", "Username and Password is Correct");
-    ui->adminFuncs->setVisible(true);
+    //ui->adminFuncs->setVisible(true);
     ui->actionLog_Out->setVisible(true);
     ui->actionLoad_Extended->setVisible(true);
 }
@@ -277,6 +277,7 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_OptimalTravel_clicked()
 {
+    ui->cityListOptimalTravel->clear();
     if(cityListData.empty()) return; //must load file first
 
     City start = cityListData[1]; //start = berlin
@@ -288,13 +289,13 @@ void MainWindow::on_OptimalTravel_clicked()
 
     //ouput sorted list and total distance traveled
     for(int i = 0; i < sorted.size(); i++){
-        ui->cityList->append(sorted[i].getCityName());
+        ui->cityListOptimalTravel->append(sorted[i].getCityName());
         if(i+1 < sorted.size()){
             totalDistance += (sorted[i].getCoordinates().distanceTo(sorted[i+1].getCoordinates()));
         }
     }
      QString Distance = QString::number(totalDistance/1000);
-     ui->cityList->append("Total Distance Traveled:" + Distance + "km");
+     ui->cityListOptimalTravel->append("Total Distance Traveled:" + Distance + "km");
 }
 
 //recursive function to find optimal travel plan based off distances
