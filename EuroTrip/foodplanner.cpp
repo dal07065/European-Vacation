@@ -36,14 +36,15 @@ void foodPlanner::setupUi()
 
     foodList = travelPlan[currentCity].getAllFood();
 
-    ui->tableWidget->setRowCount(foodList.size());
+//    ui->tableWidget->setRowCount(foodList.size());
     ui->tableWidget->setColumnCount(2);
 
-    ui->tableWidgetCart->setRowCount(foodList.size());
+//    ui->tableWidgetCart->setRowCount(foodList.size());
     ui->tableWidgetCart->setColumnCount(2);
 
     for(int i = 0; i < foodList.size(); i++)
     {
+        ui->tableWidget->insertRow(tableCount);
         ui->tableWidget->setItem(i, 0, new QTableWidgetItem(foodList[i].first));
         ui->tableWidget->setItem(i, 1, new QTableWidgetItem("$" + QString::number(foodList[i].second)));
         ui->comboBoxAdd->addItem(foodList[i].first);
@@ -62,6 +63,7 @@ void foodPlanner::on_addItem_clicked()
         if(selectedFood == foodList[i].first)
         {
             cartList.append(foodList[i]);
+            ui->tableWidgetCart->insertRow(cartCount);
             ui->tableWidgetCart->setItem(cartCount, 0, new QTableWidgetItem(foodList[i].first));
             ui->tableWidgetCart->setItem(cartCount, 1, new QTableWidgetItem("$" + QString::number(foodList[i].second)));
             cartCount++;
@@ -69,7 +71,7 @@ void foodPlanner::on_addItem_clicked()
             ui->comboBoxAdd->removeItem(selectedIndex);
             ui->comboBoxRemove->addItem(selectedFood);
             ui->tableWidget->removeRow(selectedIndex);
-            ui->tableWidget->insertRow(tableCount);
+//            ui->tableWidget->insertRow(tableCount);
             foodList.remove(i);
 
             break;
@@ -98,6 +100,7 @@ void foodPlanner::on_removeItem_clicked()
             if(correctFood(selectedFood))
             {
                 foodList.append(cartList[i]);
+                ui->tableWidget->insertRow(tableCount);
                 ui->tableWidget->setItem(tableCount, 0, new QTableWidgetItem(cartList[i].first));
                 ui->tableWidget->setItem(tableCount, 1, new QTableWidgetItem("$" + QString::number(cartList[i].second)));
                 ui->comboBoxAdd->addItem(selectedFood);
@@ -106,7 +109,7 @@ void foodPlanner::on_removeItem_clicked()
             cartCount--;
             ui->comboBoxRemove->removeItem(selectedIndex);
             ui->tableWidgetCart->removeRow(selectedIndex);
-            ui->tableWidgetCart->insertRow(cartCount);
+//            ui->tableWidgetCart->insertRow(cartCount);
             cartList.remove(i);
 
             break;
