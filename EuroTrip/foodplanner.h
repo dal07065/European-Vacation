@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "city.h"
+#include "receipt.h"
 
 namespace Ui {
 class foodPlanner;
@@ -19,17 +20,11 @@ public:
 
     void setupUi();
     bool correctFood(QString);
-    //This will add the travel plan created by the custom plan ui to the
-    //food planner ui vector named travelPlan - Nathan Tran
 
-    //The ui is supposed to flip through the cities one by one. The user
-    //selects the food they want to purchase from a city and they can click
-    //"next" to go to the next city. honestly the back button is probably not
-    //needed and will probably be a huge pain to program cuz thatll mean the
-    //user will be able to change their selection so probably scratch that idea.
-    //We'll also have to think about what happens when the user gets to the last city
-    //and then they click next but thats a problem for another day since Im tired now
-    //lol - Nathan Tran @ 2:31 AM
+    int findCurrentCity(QString foodName);
+
+    //This will add the travel plan created by the custom plan ui to the
+    //food planner ui vector named travelPlan
 
     ~foodPlanner();
 
@@ -47,10 +42,11 @@ private slots:
 private:
     Ui::foodPlanner *ui;
     QVector<City> travelPlan;
+    QVector<City> purchasedFood;
 
-    int currentCity;
     QVector<QPair<QString, double>> foodList;
     QVector<QPair<QString, double>> cartList;
+    int currentCity;
     int cartCount;
     int tableCount;
 };

@@ -11,6 +11,16 @@ City::City()
     coordinates.setLongitude(0.0);
 }
 
+City::City(QString name)
+{
+    cityName = name;
+
+    distanceToParis = 0;
+    distanceToBerlin = 0;
+    coordinates.setLatitude(0.0);
+    coordinates.setLongitude(0.0);
+}
+
 City::City(QString name, QString foodName, double foodCost, double distParis, double distBerlin, double tempLatitude, double tempLongitude)
 {
     cityName = name;
@@ -105,9 +115,29 @@ QVector<QPair<QString, double>> City::getAllFood()
     return foodInfo;
 }
 
- QString City::getCityName()
- {
-     return cityName;
- }
+bool City::noFood()const
+{
+    return foodInfo.isEmpty();
+}
+
+void City::removeFoodItem(QString food)
+{
+    int loop = 0;
+    bool notFound = true;
+
+    while(loop < foodInfo.size() && notFound)
+    {
+        if(foodInfo[loop].first == food)
+        {
+            foodInfo.removeAt(loop);
+        }
+        loop++;
+    }
+}
+
+QString City::getCityName()
+{
+    return cityName;
+}
 
 

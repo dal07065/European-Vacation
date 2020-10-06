@@ -47,6 +47,7 @@ customPlan::~customPlan()
 {
     delete ui;
 }
+
 QVector<City> customPlan::recursivePathingCustomPlan(City start,QVector<City> &cities,QVector<City> &sorted ){
     //deletes starting city from the list of cities
     QVector<City>::iterator it = cities.begin();
@@ -75,6 +76,7 @@ QVector<City> customPlan::recursivePathingCustomPlan(City start,QVector<City> &c
     }
     return sorted;
 }
+
 void customPlan::on_generate_clicked()
 {
     ui->textBrowser->clear();
