@@ -9,6 +9,10 @@ City::City()
     distanceToBerlin = 0;
     coordinates.setLatitude(0.0);
     coordinates.setLongitude(0.0);
+    for(int i = 0; i < 13; i++)
+        {
+            allDistances.push_back(0);
+        }
 }
 
 City::City(QString name, QString foodName, double foodCost, double distParis, double distBerlin, double tempLatitude, double tempLongitude)
@@ -21,6 +25,10 @@ City::City(QString name, QString foodName, double foodCost, double distParis, do
     QPair<QString, double> input(foodName, foodCost);
 
     foodInfo.push_front(input);
+    for(int i = 0; i < 13; i++)
+        {
+            allDistances.push_back(0);
+        }
 }
 
 void City::setCityName(QString newName)

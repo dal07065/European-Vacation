@@ -33,9 +33,15 @@ public:
 
      QGeoCoordinate getCoordinates();
 
+     QVector<double>& getAllDistances()
+         {
+             return allDistances;
+         }
+
 private:
     QString cityName;
     QVector<QPair<QString, double>> foodInfo;
+    QVector<double> allDistances;
     double distanceToParis;
     double distanceToBerlin;
 

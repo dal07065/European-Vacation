@@ -26,6 +26,7 @@ public:
     void printData();
     bool alreadyExistingCity(QString str);
     void readData(QString);
+    void readDistances(QVector<City> &cityList);
     ~MainWindow();
 
 private slots:
