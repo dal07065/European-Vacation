@@ -17,6 +17,7 @@ SOURCES += \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
+    receipt.cpp \
     user.cpp
 
 HEADERS += \
@@ -25,13 +26,15 @@ HEADERS += \
     foodplanner.h \
     login.h \
     mainwindow.h \
+    receipt.h \
     user.h
 
 FORMS += \
     customplan.ui \
     foodplanner.ui \
     login.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    receipt.ui
 
 TRANSLATIONS += \
     EuroTrip_en_US.ts

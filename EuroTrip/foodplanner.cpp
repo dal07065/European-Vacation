@@ -20,6 +20,7 @@ void foodPlanner::addTravelPlanData(QVector<City> data)
     for(int loop = 0; loop < data.size(); loop++)
     {
         travelPlan.append(data[loop]);
+        purchasedFood.push_back(data[loop].getCityName());
     }
 }
 foodPlanner::~foodPlanner()
@@ -74,6 +75,8 @@ void foodPlanner::on_addItem_clicked()
 //            ui->tableWidget->insertRow(tableCount);
             foodList.remove(i);
 
+            purchasedFood[currentCity].addNewFoodItem(cartList.back().first, cartList.back().second);
+
             break;
         }
     }
@@ -88,6 +91,26 @@ bool foodPlanner::correctFood(QString foodName)
     }
     return false;
 }
+
+int foodPlanner::findCurrentCity(QString foodName)
+{
+    int currentCityIndex = 0;
+    for(int i = 0; i < travelPlan.size(); i++)
+    {
+        QVector<QPair<QString, double>> foodListOriginal = travelPlan[currentCity].getAllFood();
+        for(int j = 0; j < foodListOriginal.size(); j++)
+        {
+            if(foodName == foodListOriginal[i].first)
+            {
+                currentCityIndex = i;
+                i = travelPlan.size();
+                j = foodListOriginal.size();
+            }
+        }
+    }
+    return currentCityIndex;
+}
+
 void foodPlanner::on_removeItem_clicked()
 {
     QString selectedFood = ui->comboBoxRemove->currentText();
@@ -97,6 +120,7 @@ void foodPlanner::on_removeItem_clicked()
     {
         if(selectedFood == cartList[i].first)
         {
+            int currentCityIndex = findCurrentCity(selectedFood);
             if(correctFood(selectedFood))
             {
                 foodList.append(cartList[i]);
@@ -106,6 +130,7 @@ void foodPlanner::on_removeItem_clicked()
                 ui->comboBoxAdd->addItem(selectedFood);
                 tableCount++;
             }
+            purchasedFood[currentCityIndex].removeFoodItem(cartList[i].first);
             cartCount--;
             ui->comboBoxRemove->removeItem(selectedIndex);
             ui->tableWidgetCart->removeRow(selectedIndex);
@@ -121,7 +146,12 @@ void foodPlanner::on_nextButton_clicked()
 {
     if(currentCity + 1 == travelPlan.size())
     {
+        Receipt invoice;
 
+        invoice.addData(purchasedFood);
+        invoice.printReceipt();
+
+        invoice.exec();
     }
     else
     {
