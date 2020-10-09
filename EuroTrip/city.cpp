@@ -148,4 +148,30 @@ QString City::getCityName()
     return cityName;
 }
 
+// retrieves distance from "this" City object to "city"
+double City::getDistance(QString city)
+{
+    if(city == "Amsterdam")
+        return allDistances[0];
+    if(city == "Berlin")
+        return allDistances[1];
+    if(city == "Brussels")
+        return allDistances[2];
+    if(city == "Budapest")
+        return allDistances[3];
+    if(city == "Hamburg")
+        return allDistances[4];
+    if(city == "Lisbon")
+        return allDistances[5];
+    if(city == "London")
+        return allDistances[6];
+    if(city == "Madrid")
+        return allDistances[7];
+    if(city == "Paris")
+        return allDistances[8];
+    if(city == "Prague")
+        return allDistances[9];
+    if(city == "Rome")
+        return allDistances[10];
+}
 

@@ -198,19 +198,21 @@ void MainWindow::readData(QString dataFile)
         }
     }
 
+    // read in distance data
     readDistances(cityListData);
+
     QString temp;
 
-        for(int q = 0; q < 11; q++)
+    for(int q = 0; q < 11; q++)
+    {
+        ui->textBrowser->append(cityListData[q].getCityName());
+        for(int r = 0; r < 13; r++)
         {
-            ui->textBrowser->append(cityListData[q].getCityName());
-            for(int r = 0; r < 13; r++)
-            {
-                temp = QString::number(cityListData[q].getAllDistances()[r]);
+            temp = QString::number(cityListData[q].getAllDistances()[r]);
 
-                ui->textBrowser->append(temp);
-            }
+            ui->textBrowser->append(temp);
         }
+    }
     // Print data on UI
     for(int loop= 0; loop < cityListData.size(); loop++)//this loops through the main city vecotr to print the info on each city.
     {
@@ -218,14 +220,19 @@ void MainWindow::readData(QString dataFile)
         *cityInfo = cityListData.value(loop);
         ui->cityList->append(cityInfo->getCityName()); //this is supposed to display the city name onto the cityList text box on the gui.
 
-        /////EDIT////////////////////////////////////////////
         tempLat = QString::number(cityInfo->getLatitude());
         tempLong = QString::number(cityInfo->getLongitude());
 
         ui->cityList->append(tempLat + cityInfo->getLatDir() + ", " + tempLong + cityInfo->getLongDir());
+
          ////END EDIT/////////////////////////////////////////
         berlinDist = QString::number(cityInfo->getAllDistances()[1]);
        ui->cityList->append("Distance from Berlin: " + berlinDist + "km");
+
+
+        //berlinDist = QString::number(cityInfo->getDistance("Berlin"));
+        //ui->cityList->append("Distance from Berlin: " + berlinDist + "km");
+
 
         for(int j = 0;j < cityInfo->getAllFood().size(); j++) //this loops through out the food vector array in each city object to print the food and price.
         {
@@ -305,7 +312,9 @@ void MainWindow::on_OptimalTravel_clicked()
     for(int i = 0; i < sorted.size(); i++){
         ui->cityListOptimalTravel->append(sorted[i].getCityName());
         if(i+1 < sorted.size()){
-            totalDistance += (sorted[i].getCoordinates().distanceTo(sorted[i+1].getCoordinates()));
+//            totalDistance += (sorted[i].getCoordinates().distanceTo(sorted[i+1].getCoordinates()));
+            totalDistance += (sorted[i].getDistance(sorted[i+1].getCityName()));
+
         }
     }
      QString Distance = QString::number(totalDistance/1000);
@@ -330,7 +339,12 @@ QVector<City> MainWindow::recursivePathing(City start,QVector<City> &cities,QVec
     //find the closest city to the start city
     City* closest = &cities[0];
     for(int i = 0; i < cities.size();i++){
-        if(cities[i].getCoordinates().distanceTo(start.getCoordinates()) < closest->getCoordinates().distanceTo(start.getCoordinates()))
+//        if(cities[i].getCoordinates().distanceTo(start.getCoordinates()) < closest->getCoordinates().distanceTo(start.getCoordinates()))
+
+        // ---------- EDIT ------------ //
+        // I fixed it with the NEW distances bc it seemed to work with custom plan...
+        // Don't hesitate to change/improve it anytime - Lina K
+        if(cities[i].getDistance(start.getCityName()) < closest->getDistance(start.getCityName()))
         {
             closest = &cities[i];
         }
@@ -384,7 +398,9 @@ void MainWindow::on_OptimalTravel_2_clicked()
     for(int i = 0; i < sorted.size(); i++){
         ui->cityListOptimalTravel->append(sorted[i].getCityName());
         if(i+1 < sorted.size()){
-            totalDistance += (sorted[i].getCoordinates().distanceTo(sorted[i+1].getCoordinates()));
+//            totalDistance += (sorted[i].getCoordinates().distanceTo(sorted[i+1].getCoordinates()));
+            totalDistance += (sorted[i].getDistance(sorted[i+1].getCityName()));
+
         }
     }
      QString Distance = QString::number(totalDistance/1000);
