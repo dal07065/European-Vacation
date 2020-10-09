@@ -65,6 +65,9 @@ public:
              return allDistances;
          }
 
+     double getDistance(QString cityName);
+     //Function to return distance from "cityName"
+
 private:
     QString cityName;
     QVector<QPair<QString, double>> foodInfo;

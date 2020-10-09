@@ -62,7 +62,11 @@ QVector<City> customPlan::recursivePathingCustomPlan(City start,QVector<City> &c
     //find the closest city to the start city
     City* closest = &cities[0];
     for(int i = 0; i < cities.size();i++){
-        if(cities[i].getCoordinates().distanceTo(start.getCoordinates()) < closest->getCoordinates().distanceTo(start.getCoordinates()))
+//        if(cities[i].getCoordinates().distanceTo(start.getCoordinates()) < closest->getCoordinates().distanceTo(start.getCoordinates()))
+
+        qDebug() << "Comparing Distance from " << cities[i].getCityName() << " of " << cities[i].getDistance(start.getCityName()) <<
+                    " to " << closest->getCityName() << " of " << closest->getDistance(start.getCityName()) << endl;
+        if(cities[i].getDistance(start.getCityName()) < closest->getDistance(start.getCityName()))
         {
             closest = &cities[i];
         }
@@ -103,8 +107,7 @@ void customPlan::on_generate_clicked()
 
     for(int i = 0; i < selectedCities.size(); i++)
     {
-        QString cityAndDistance = selectedCities[i].getCityName() + " : " +
-                QString::number((selectedCities[i].getCoordinates().distanceTo(start.getCoordinates()))/1000) + "km";
+        QString cityAndDistance = selectedCities[i].getCityName();
         ui->textBrowser->append(cityAndDistance);
     }
 }

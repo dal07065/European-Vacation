@@ -9,7 +9,6 @@ foodPlanner::foodPlanner(QWidget *parent) :
     ui->setupUi(this);
     currentCity = 0;
     cartCount = 0;
-    tableCount = 0;
 }
 void foodPlanner::addCity(City data)
 {
@@ -37,19 +36,18 @@ void foodPlanner::setupUi()
 
     foodList = travelPlan[currentCity].getAllFood();
 
-//    ui->tableWidget->setRowCount(foodList.size());
-    ui->tableWidget->setColumnCount(2);
+    ui->tableWidget->clearContents();
+    ui->comboBoxAdd->clear();
 
-//    ui->tableWidgetCart->setRowCount(foodList.size());
+    ui->tableWidget->setRowCount(foodList.size());
+    ui->tableWidget->setColumnCount(2);
     ui->tableWidgetCart->setColumnCount(2);
 
     for(int i = 0; i < foodList.size(); i++)
     {
-        ui->tableWidget->insertRow(tableCount);
         ui->tableWidget->setItem(i, 0, new QTableWidgetItem(foodList[i].first));
         ui->tableWidget->setItem(i, 1, new QTableWidgetItem("$" + QString::number(foodList[i].second)));
         ui->comboBoxAdd->addItem(foodList[i].first);
-        tableCount++;
     }
 
 }
@@ -59,56 +57,15 @@ void foodPlanner::on_addItem_clicked()
     QString selectedFood = ui->comboBoxAdd->currentText();
     int selectedIndex = ui->comboBoxAdd->currentIndex();
 
-    for(int i = 0; i < foodList.size(); i++)
-    {
-        if(selectedFood == foodList[i].first)
-        {
-            cartList.append(foodList[i]);
-            ui->tableWidgetCart->insertRow(cartCount);
-            ui->tableWidgetCart->setItem(cartCount, 0, new QTableWidgetItem(foodList[i].first));
-            ui->tableWidgetCart->setItem(cartCount, 1, new QTableWidgetItem("$" + QString::number(foodList[i].second)));
-            cartCount++;
-            tableCount--;
-            ui->comboBoxAdd->removeItem(selectedIndex);
-            ui->comboBoxRemove->addItem(selectedFood);
-            ui->tableWidget->removeRow(selectedIndex);
-//            ui->tableWidget->insertRow(tableCount);
-            foodList.remove(i);
+    ui->tableWidgetCart->insertRow(cartCount);
+    ui->tableWidgetCart->setItem(cartCount, 0, new QTableWidgetItem(foodList[selectedIndex].first));
+    ui->tableWidgetCart->setItem(cartCount, 1, new QTableWidgetItem("$" + QString::number(foodList[selectedIndex].second)));
+    ui->comboBoxRemove->addItem(selectedFood);
 
-            purchasedFood[currentCity].addNewFoodItem(cartList.back().first, cartList.back().second);
+    cartCount++;
 
-            break;
-        }
-    }
-}
-bool foodPlanner::correctFood(QString foodName)
-{
-    QVector<QPair<QString, double>> foodListOriginal = travelPlan[currentCity].getAllFood();
-    for(int i= 0; i < foodListOriginal.size(); i++)
-    {
-        if(foodName == foodListOriginal[i].first)
-            return true;
-    }
-    return false;
-}
+    cartList.append(foodList[selectedIndex]);
 
-int foodPlanner::findCurrentCity(QString foodName)
-{
-    int currentCityIndex = 0;
-    for(int i = 0; i < travelPlan.size(); i++)
-    {
-        QVector<QPair<QString, double>> foodListOriginal = travelPlan[currentCity].getAllFood();
-        for(int j = 0; j < foodListOriginal.size(); j++)
-        {
-            if(foodName == foodListOriginal[i].first)
-            {
-                currentCityIndex = i;
-                i = travelPlan.size();
-                j = foodListOriginal.size();
-            }
-        }
-    }
-    return currentCityIndex;
 }
 
 void foodPlanner::on_removeItem_clicked()
@@ -116,48 +73,35 @@ void foodPlanner::on_removeItem_clicked()
     QString selectedFood = ui->comboBoxRemove->currentText();
     int selectedIndex = ui->comboBoxRemove->currentIndex();
 
-    for(int i = 0; i < cartList.size(); i++)
-    {
-        if(selectedFood == cartList[i].first)
-        {
-            int currentCityIndex = findCurrentCity(selectedFood);
-            if(correctFood(selectedFood))
-            {
-                foodList.append(cartList[i]);
-                ui->tableWidget->insertRow(tableCount);
-                ui->tableWidget->setItem(tableCount, 0, new QTableWidgetItem(cartList[i].first));
-                ui->tableWidget->setItem(tableCount, 1, new QTableWidgetItem("$" + QString::number(cartList[i].second)));
-                ui->comboBoxAdd->addItem(selectedFood);
-                tableCount++;
-            }
-            purchasedFood[currentCityIndex].removeFoodItem(cartList[i].first);
-            cartCount--;
-            ui->comboBoxRemove->removeItem(selectedIndex);
-            ui->tableWidgetCart->removeRow(selectedIndex);
-//            ui->tableWidgetCart->insertRow(cartCount);
-            cartList.remove(i);
+    ui->comboBoxRemove->removeItem(selectedIndex);
+    ui->tableWidgetCart->removeRow(selectedIndex);
 
-            break;
-        }
-    }
+    cartCount--;
+
+    if(selectedIndex >= 0)
+        cartList.remove(selectedIndex);
 }
 
 void foodPlanner::on_nextButton_clicked()
 {
     if(currentCity + 1 == travelPlan.size())
     {
+        for(int i = 0; i < ui->tableWidgetCart->rowCount(); i++)
+        {
+            purchasedFood[i].addNewFoodItem(cartList[i].first, cartList[i].second);
+
+        }
         Receipt invoice;
 
         invoice.addData(purchasedFood);
         invoice.printReceipt();
 
         invoice.exec();
+        close();
     }
     else
     {
-        ui->comboBoxAdd->clear();
         currentCity++;
-        tableCount = 0;
         setupUi();
     }
 }
@@ -170,9 +114,7 @@ void foodPlanner::on_backButton_clicked()
     }
     else
     {
-        ui->comboBoxAdd->clear();
         currentCity--;
-        tableCount = 0;
         setupUi();
     }
 }
