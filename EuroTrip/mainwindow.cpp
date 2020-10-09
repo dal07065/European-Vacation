@@ -224,7 +224,7 @@ void MainWindow::readData(QString dataFile)
 
         ui->cityList->append(tempLat + cityInfo->getLatDir() + ", " + tempLong + cityInfo->getLongDir());
          ////END EDIT/////////////////////////////////////////
-        berlinDist = QString::number((cityInfo->getCoordinates().distanceTo(berlin) / 1000));
+        berlinDist = QString::number(cityInfo->getAllDistances()[1]);
        ui->cityList->append("Distance from Berlin: " + berlinDist + "km");
 
         for(int j = 0;j < cityInfo->getAllFood().size(); j++) //this loops through out the food vector array in each city object to print the food and price.
