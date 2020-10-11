@@ -67,6 +67,8 @@ void MainWindow::on_actionLoad_triggered()
         ui->comboBox_SelectCityAddFood->addItem(cityListData[i].getCityName());
     }
 }
+
+
 void MainWindow::on_actionLoad_Extended_triggered()
 {
     ui->cityList->clear();
@@ -223,7 +225,7 @@ void MainWindow::readData(QString dataFile)
         tempLat = QString::number(cityInfo->getLatitude());
         tempLong = QString::number(cityInfo->getLongitude());
 
-        ui->cityList->append(tempLat + cityInfo->getLatDir() + ", " + tempLong + cityInfo->getLongDir());
+       // ui->cityList->append(tempLat + cityInfo->getLatDir() + ", " + tempLong + cityInfo->getLongDir());
 
          ////END EDIT/////////////////////////////////////////
         berlinDist = QString::number(cityInfo->getAllDistances()[1]);
@@ -317,7 +319,7 @@ void MainWindow::on_OptimalTravel_clicked()
 
         }
     }
-     QString Distance = QString::number(totalDistance/1000);
+     QString Distance = QString::number(totalDistance /*/1000*/ );
      ui->cityListOptimalTravel->append("Total Distance Traveled:" + Distance + "km");
 }
 
