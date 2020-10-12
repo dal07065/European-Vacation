@@ -321,6 +321,10 @@ void MainWindow::on_OptimalTravel_clicked()
     }
      QString Distance = QString::number(totalDistance /*/1000*/ );
      ui->cityListOptimalTravel->append("Total Distance Traveled:" + Distance + "km");
+     foodPlanner finalizedTrip;
+     finalizedTrip.addTravelPlanData(sorted);
+     finalizedTrip.setupUi();
+     finalizedTrip.exec();
 }
 
 //recursive function to find optimal travel plan based off distances
@@ -407,6 +411,10 @@ void MainWindow::on_OptimalTravel_2_clicked()
     }
      QString Distance = QString::number(totalDistance/*/1000*/);
      ui->cityListOptimalTravel->append("Total Distance Traveled:" + Distance + "km");
+     foodPlanner finalizedTrip;
+     finalizedTrip.addTravelPlanData(sorted);
+     finalizedTrip.setupUi();
+     finalizedTrip.exec();
 }
 
 void MainWindow::readDistances(QVector<City> &cityList)
