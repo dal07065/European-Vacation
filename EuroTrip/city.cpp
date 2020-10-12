@@ -173,5 +173,9 @@ double City::getDistance(QString city)
         return allDistances[9];
     if(city == "Rome")
         return allDistances[10];
+    if(city == "Stockholm")
+        return allDistances[11];
+    if(city == "Vienna")
+        return allDistances[12];
 }
 

@@ -6,5 +6,6 @@
         <file>EuropeanDistancesandFoods.txt</file>
         <file>EuropeanDistancesandFoodsExt.txt</file>
         <file>distances.txt</file>
+        <file>distancesExt.txt</file>
     </qresource>
 </RCC>

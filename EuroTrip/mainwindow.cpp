@@ -205,7 +205,7 @@ void MainWindow::readData(QString dataFile)
 
     QString temp;
 
-    for(int q = 0; q < 11; q++)
+    for(int q = 0; q < cityListData.size(); q++)
     {
         ui->textBrowser->append(cityListData[q].getCityName());
         for(int r = 0; r < 13; r++)
@@ -405,12 +405,45 @@ void MainWindow::on_OptimalTravel_2_clicked()
 
         }
     }
-     QString Distance = QString::number(totalDistance/1000);
+     QString Distance = QString::number(totalDistance/*/1000*/);
      ui->cityListOptimalTravel->append("Total Distance Traveled:" + Distance + "km");
 }
 
 void MainWindow::readDistances(QVector<City> &cityList)
 {
+    //if extended cities are loaded do this
+    if(cityList.size() > 11){
+     QFile file(":/Files/distancesExt.txt");
+     if(!file.open(QIODevice::ReadOnly))
+     {
+         QMessageBox::information(0, "info", file.errorString());
+     }
+
+     QTextStream in(&file);
+
+     int i = 0;
+
+
+     while(!in.atEnd())
+     {
+         for(int j = 0; j < 13; j++)
+         {
+            if(j == i)
+            {
+                cityList[i].getAllDistances()[j] = 0;
+            }
+            else
+            {
+                cityList[i].getAllDistances()[j] = in.readLine().toDouble();
+            }
+         }
+         i += 1;
+      }
+     file.close();
+    }
+
+    //if the vector contains only 11 cities
+    else{
     QFile file(":/Files/distances.txt");
 
     if(!file.open(QIODevice::ReadOnly))
@@ -439,6 +472,6 @@ void MainWindow::readDistances(QVector<City> &cityList)
         i += 1;
      }
     file.close();
-
+    }
 
 }
