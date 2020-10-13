@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "customplan.h"
 
-//#include <QDebug>
+#include <QDebug>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -208,12 +208,12 @@ void MainWindow::readData(QString dataFile)
 
     for(int q = 0; q < cityListData.size(); q++)
     {
-        ui->textBrowser->append(cityListData[q].getCityName());
+        //ui->textBrowser->append(cityListData[q].getCityName());
         for(int r = 0; r < 13; r++)
         {
             temp = QString::number(cityListData[q].getAllDistances()[r]);
 
-            ui->textBrowser->append(temp);
+           // ui->textBrowser->append(temp);
         }
     }
     // Print data on UI
@@ -465,4 +465,67 @@ void MainWindow::readDistances(QVector<City> &cityList)
     file.close();
     }
 
+}
+
+
+void MainWindow::on_pushButton_loadFoods_clicked()
+{
+    ui->comboBox_EditFood->clear();
+    ui->doubleSpinBox_EditFoodPrice->clear();
+
+    QString cityName = ui->comboBox_SelectCityAddFood->currentText();
+
+    int index = 0;
+    while(index < cityListData.size() - 1 && cityListData[index].getCityName() != cityName)
+    {
+        index++;
+    }
+
+    QVector<QPair<QString, double>> foods = cityListData[index].getAllFood();
+
+    for(int i = 0; i < foods.size(); ++i){
+        ui->comboBox_EditFood->addItem(foods[i].first);
+    }
+
+   //  TESTING STUFF
+//    qDebug() << "City: " << cityListData[index].getCityName();
+//    QVector<QPair<QString, double>> foodInfo = cityListData[index].getAllFood();
+//    qDebug() << "Food: ";
+//    for(int i = 0; i < foodInfo.size(); ++i){
+//        qDebug() << foodInfo[i].first << "  $" << foodInfo[i].second;
+//    }
+   //  TESTING STUFF
+}
+
+void MainWindow::on_pushButton_deleteFood_clicked()
+{
+    QString cityName = ui->comboBox_SelectCityAddFood->currentText();
+
+    int index = 0;
+    while(index < cityListData.size() - 1 && cityListData[index].getCityName() != cityName)
+    {
+        index++;
+    }
+
+    cityListData[index].removeFoodItem(ui->comboBox_EditFood->currentText());
+
+    ui->comboBox_EditFood->clear();
+    ui->doubleSpinBox_EditFoodPrice->clear();
+
+}
+
+void MainWindow::on_pushButton_changePrice_clicked()
+{
+    QString cityName = ui->comboBox_SelectCityAddFood->currentText();
+
+    int index = 0;
+    while(index < cityListData.size() - 1 && cityListData[index].getCityName() != cityName)
+    {
+        index++;
+    }
+
+    cityListData[index].changeFoodCost(ui->comboBox_EditFood->currentText(), ui->doubleSpinBox_EditFoodPrice->value());
+
+    ui->comboBox_EditFood->clear();
+    ui->doubleSpinBox_EditFoodPrice->clear();
 }

@@ -50,6 +50,8 @@ public:
     //Function that returns true if there is no food in city
     void removeFoodItem(QString food);
     //Function to remove a food item
+    void changeFoodCost(QString food, double price);
+    //Function to edit a food items cost
     QString getCityName();
     //Function to return the city name
     double getDistToBerlin();

@@ -138,8 +138,22 @@ void City::removeFoodItem(QString food)
         if(foodInfo[loop].first == food)
         {
             foodInfo.removeAt(loop);
+            notFound = false;
         }
         loop++;
+    }
+}
+
+void City::changeFoodCost(QString food, double price)
+{
+    int index = 0;
+    bool notFound = true;
+    while (index < foodInfo.size() && notFound){
+        if(foodInfo[index].first == food){
+            foodInfo[index].second = price;
+            notFound = false;
+        }
+        ++index;
     }
 }
 

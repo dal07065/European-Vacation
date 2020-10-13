@@ -57,6 +57,12 @@ private slots:
 
     void on_OptimalTravel_2_clicked();//Starting at Paris
 
+    void on_pushButton_loadFoods_clicked();
+
+    void on_pushButton_deleteFood_clicked();
+
+    void on_pushButton_changePrice_clicked();
+
 private:
     Ui::MainWindow *ui;
     QVector<City> cityListData;

@@ -83,39 +83,41 @@ QVector<City> customPlan::recursivePathingCustomPlan(City start,QVector<City> &c
 
 void customPlan::on_generate_clicked()
 {
-    ui->textBrowser->clear();
+    if(ui->listWidget->selectedItems().size() > 0){
+        ui->textBrowser->clear();
 
-    selectedCities.clear();
-    QList<QListWidgetItem *> selectedSlots = ui->listWidget->selectedItems();
-    for(int i = 0; i < selectedSlots.size(); i++)
-    {
-        for(int j = 0; j < customCityData.size(); j++)
+        selectedCities.clear();
+        QList<QListWidgetItem *> selectedSlots = ui->listWidget->selectedItems();
+        for(int i = 0; i < selectedSlots.size(); i++)
         {
-            if(selectedSlots[i]->text() == customCityData[j].getCityName())
+            for(int j = 0; j < customCityData.size(); j++)
             {
-                selectedCities.append(customCityData[j]);
-                //ui->textBrowser->append(customCityData[j].getCityName());
+                if(selectedSlots[i]->text() == customCityData[j].getCityName())
+                {
+                    selectedCities.append(customCityData[j]);
+                    //ui->textBrowser->append(customCityData[j].getCityName());
+                }
             }
         }
-    }
 
-    City start = customCityData[0]; //start = berlin
-    QVector<City> sorted; //empty vector
-    sorted.push_back(start);
-//    QVector<City> cities = selectedCities;
-    selectedCities = recursivePathingCustomPlan(start,selectedCities,sorted);
+        City start = customCityData[0]; //start = berlin
+        QVector<City> sorted; //empty vector
+        sorted.push_back(start);
+    //    QVector<City> cities = selectedCities;
+        selectedCities = recursivePathingCustomPlan(start,selectedCities,sorted);
 
-    for(int i = 0; i < selectedCities.size(); i++)
-    {
-        QString cityAndDistance = selectedCities[i].getCityName();
-        ui->textBrowser->append(cityAndDistance);
+        for(int i = 0; i < selectedCities.size(); i++)
+        {
+            QString cityAndDistance = selectedCities[i].getCityName();
+            ui->textBrowser->append(cityAndDistance);
+        }
     }
 }
 
 void customPlan::on_startTrip_clicked()
 {
-    foodPlanner finalizedTrip;
-    finalizedTrip.addTravelPlanData(selectedCities);
-    finalizedTrip.setupUi();
-    finalizedTrip.exec();
+        foodPlanner finalizedTrip;
+        finalizedTrip.addTravelPlanData(selectedCities);
+        finalizedTrip.setupUi();
+        finalizedTrip.exec();
 }
