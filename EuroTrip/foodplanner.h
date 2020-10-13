@@ -46,6 +46,7 @@ private:
 
     QVector<QPair<QString, double>> foodList;
     QVector<QPair<QString, double>> cartList;
+
     int currentCity;
     int cartCount;
     int tableCount;

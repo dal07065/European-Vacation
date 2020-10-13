@@ -1,5 +1,6 @@
 #include "receipt.h"
 #include "ui_receipt.h"
+#include <QDebug>
 
 Receipt::Receipt(QWidget *parent) :
     QDialog(parent),
@@ -17,6 +18,7 @@ void Receipt::addData(QVector<City> data)
         purchasedFood.push_back(data[loop]);
     }
 }
+
 
 void Receipt::printReceipt()
 {

@@ -62,6 +62,8 @@ void foodPlanner::on_addItem_clicked()
     ui->tableWidgetCart->setItem(cartCount, 1, new QTableWidgetItem("$" + QString::number(foodList[selectedIndex].second)));
     ui->comboBoxRemove->addItem(selectedFood);
 
+
+    purchasedFood[currentCity].addNewFoodItem(foodList[selectedIndex].first, foodList[selectedIndex].second ); // NEW STUFF
     cartCount++;
 
     cartList.append(foodList[selectedIndex]);
@@ -86,15 +88,15 @@ void foodPlanner::on_nextButton_clicked()
 {
     if(currentCity + 1 == travelPlan.size())
     {
-        for(int i = 0; i < ui->tableWidgetCart->rowCount(); i++)
-        {
-            purchasedFood[i].addNewFoodItem(cartList[i].first, cartList[i].second);
+//        for(int i = 0; i < ui->tableWidgetCart->rowCount(); i++)
+//        {
+//            purchasedFood[i].addNewFoodItem(cartList[i].first, cartList[i].second);
 
-        }
+//        }
         Receipt invoice;
 
-        invoice.addData(purchasedFood);
-        invoice.printReceipt();
+       invoice.addData(purchasedFood);
+       invoice.printReceipt();
 
         invoice.exec();
         close();
