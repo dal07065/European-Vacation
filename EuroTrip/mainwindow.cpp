@@ -48,7 +48,7 @@ void MainWindow::on_actionLog_Out_triggered()
 void MainWindow::userIsAdmin()
 {
     QMessageBox::information(this, "Login", "Username and Password is Correct");
-    //ui->adminFuncs->setVisible(true);
+    ui->adminFuncs->setVisible(true);
     ui->actionLog_Out->setVisible(true);
     ui->actionLoad_Extended->setVisible(true);
 }
@@ -94,6 +94,7 @@ void MainWindow::on_pushButton_clicked()
 
 }*/
 // When reading in file, checks if city is already an exisiting city
+
 bool MainWindow::alreadyExistingCity(QString checkCity)
 {
     City *cityInfo = new City;
@@ -250,27 +251,7 @@ void MainWindow::on_buttonGenerate_clicked()
     // This will create a new window with all the possible travel plans
 }
 
-void MainWindow::on_pushButton_AddCity_clicked()
-{
-    QString cityName = ui->lineEdit_AddCity->text();
-    QString lati     = ui->lineEdit_Latitude->text();
-    QString longi    = ui->lineEdit_Longitude->text();
-
-    if(cityName.size() > 2)
-    {
-        City newCity;
-        newCity.setCityName(cityName);
-        newCity.setLatitude(lati.toDouble());
-        newCity.setLongitude(longi.toDouble());
-
-        cityListData.push_back(newCity);
-        ui->lineEdit_AddCity->clear();
-        ui->lineEdit_Latitude->clear();
-        ui->lineEdit_Longitude->clear();
-    }
-
-}
-
+// Add food buttons and functions
 void MainWindow::on_pushButton_clicked()
 {
     QString cityName = ui->comboBox_SelectCityAddFood->currentText();
@@ -288,12 +269,12 @@ void MainWindow::on_pushButton_clicked()
     ui->doubleSpinBox_FoodCost->clear();
 
     // TESTING STUFF
-    qDebug() << "City: " << cityListData[count].getCityName();
-    QVector<QPair<QString, double>> foodInfo = cityListData[count].getAllFood();
-    qDebug() << "Food: ";
-    for(int i = 0; i < foodInfo.size(); ++i){
-        qDebug() << foodInfo[i].first << "  $" << foodInfo[i].second;
-    }
+//    qDebug() << "City: " << cityListData[count].getCityName();
+//    QVector<QPair<QString, double>> foodInfo = cityListData[count].getAllFood();
+//    qDebug() << "Food: ";
+//    for(int i = 0; i < foodInfo.size(); ++i){
+//        qDebug() << foodInfo[i].first << "  $" << foodInfo[i].second;
+//    }
     // TESTING STUFF
 }
 
