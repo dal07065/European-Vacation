@@ -21,6 +21,7 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSplitter>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
@@ -49,15 +50,15 @@ public:
     QPushButton *customPlan;
     QGroupBox *adminFuncs;
     QVBoxLayout *verticalLayout_2;
-    QLabel *label_addCity;
-    QLineEdit *lineEdit_AddCity;
-    QLabel *label_5;
-    QLineEdit *lineEdit_Latitude;
-    QLabel *label_6;
-    QLineEdit *lineEdit_Longitude;
-    QPushButton *pushButton_AddCity;
     QLabel *label_2;
     QComboBox *comboBox_SelectCityAddFood;
+    QPushButton *pushButton_loadFoods;
+    QLabel *label_5;
+    QComboBox *comboBox_EditFood;
+    QDoubleSpinBox *doubleSpinBox_EditFoodPrice;
+    QSplitter *splitter;
+    QPushButton *pushButton_changePrice;
+    QPushButton *pushButton_deleteFood;
     QLabel *label_3;
     QLineEdit *lineEdit_FoodName;
     QLabel *label_4;
@@ -65,7 +66,6 @@ public:
     QPushButton *pushButton;
     QTextBrowser *cityListOptimalTravel;
     QLabel *label_7;
-    QTextBrowser *textBrowser;
     QMenuBar *menubar;
     QMenu *menuFile;
     QStatusBar *statusbar;
@@ -136,44 +136,9 @@ public:
 
         adminFuncs = new QGroupBox(centralwidget);
         adminFuncs->setObjectName(QString::fromUtf8("adminFuncs"));
-        adminFuncs->setGeometry(QRect(330, 290, 301, 201));
+        adminFuncs->setGeometry(QRect(650, 70, 221, 371));
         verticalLayout_2 = new QVBoxLayout(adminFuncs);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        label_addCity = new QLabel(adminFuncs);
-        label_addCity->setObjectName(QString::fromUtf8("label_addCity"));
-
-        verticalLayout_2->addWidget(label_addCity);
-
-        lineEdit_AddCity = new QLineEdit(adminFuncs);
-        lineEdit_AddCity->setObjectName(QString::fromUtf8("lineEdit_AddCity"));
-
-        verticalLayout_2->addWidget(lineEdit_AddCity);
-
-        label_5 = new QLabel(adminFuncs);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-
-        verticalLayout_2->addWidget(label_5);
-
-        lineEdit_Latitude = new QLineEdit(adminFuncs);
-        lineEdit_Latitude->setObjectName(QString::fromUtf8("lineEdit_Latitude"));
-
-        verticalLayout_2->addWidget(lineEdit_Latitude);
-
-        label_6 = new QLabel(adminFuncs);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-
-        verticalLayout_2->addWidget(label_6);
-
-        lineEdit_Longitude = new QLineEdit(adminFuncs);
-        lineEdit_Longitude->setObjectName(QString::fromUtf8("lineEdit_Longitude"));
-
-        verticalLayout_2->addWidget(lineEdit_Longitude);
-
-        pushButton_AddCity = new QPushButton(adminFuncs);
-        pushButton_AddCity->setObjectName(QString::fromUtf8("pushButton_AddCity"));
-
-        verticalLayout_2->addWidget(pushButton_AddCity);
-
         label_2 = new QLabel(adminFuncs);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
@@ -183,6 +148,39 @@ public:
         comboBox_SelectCityAddFood->setObjectName(QString::fromUtf8("comboBox_SelectCityAddFood"));
 
         verticalLayout_2->addWidget(comboBox_SelectCityAddFood);
+
+        pushButton_loadFoods = new QPushButton(adminFuncs);
+        pushButton_loadFoods->setObjectName(QString::fromUtf8("pushButton_loadFoods"));
+
+        verticalLayout_2->addWidget(pushButton_loadFoods);
+
+        label_5 = new QLabel(adminFuncs);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        verticalLayout_2->addWidget(label_5);
+
+        comboBox_EditFood = new QComboBox(adminFuncs);
+        comboBox_EditFood->setObjectName(QString::fromUtf8("comboBox_EditFood"));
+
+        verticalLayout_2->addWidget(comboBox_EditFood);
+
+        doubleSpinBox_EditFoodPrice = new QDoubleSpinBox(adminFuncs);
+        doubleSpinBox_EditFoodPrice->setObjectName(QString::fromUtf8("doubleSpinBox_EditFoodPrice"));
+        doubleSpinBox_EditFoodPrice->setSingleStep(0.250000000000000);
+
+        verticalLayout_2->addWidget(doubleSpinBox_EditFoodPrice);
+
+        splitter = new QSplitter(adminFuncs);
+        splitter->setObjectName(QString::fromUtf8("splitter"));
+        splitter->setOrientation(Qt::Horizontal);
+        pushButton_changePrice = new QPushButton(splitter);
+        pushButton_changePrice->setObjectName(QString::fromUtf8("pushButton_changePrice"));
+        splitter->addWidget(pushButton_changePrice);
+        pushButton_deleteFood = new QPushButton(splitter);
+        pushButton_deleteFood->setObjectName(QString::fromUtf8("pushButton_deleteFood"));
+        splitter->addWidget(pushButton_deleteFood);
+
+        verticalLayout_2->addWidget(splitter);
 
         label_3 = new QLabel(adminFuncs);
         label_3->setObjectName(QString::fromUtf8("label_3"));
@@ -201,6 +199,7 @@ public:
 
         doubleSpinBox_FoodCost = new QDoubleSpinBox(adminFuncs);
         doubleSpinBox_FoodCost->setObjectName(QString::fromUtf8("doubleSpinBox_FoodCost"));
+        doubleSpinBox_FoodCost->setSingleStep(0.250000000000000);
 
         verticalLayout_2->addWidget(doubleSpinBox_FoodCost);
 
@@ -215,9 +214,6 @@ public:
         label_7 = new QLabel(centralwidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(330, 10, 299, 16));
-        textBrowser = new QTextBrowser(centralwidget);
-        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-        textBrowser->setGeometry(QRect(640, 50, 256, 192));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -258,13 +254,13 @@ public:
         OptimalTravel->setText(QApplication::translate("MainWindow", "Berlin Travel", nullptr));
         OptimalTravel_2->setText(QApplication::translate("MainWindow", "Paris Travel", nullptr));
         customPlan->setText(QApplication::translate("MainWindow", "Create Plan", nullptr));
-        label_addCity->setText(QApplication::translate("MainWindow", "Add New City", nullptr));
-        label_5->setText(QApplication::translate("MainWindow", "Latitude", nullptr));
-        label_6->setText(QApplication::translate("MainWindow", "Longitude", nullptr));
-        pushButton_AddCity->setText(QApplication::translate("MainWindow", "Add City", nullptr));
-        label_2->setText(QApplication::translate("MainWindow", "Select City to Add Food", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "Food Name:", nullptr));
-        label_4->setText(QApplication::translate("MainWindow", "Food Cost", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "Select City to Add/Edit Food", nullptr));
+        pushButton_loadFoods->setText(QApplication::translate("MainWindow", "Load Foods", nullptr));
+        label_5->setText(QApplication::translate("MainWindow", "Select Food to Edit/Delete", nullptr));
+        pushButton_changePrice->setText(QApplication::translate("MainWindow", "Change Price", nullptr));
+        pushButton_deleteFood->setText(QApplication::translate("MainWindow", "Delete Food", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "New Food Name:", nullptr));
+        label_4->setText(QApplication::translate("MainWindow", "New Food Cost", nullptr));
         pushButton->setText(QApplication::translate("MainWindow", "Add Food", nullptr));
         label_7->setText(QApplication::translate("MainWindow", "Optimal Travel Plan:", nullptr));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", nullptr));

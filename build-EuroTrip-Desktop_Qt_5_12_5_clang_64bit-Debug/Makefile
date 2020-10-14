@@ -719,6 +719,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_Resources.cpp
 qrc_Resources.cpp: ../EuroTrip/Resources.qrc \
 		../../../../Qt/5.12.5/clang_64/bin/rcc \
+		../EuroTrip/distancesExt.txt \
 		../EuroTrip/EuropeanDistancesandFoodsExt.txt \
 		../EuroTrip/EuropeanDistancesandFoods.txt \
 		../EuroTrip/distances.txt \
@@ -1039,7 +1040,9 @@ receipt.o: ../EuroTrip/receipt.cpp ../EuroTrip/receipt.h \
 		../../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qpair.h \
 		../../../../Qt/5.12.5/clang_64/lib/QtPositioning.framework/Headers/QGeoCoordinate \
 		../../../../Qt/5.12.5/clang_64/lib/QtPositioning.framework/Headers/qgeocoordinate.h \
-		ui_receipt.h
+		ui_receipt.h \
+		../../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt/5.12.5/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o receipt.o ../EuroTrip/receipt.cpp
 
 user.o: ../EuroTrip/user.cpp ../EuroTrip/user.h \

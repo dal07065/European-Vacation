@@ -402,7 +402,7 @@ void MainWindow::on_OptimalTravel_2_clicked()
 }
 
 //This function is called within readData function. It takes the data from distances.txt and updates the distance array in each of the city
-//objects for the first 11 cities
+//objects for the first 11 cities -Nathan Kim
 void MainWindow::readDistances(QVector<City> &cityList)
 {
     //if extended cities are loaded do this

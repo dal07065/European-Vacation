@@ -9,10 +9,13 @@ City::City()
     distanceToBerlin = 0;
     coordinates.setLatitude(0.0);
     coordinates.setLongitude(0.0);
+
+    //allDistances must be initialized to 13 (num cities)
+    //Note: the order of this vector must be maintained
     for(int i = 0; i < 13; i++)
-        {
-            allDistances.push_back(0);
-        }
+    {
+       allDistances.push_back(0);
+    }
 }
 
 City::City(QString name)
@@ -35,6 +38,9 @@ City::City(QString name, QString foodName, double foodCost, double distParis, do
     QPair<QString, double> input(foodName, foodCost);
 
     foodInfo.push_front(input);
+
+    //allDistances must be initialized to 13 (num cities)
+    //Note: the order of this vector must be maintained
     for(int i = 0; i < 13; i++)
         {
             allDistances.push_back(0);

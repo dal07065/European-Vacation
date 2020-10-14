@@ -33,6 +33,7 @@ public:
     QListWidget *listWidget;
     QTextBrowser *textBrowser;
     QPushButton *startTrip;
+    QLabel *label_3;
 
     void setupUi(QDialog *customPlan)
     {
@@ -85,6 +86,12 @@ public:
 
         gridLayout->addWidget(startTrip, 4, 1, 1, 1);
 
+        label_3 = new QLabel(gridLayoutWidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setMaximumSize(QSize(16777215, 11));
+
+        gridLayout->addWidget(label_3, 2, 1, 1, 1);
+
 
         retranslateUi(customPlan);
 
@@ -103,6 +110,7 @@ public:
         label_2->setText(QApplication::translate("customPlan", "Starting city:", nullptr));
         generate->setText(QApplication::translate("customPlan", "Generate", nullptr));
         startTrip->setText(QApplication::translate("customPlan", "Start Trip", nullptr));
+        label_3->setText(QApplication::translate("customPlan", "Current Plan:", nullptr));
     } // retranslateUi
 
 };

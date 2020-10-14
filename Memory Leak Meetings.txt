@@ -1,0 +1,47 @@
+﻿Memory Leak Meeting (12 October, 2020)
+Topic: Discuss the finishing touches to the project. 
+1. Debug the receipt output. 
+2. Talk about how we are going to implement the add/delete food items functionality, as well as changing food prices.
+3. Jeff and Lina were assigned to work on the add food button functionality
+4. Nathan Tran was assigned to update the product backlog
+5. Nathan Kim was assigned to do the “Big Oh” analysis
+
+
+Memory Leak Meeting (5 October, 2020)
+Topic: Progress Review Meeting
+1. Nathan Kim was assigned to update the UML Diagram
+2. Lina and Nathan Tran worked on the Receipt functionality.
+3. Whole team worked on debugging the project.
+4. Nathan Kim was also assigned to restructure the City class, and Input functionality.
+
+
+Memory Leak Meeting (2 October, 2020)
+Topic: Progress Review Meeting
+1. Nathan Kim was assigned to work on the custom trip window.
+2. Nathan Tran was assigned to update the food item display.
+3. Lina was assigned to work on the “Shortest Trip to Paris” functionality
+
+
+Memory Leak Meeting (28 September, 2020)
+Topic: Progress Review Meeting
+1. Michael Duenas was assigned to work on the recursive distance algorithm.
+2. Michael Duenas was also assigned to output the total distance to Berlin.
+
+
+Memory Leak Meeting (21 September, 2020)
+Topic:  Debugging Meeting
+1. The whole team worked on debugging the load button functionality.
+
+
+Memory Leak Meeting (18 September, 2020)
+Topic: Progress Review Meeting
+1. Jeff Purdy was assigned to work on the user login functionality.
+2. Nathan Tran was assigned to work on the UML
+3. Nathan Kim was assigned to continue updating the City class.
+4. Lina was assigned to update the use case diagrams.
+
+
+Memory Leak Meeting (17 September, 2020)
+Topic: Discussing how we will implement each cities distance from each other
+1. Nathan Kim was assigned to modify the input function to accommodate geographic coordinates.
+2. Reviewed how the input function worked (Both Nathan Tran and Lina Kang worked on this function).

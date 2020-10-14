@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[21];
-    char stringdata0[380];
+    QByteArrayData data[24];
+    char stringdata0[479];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -52,7 +52,10 @@ QT_MOC_LITERAL(16, 302, 14), // "QVector<City>&"
 QT_MOC_LITERAL(17, 317, 6), // "cities"
 QT_MOC_LITERAL(18, 324, 6), // "sorted"
 QT_MOC_LITERAL(19, 331, 21), // "on_customPlan_clicked"
-QT_MOC_LITERAL(20, 353, 26) // "on_OptimalTravel_2_clicked"
+QT_MOC_LITERAL(20, 353, 26), // "on_OptimalTravel_2_clicked"
+QT_MOC_LITERAL(21, 380, 31), // "on_pushButton_loadFoods_clicked"
+QT_MOC_LITERAL(22, 412, 32), // "on_pushButton_deleteFood_clicked"
+QT_MOC_LITERAL(23, 445, 33) // "on_pushButton_changePrice_cli..."
 
     },
     "MainWindow\0on_actionExit_triggered\0\0"
@@ -65,7 +68,10 @@ QT_MOC_LITERAL(20, 353, 26) // "on_OptimalTravel_2_clicked"
     "on_OptimalTravel_clicked\0recursivePathing\0"
     "QVector<City>\0City\0start\0QVector<City>&\0"
     "cities\0sorted\0on_customPlan_clicked\0"
-    "on_OptimalTravel_2_clicked"
+    "on_OptimalTravel_2_clicked\0"
+    "on_pushButton_loadFoods_clicked\0"
+    "on_pushButton_deleteFood_clicked\0"
+    "on_pushButton_changePrice_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -75,7 +81,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -83,19 +89,22 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   79,    2, 0x08 /* Private */,
-       3,    0,   80,    2, 0x08 /* Private */,
-       4,    0,   81,    2, 0x08 /* Private */,
-       5,    0,   82,    2, 0x08 /* Private */,
-       6,    0,   83,    2, 0x08 /* Private */,
-       7,    0,   84,    2, 0x08 /* Private */,
-       8,    0,   85,    2, 0x08 /* Private */,
-       9,    0,   86,    2, 0x08 /* Private */,
-      10,    0,   87,    2, 0x08 /* Private */,
-      11,    0,   88,    2, 0x08 /* Private */,
-      12,    3,   89,    2, 0x08 /* Private */,
-      19,    0,   96,    2, 0x08 /* Private */,
-      20,    0,   97,    2, 0x08 /* Private */,
+       1,    0,   94,    2, 0x08 /* Private */,
+       3,    0,   95,    2, 0x08 /* Private */,
+       4,    0,   96,    2, 0x08 /* Private */,
+       5,    0,   97,    2, 0x08 /* Private */,
+       6,    0,   98,    2, 0x08 /* Private */,
+       7,    0,   99,    2, 0x08 /* Private */,
+       8,    0,  100,    2, 0x08 /* Private */,
+       9,    0,  101,    2, 0x08 /* Private */,
+      10,    0,  102,    2, 0x08 /* Private */,
+      11,    0,  103,    2, 0x08 /* Private */,
+      12,    3,  104,    2, 0x08 /* Private */,
+      19,    0,  111,    2, 0x08 /* Private */,
+      20,    0,  112,    2, 0x08 /* Private */,
+      21,    0,  113,    2, 0x08 /* Private */,
+      22,    0,  114,    2, 0x08 /* Private */,
+      23,    0,  115,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -109,6 +118,9 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     0x80000000 | 13, 0x80000000 | 14, 0x80000000 | 16, 0x80000000 | 16,   15,   17,   18,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -135,6 +147,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             if (_a[0]) *reinterpret_cast< QVector<City>*>(_a[0]) = std::move(_r); }  break;
         case 11: _t->on_customPlan_clicked(); break;
         case 12: _t->on_OptimalTravel_2_clicked(); break;
+        case 13: _t->on_pushButton_loadFoods_clicked(); break;
+        case 14: _t->on_pushButton_deleteFood_clicked(); break;
+        case 15: _t->on_pushButton_changePrice_clicked(); break;
         default: ;
         }
     }
@@ -169,13 +184,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 16)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 13;
+        _id -= 16;
     }
     return _id;
 }

@@ -192,6 +192,9 @@ private:
     QString cityName; /*!< a QString which contains the name of the city */
     QVector<QPair<QString, double>> foodInfo; /*!< a Qvector QPair of type QString and double which contains the list of food and its prices for this city */
     QVector<double> allDistances; /*< a Qvector of type double which contains a list of distances to multiple cities from this city */
+    //allDistances is initialized to hold 13 elements in the constructors
+    //Note: the order of allDistances must be maintained (0->distance to Amsterdam, 1-> distance to Berlin,...)
+
     double distanceToParis;/*< a double which contains the distance from this city to paris*/
     double distanceToBerlin;/*< a double which contains the distance from this city to berlin*/
 
