@@ -121,7 +121,11 @@
       <widget class="QComboBox" name="comboBox_EditFood"/>
      </item>
      <item>
-      <widget class="QDoubleSpinBox" name="doubleSpinBox_EditFoodPrice"/>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_EditFoodPrice">
+       <property name="singleStep">
+        <double>0.250000000000000</double>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QSplitter" name="splitter">
@@ -158,7 +162,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QDoubleSpinBox" name="doubleSpinBox_FoodCost"/>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_FoodCost">
+       <property name="singleStep">
+        <double>0.250000000000000</double>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton">
