@@ -44,7 +44,7 @@ private slots:
 
     void on_buttonGenerate_clicked();
 
-    void on_pushButton_AddCity_clicked();
+//    void on_pushButton_AddCity_clicked();
 
     void on_pushButton_clicked();
 
