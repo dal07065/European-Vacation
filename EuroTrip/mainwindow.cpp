@@ -257,8 +257,9 @@ void MainWindow::on_buttonGenerate_clicked()
         if(cityListData[i].getCityName() == selectedCity)
         {
             foodList = cityListData[i].getAllFood();
-            ui->cityInfo->append(cityListData[i].getCityName());
-            ui->cityInfo->append("Distance from Berlin: " + QString::number(cityListData[i].getDistance("Berlin")));
+            ui->cityInfo->append(cityListData[i].getCityName() + "\n----------------");
+            ui->cityInfo->append("Distance from Berlin: " + QString::number(cityListData[i].getDistance("Berlin")) + "km"
+                                 + "\n----------------");
             for(int j = 0; j < foodList.size(); j++)
             ui->cityInfo->append(foodList[j].first + ": $" + QString::number(foodList[j].second));
 

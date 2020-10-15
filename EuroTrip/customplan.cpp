@@ -48,7 +48,8 @@ customPlan::~customPlan()
     delete ui;
 }
 
-QVector<City> customPlan::recursivePathingCustomPlan(City start,QVector<City> &cities,QVector<City> &sorted ){
+QVector<City> customPlan::recursivePathingCustomPlan(City start,QVector<City> &cities,QVector<City> &sorted )
+{
     //deletes starting city from the list of cities
     QVector<City>::iterator it = cities.begin();
     for(int i = 0; i < cities.size(); i++)
@@ -61,9 +62,8 @@ QVector<City> customPlan::recursivePathingCustomPlan(City start,QVector<City> &c
 
     //find the closest city to the start city
     City* closest = &cities[0];
-    for(int i = 0; i < cities.size();i++){
-//        if(cities[i].getCoordinates().distanceTo(start.getCoordinates()) < closest->getCoordinates().distanceTo(start.getCoordinates()))
-
+    for(int i = 0; i < cities.size();i++)
+    {
         qDebug() << "Comparing Distance from " << cities[i].getCityName() << " of " << cities[i].getDistance(start.getCityName()) <<
                     " to " << closest->getCityName() << " of " << closest->getDistance(start.getCityName()) << endl;
         if(cities[i].getDistance(start.getCityName()) < closest->getDistance(start.getCityName()))
@@ -83,10 +83,13 @@ QVector<City> customPlan::recursivePathingCustomPlan(City start,QVector<City> &c
 
 void customPlan::on_generate_clicked()
 {
-    if(ui->listWidget->selectedItems().size() > 0){
-        ui->textBrowser->clear();
+    // Reset the text browser display and the selected cities vector
+    ui->textBrowser->clear();
+    selectedCities.clear();
 
-        selectedCities.clear();
+    // if cities have been selected
+    if(ui->listWidget->selectedItems().size() > 0)
+    {
         QList<QListWidgetItem *> selectedSlots = ui->listWidget->selectedItems();
         for(int i = 0; i < selectedSlots.size(); i++)
         {
@@ -95,7 +98,6 @@ void customPlan::on_generate_clicked()
                 if(selectedSlots[i]->text() == customCityData[j].getCityName())
                 {
                     selectedCities.append(customCityData[j]);
-                    //ui->textBrowser->append(customCityData[j].getCityName());
                 }
             }
         }
@@ -103,21 +105,37 @@ void customPlan::on_generate_clicked()
         City start = customCityData[0]; //start = berlin
         QVector<City> sorted; //empty vector
         sorted.push_back(start);
-    //    QVector<City> cities = selectedCities;
         selectedCities = recursivePathingCustomPlan(start,selectedCities,sorted);
-
-        for(int i = 0; i < selectedCities.size(); i++)
+    }
+    // if no cities have been selected
+    else if(ui->listWidget->selectedItems().size() == 0)
+    {
+        // if a NUMBER of cities have been specified
+        if(ui->spinBox->value() > 0)
         {
-            QString cityAndDistance = selectedCities[i].getCityName();
-            ui->textBrowser->append(cityAndDistance);
+//            This is where you should take in ui->spinBox->value() and
+//            find __5__ closest cities from Paris
+
+//            City start = customCityData[0]; //start = berlin
+//            QVector<City> sorted; //empty vector
+//            sorted.push_back(start);
+//            selectedCities = recursivePathingCustomPlan(start,selectedCities,sorted);
         }
+        selectedCities.append(customCityData[0]);
+    }
+
+    // Print selected cities onto the text browser
+    for(int i = 0; i < selectedCities.size(); i++)
+    {
+        QString cityAndDistance = selectedCities[i].getCityName();
+        ui->textBrowser->append(cityAndDistance);
     }
 }
 
 void customPlan::on_startTrip_clicked()
 {
-        foodPlanner finalizedTrip;
-        finalizedTrip.addTravelPlanData(selectedCities);
-        finalizedTrip.setupUi();
-        finalizedTrip.exec();
+    foodPlanner finalizedTrip;
+    finalizedTrip.addTravelPlanData(selectedCities);
+    finalizedTrip.setupUi();
+    finalizedTrip.exec();
 }
