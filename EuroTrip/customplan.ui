@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>521</width>
-    <height>331</height>
+    <width>520</width>
+    <height>332</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,8 +23,22 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="0">
-     <widget class="QLabel" name="label">
+    <item row="6" column="0">
+     <widget class="QPushButton" name="generate">
+      <property name="text">
+       <string>Generate</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QPushButton" name="startTrip">
+      <property name="text">
+       <string>Start Trip</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="label_3">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -32,7 +46,23 @@
        </size>
       </property>
       <property name="text">
-       <string>Select all cities to travel to:</string>
+       <string>Current Plan:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QTextBrowser" name="textBrowser"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Starting city:</string>
       </property>
      </widget>
     </item>
@@ -53,51 +83,8 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_2">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>16</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Starting city:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="generate">
-      <property name="text">
-       <string>Generate</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QListWidget" name="listWidget">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>202</height>
-       </size>
-      </property>
-      <property name="selectionMode">
-       <enum>QAbstractItemView::MultiSelection</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QTextBrowser" name="textBrowser"/>
-    </item>
-    <item row="4" column="1">
-     <widget class="QPushButton" name="startTrip">
-      <property name="text">
-       <string>Start Trip</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLabel" name="label_3">
+    <item row="2" column="0">
+     <widget class="QLabel" name="label">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -105,9 +92,42 @@ p, li { white-space: pre-wrap; }
        </size>
       </property>
       <property name="text">
-       <string>Current Plan:</string>
+       <string>Select all cities to travel to:</string>
       </property>
      </widget>
+    </item>
+    <item row="3" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QListWidget" name="listWidget">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>202</height>
+         </size>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::MultiSelection</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>11</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>OR - Select NUMBER of cities to travel to:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="spinBox"/>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

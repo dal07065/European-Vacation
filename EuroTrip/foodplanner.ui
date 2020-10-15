@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>829</width>
-    <height>413</height>
+    <width>753</width>
+    <height>422</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>801</width>
-     <height>391</height>
+     <width>731</width>
+     <height>388</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -96,7 +96,21 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBoxAdd"/>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QComboBox" name="comboBoxAdd"/>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="spinBoxAdd">
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item>
        <widget class="QPushButton" name="addItem">

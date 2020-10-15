@@ -238,18 +238,33 @@ void MainWindow::readData(QString dataFile)
         //ui->cityList->append("Distance from Berlin: " + berlinDist + "km");
 
 
-        for(int j = 0;j < cityInfo->getAllFood().size(); j++) //this loops through out the food vector array in each city object to print the food and price.
-        {
-            price = QString::number(cityInfo->getAllFood().value(j).second);//second is food price.
-            ui->cityList->append(cityInfo->getAllFood().value(j).first + ": $" + price);//append is supposed to allow you to print multiple lines of text on the gui without it refreshing. first is food name
-        }
+//        for(int j = 0;j < cityInfo->getAllFood().size(); j++) //this loops through out the food vector array in each city object to print the food and price.
+//        {
+//            price = QString::number(cityInfo->getAllFood().value(j).second);//second is food price.
+//            ui->cityList->append(cityInfo->getAllFood().value(j).first + ": $" + price);//append is supposed to allow you to print multiple lines of text on the gui without it refreshing. first is food name
+//        }
         ui->cityList->append("");
     }
 }
 
 void MainWindow::on_buttonGenerate_clicked()
 {
-    // This will create a new window with all the possible travel plans
+    ui->cityInfo->clear();
+    QString selectedCity = ui->comboBoxCities->currentText();
+    QVector<QPair<QString, double>> foodList;
+    for(int i = 0; i < cityListData.size(); i++)
+    {
+        if(cityListData[i].getCityName() == selectedCity)
+        {
+            foodList = cityListData[i].getAllFood();
+            ui->cityInfo->append(cityListData[i].getCityName());
+            ui->cityInfo->append("Distance from Berlin: " + QString::number(cityListData[i].getDistance("Berlin")));
+            for(int j = 0; j < foodList.size(); j++)
+            ui->cityInfo->append(foodList[j].first + ": $" + QString::number(foodList[j].second));
+
+            i = cityListData.size();
+        }
+    }
 }
 
 // Add food buttons and functions
@@ -402,7 +417,7 @@ void MainWindow::on_OptimalTravel_2_clicked()
 }
 
 //This function is called within readData function. It takes the data from distances.txt and updates the distance array in each of the city
-//objects for the first 11 cities
+//objects for the first 11 cities -Nathan Kim
 void MainWindow::readDistances(QVector<City> &cityList)
 {
     //if extended cities are loaded do this
