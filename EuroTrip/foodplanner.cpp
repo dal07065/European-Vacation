@@ -9,6 +9,7 @@ foodPlanner::foodPlanner(QWidget *parent) :
     ui->setupUi(this);
     currentCity = 0;
     cartCount = 0;
+
 }
 void foodPlanner::addCity(City data)
 {
@@ -16,10 +17,13 @@ void foodPlanner::addCity(City data)
 }
 void foodPlanner::addTravelPlanData(QVector<City> data)
 {
+    QVector<int> temp;
+
+    purchasedFood.resize(data.size());
     for(int loop = 0; loop < data.size(); loop++)
     {
         travelPlan.append(data[loop]);
-        purchasedFood.push_back(data[loop].getCityName());
+        purchasedFood[loop].first.setCityName(data[loop].getCityName());
     }
 }
 foodPlanner::~foodPlanner()
@@ -84,7 +88,8 @@ void foodPlanner::on_addItem_clicked()
 
 
     //purchasedFood[currentCity].addNewFoodItem(foodList[selectedIndex].first, foodList[selectedIndex].second ); // NEW STUFF
-    purchasedFood[currentCity].addNewFoodItem(foodList[selectedIndex].first, quantityBought );
+    purchasedFood[currentCity].first.addNewFoodItem(foodList[selectedIndex].first, foodList[selectedIndex].second);
+    purchasedFood[currentCity].second.push_back(quantityBought);
     //cartCount++;
     cartCount += quantityBought;
 
@@ -93,7 +98,6 @@ void foodPlanner::on_addItem_clicked()
     temp.first = foodList[selectedIndex].first;
     temp.second = quantityBought;
     cartList.push_back(temp);
-
 }
 
 void foodPlanner::on_removeItem_clicked()
@@ -107,7 +111,9 @@ void foodPlanner::on_removeItem_clicked()
     cartCount--;
 
     if(selectedIndex >= 0)
+    {
         cartList.remove(selectedIndex);
+    }
 }
 
 void foodPlanner::on_nextButton_clicked()

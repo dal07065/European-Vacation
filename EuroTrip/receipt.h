@@ -15,7 +15,7 @@ class Receipt : public QDialog
 public:
     explicit Receipt(QWidget *parent = nullptr);
 
-    void addData(QVector<City> data);
+    void addData(QVector<QPair<City, QVector<int>>> data);
     //void addData(QVector<QVector<QPair<QString, double>>>);
     //Function to add data from foodplanner to purchasedFood vector
     void printReceipt();
@@ -25,7 +25,7 @@ public:
 
 private:
     Ui::Receipt *ui;
-    QVector<City> purchasedFood;
+    QVector<QPair<City, QVector<int>>> purchasedFood;
 };
 
 #endif // RECEIPT_H
