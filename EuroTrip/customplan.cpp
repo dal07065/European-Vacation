@@ -116,12 +116,17 @@ void customPlan::on_generate_clicked()
 //            This is where you should take in ui->spinBox->value() and
 //            find __5__ closest cities from Paris
 
-//            City start = customCityData[0]; //start = berlin
-//            QVector<City> sorted; //empty vector
-//            sorted.push_back(start);
-//            selectedCities = recursivePathingCustomPlan(start,selectedCities,sorted);
+              City start = customCityData[0]; //start = selected city
+              QVector<City> sorted; //empty vector
+              sorted.push_back(start);
+              QVector<City> cities = customCityData;
+              recursivePathingCustomPlan(start,cities,sorted);
+              for(int i = 0;i < ui->spinBox->value()+1; i++){
+                  selectedCities.push_back(sorted[i]);
+              }
+
         }
-        selectedCities.append(customCityData[0]);
+        //selectedCities.append(customCityData[0]);
     }
 
     // Print selected cities onto the text browser
