@@ -101,10 +101,10 @@
          <widget class="QComboBox" name="comboBoxAdd"/>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinBoxAdd">
+         <widget class="QLineEdit" name="quantityLineEdit">
           <property name="maximumSize">
            <size>
-            <width>80</width>
+            <width>100</width>
             <height>16777215</height>
            </size>
           </property>

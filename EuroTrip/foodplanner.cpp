@@ -54,19 +54,45 @@ void foodPlanner::setupUi()
 
 void foodPlanner::on_addItem_clicked()
 {
+    //int numRows = ui->tableWidgetCart->rowCount();
+    ui->quantityLineEdit->setValidator( new QIntValidator(0, 2000, this) );
+
+    int quantityBought = ui->quantityLineEdit->text().toInt();
+    QString qBString = ui->quantityLineEdit->text();
+
+
     QString selectedFood = ui->comboBoxAdd->currentText();
     int selectedIndex = ui->comboBoxAdd->currentIndex();
 
-    ui->tableWidgetCart->insertRow(cartCount);
-    ui->tableWidgetCart->setItem(cartCount, 0, new QTableWidgetItem(foodList[selectedIndex].first));
-    ui->tableWidgetCart->setItem(cartCount, 1, new QTableWidgetItem("$" + QString::number(foodList[selectedIndex].second)));
+
+
+    double price = (foodList[selectedIndex].second) * quantityBought;
+    QString priceStr = QString::number(price);
+    //foodList[selectedIndex].second = quantityBought;
+
+    //ui->tableWidgetCart->insertRow(cartCount);
+    ui->tableWidgetCart->insertRow(ui->tableWidgetCart->rowCount());
+
+    //ui->tableWidgetCart->setItem(cartCount, 0, new QTableWidgetItem(foodList[selectedIndex].first));
+    ui->tableWidgetCart->setItem((ui->tableWidgetCart->rowCount() - 1), 0, new QTableWidgetItem(foodList[selectedIndex].first));
+
+    //ui->tableWidgetCart->setItem(cartCount, 1, new QTableWidgetItem("$" + QString::number(foodList[selectedIndex].second)));
+    //ui->tableWidgetCart->setItem(cartCount, 1, new QTableWidgetItem("Quantitiy: " + qBString + "$" + priceStr));
+    ui->tableWidgetCart->setItem((ui->tableWidgetCart->rowCount() - 1), 1, new QTableWidgetItem("Quantitiy: " + qBString + "    $" + priceStr));
+
     ui->comboBoxRemove->addItem(selectedFood);
 
 
-    purchasedFood[currentCity].addNewFoodItem(foodList[selectedIndex].first, foodList[selectedIndex].second ); // NEW STUFF
-    cartCount++;
+    //purchasedFood[currentCity].addNewFoodItem(foodList[selectedIndex].first, foodList[selectedIndex].second ); // NEW STUFF
+    purchasedFood[currentCity].addNewFoodItem(foodList[selectedIndex].first, quantityBought );
+    //cartCount++;
+    cartCount += quantityBought;
 
-    cartList.append(foodList[selectedIndex]);
+    //cartList.append(foodList[selectedIndex]);
+    QPair<QString, double> temp;
+    temp.first = foodList[selectedIndex].first;
+    temp.second = quantityBought;
+    cartList.push_back(temp);
 
 }
 

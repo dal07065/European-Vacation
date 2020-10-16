@@ -17,6 +17,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTableWidget>
@@ -35,7 +36,9 @@ public:
     QLabel *label;
     QVBoxLayout *verticalLayout_2;
     QTableWidget *tableWidget;
+    QHBoxLayout *horizontalLayout_2;
     QComboBox *comboBoxAdd;
+    QLineEdit *quantityLineEdit;
     QPushButton *addItem;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout;
@@ -53,10 +56,10 @@ public:
     {
         if (foodPlanner->objectName().isEmpty())
             foodPlanner->setObjectName(QString::fromUtf8("foodPlanner"));
-        foodPlanner->resize(829, 413);
+        foodPlanner->resize(753, 422);
         gridLayoutWidget = new QWidget(foodPlanner);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 10, 801, 391));
+        gridLayoutWidget->setGeometry(QRect(10, 10, 731, 388));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -101,10 +104,21 @@ public:
 
         verticalLayout_2->addWidget(tableWidget);
 
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         comboBoxAdd = new QComboBox(gridLayoutWidget);
         comboBoxAdd->setObjectName(QString::fromUtf8("comboBoxAdd"));
 
-        verticalLayout_2->addWidget(comboBoxAdd);
+        horizontalLayout_2->addWidget(comboBoxAdd);
+
+        quantityLineEdit = new QLineEdit(gridLayoutWidget);
+        quantityLineEdit->setObjectName(QString::fromUtf8("quantityLineEdit"));
+        quantityLineEdit->setMaximumSize(QSize(100, 16777215));
+
+        horizontalLayout_2->addWidget(quantityLineEdit);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_2);
 
         addItem = new QPushButton(gridLayoutWidget);
         addItem->setObjectName(QString::fromUtf8("addItem"));

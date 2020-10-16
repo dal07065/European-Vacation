@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDoubleSpinBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -21,6 +22,7 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
@@ -38,16 +40,6 @@ public:
     QAction *actionLog_Out;
     QAction *actionLoad_Extended;
     QWidget *centralwidget;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
-    QLabel *label;
-    QTextBrowser *cityList;
-    QLabel *label_8;
-    QComboBox *comboBoxCities;
-    QPushButton *buttonGenerate;
-    QPushButton *OptimalTravel;
-    QPushButton *OptimalTravel_2;
-    QPushButton *customPlan;
     QGroupBox *adminFuncs;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_2;
@@ -64,8 +56,31 @@ public:
     QLabel *label_4;
     QDoubleSpinBox *doubleSpinBox_FoodCost;
     QPushButton *pushButton;
-    QTextBrowser *cityListOptimalTravel;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout_4;
+    QGroupBox *adminFuncs_4;
+    QVBoxLayout *verticalLayout_8;
     QLabel *label_7;
+    QTextBrowser *cityListOptimalTravel;
+    QPushButton *OptimalTravel;
+    QPushButton *OptimalTravel_2;
+    QVBoxLayout *verticalLayout_6;
+    QGroupBox *adminFuncs_3;
+    QVBoxLayout *verticalLayout_7;
+    QLabel *label;
+    QTextBrowser *cityList;
+    QGroupBox *adminFuncs_2;
+    QVBoxLayout *verticalLayout_3;
+    QGridLayout *gridLayout_2;
+    QVBoxLayout *verticalLayout_5;
+    QComboBox *comboBoxCities;
+    QPushButton *buttonGenerate;
+    QSpacerItem *verticalSpacer;
+    QLabel *label_8;
+    QLabel *label_9;
+    QTextBrowser *cityInfo;
+    QPushButton *customPlan;
     QMenuBar *menubar;
     QMenu *menuFile;
     QStatusBar *statusbar;
@@ -74,7 +89,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(916, 535);
+        MainWindow->resize(901, 568);
         actionAdmin = new QAction(MainWindow);
         actionAdmin->setObjectName(QString::fromUtf8("actionAdmin"));
         actionExit = new QAction(MainWindow);
@@ -87,56 +102,9 @@ public:
         actionLoad_Extended->setObjectName(QString::fromUtf8("actionLoad_Extended"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        verticalLayoutWidget = new QWidget(centralwidget);
-        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 10, 301, 481));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setSpacing(20);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 5, 0, 5);
-        label = new QLabel(verticalLayoutWidget);
-        label->setObjectName(QString::fromUtf8("label"));
-
-        verticalLayout->addWidget(label);
-
-        cityList = new QTextBrowser(verticalLayoutWidget);
-        cityList->setObjectName(QString::fromUtf8("cityList"));
-
-        verticalLayout->addWidget(cityList);
-
-        label_8 = new QLabel(verticalLayoutWidget);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-
-        verticalLayout->addWidget(label_8);
-
-        comboBoxCities = new QComboBox(verticalLayoutWidget);
-        comboBoxCities->setObjectName(QString::fromUtf8("comboBoxCities"));
-
-        verticalLayout->addWidget(comboBoxCities);
-
-        buttonGenerate = new QPushButton(verticalLayoutWidget);
-        buttonGenerate->setObjectName(QString::fromUtf8("buttonGenerate"));
-
-        verticalLayout->addWidget(buttonGenerate);
-
-        OptimalTravel = new QPushButton(verticalLayoutWidget);
-        OptimalTravel->setObjectName(QString::fromUtf8("OptimalTravel"));
-
-        verticalLayout->addWidget(OptimalTravel);
-
-        OptimalTravel_2 = new QPushButton(verticalLayoutWidget);
-        OptimalTravel_2->setObjectName(QString::fromUtf8("OptimalTravel_2"));
-
-        verticalLayout->addWidget(OptimalTravel_2);
-
-        customPlan = new QPushButton(verticalLayoutWidget);
-        customPlan->setObjectName(QString::fromUtf8("customPlan"));
-
-        verticalLayout->addWidget(customPlan);
-
         adminFuncs = new QGroupBox(centralwidget);
         adminFuncs->setObjectName(QString::fromUtf8("adminFuncs"));
-        adminFuncs->setGeometry(QRect(650, 70, 221, 371));
+        adminFuncs->setGeometry(QRect(670, 20, 216, 359));
         verticalLayout_2 = new QVBoxLayout(adminFuncs);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         label_2 = new QLabel(adminFuncs);
@@ -208,16 +176,150 @@ public:
 
         verticalLayout_2->addWidget(pushButton);
 
-        cityListOptimalTravel = new QTextBrowser(centralwidget);
-        cityListOptimalTravel->setObjectName(QString::fromUtf8("cityListOptimalTravel"));
-        cityListOptimalTravel->setGeometry(QRect(330, 48, 299, 241));
-        label_7 = new QLabel(centralwidget);
+        gridLayoutWidget = new QWidget(centralwidget);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(10, 20, 651, 484));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        adminFuncs_4 = new QGroupBox(gridLayoutWidget);
+        adminFuncs_4->setObjectName(QString::fromUtf8("adminFuncs_4"));
+        verticalLayout_8 = new QVBoxLayout(adminFuncs_4);
+        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        label_7 = new QLabel(adminFuncs_4);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(330, 10, 299, 16));
+
+        verticalLayout_8->addWidget(label_7);
+
+        cityListOptimalTravel = new QTextBrowser(adminFuncs_4);
+        cityListOptimalTravel->setObjectName(QString::fromUtf8("cityListOptimalTravel"));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(cityListOptimalTravel->sizePolicy().hasHeightForWidth());
+        cityListOptimalTravel->setSizePolicy(sizePolicy);
+
+        verticalLayout_8->addWidget(cityListOptimalTravel);
+
+        OptimalTravel = new QPushButton(adminFuncs_4);
+        OptimalTravel->setObjectName(QString::fromUtf8("OptimalTravel"));
+
+        verticalLayout_8->addWidget(OptimalTravel);
+
+        OptimalTravel_2 = new QPushButton(adminFuncs_4);
+        OptimalTravel_2->setObjectName(QString::fromUtf8("OptimalTravel_2"));
+
+        verticalLayout_8->addWidget(OptimalTravel_2);
+
+
+        verticalLayout_4->addWidget(adminFuncs_4);
+
+
+        gridLayout->addLayout(verticalLayout_4, 0, 1, 1, 1);
+
+        verticalLayout_6 = new QVBoxLayout();
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        adminFuncs_3 = new QGroupBox(gridLayoutWidget);
+        adminFuncs_3->setObjectName(QString::fromUtf8("adminFuncs_3"));
+        verticalLayout_7 = new QVBoxLayout(adminFuncs_3);
+        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
+        label = new QLabel(adminFuncs_3);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        verticalLayout_7->addWidget(label);
+
+        cityList = new QTextBrowser(adminFuncs_3);
+        cityList->setObjectName(QString::fromUtf8("cityList"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(cityList->sizePolicy().hasHeightForWidth());
+        cityList->setSizePolicy(sizePolicy1);
+        cityList->setMaximumSize(QSize(16777215, 200));
+
+        verticalLayout_7->addWidget(cityList);
+
+
+        verticalLayout_6->addWidget(adminFuncs_3);
+
+        adminFuncs_2 = new QGroupBox(gridLayoutWidget);
+        adminFuncs_2->setObjectName(QString::fromUtf8("adminFuncs_2"));
+        verticalLayout_3 = new QVBoxLayout(adminFuncs_2);
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        verticalLayout_5 = new QVBoxLayout();
+        verticalLayout_5->setSpacing(12);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        comboBoxCities = new QComboBox(adminFuncs_2);
+        comboBoxCities->setObjectName(QString::fromUtf8("comboBoxCities"));
+        sizePolicy1.setHeightForWidth(comboBoxCities->sizePolicy().hasHeightForWidth());
+        comboBoxCities->setSizePolicy(sizePolicy1);
+
+        verticalLayout_5->addWidget(comboBoxCities);
+
+        buttonGenerate = new QPushButton(adminFuncs_2);
+        buttonGenerate->setObjectName(QString::fromUtf8("buttonGenerate"));
+        sizePolicy1.setHeightForWidth(buttonGenerate->sizePolicy().hasHeightForWidth());
+        buttonGenerate->setSizePolicy(sizePolicy1);
+        buttonGenerate->setMaximumSize(QSize(150, 16777215));
+
+        verticalLayout_5->addWidget(buttonGenerate);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_5->addItem(verticalSpacer);
+
+
+        gridLayout_2->addLayout(verticalLayout_5, 1, 0, 1, 1);
+
+        label_8 = new QLabel(adminFuncs_2);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(label_8->sizePolicy().hasHeightForWidth());
+        label_8->setSizePolicy(sizePolicy2);
+
+        gridLayout_2->addWidget(label_8, 0, 0, 1, 1);
+
+        label_9 = new QLabel(adminFuncs_2);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Minimum);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
+        label_9->setSizePolicy(sizePolicy3);
+        label_9->setMaximumSize(QSize(150, 16777215));
+
+        gridLayout_2->addWidget(label_9, 0, 1, 1, 1);
+
+        cityInfo = new QTextBrowser(adminFuncs_2);
+        cityInfo->setObjectName(QString::fromUtf8("cityInfo"));
+        cityInfo->setMaximumSize(QSize(300, 150));
+
+        gridLayout_2->addWidget(cityInfo, 1, 1, 1, 1);
+
+
+        verticalLayout_3->addLayout(gridLayout_2);
+
+        customPlan = new QPushButton(adminFuncs_2);
+        customPlan->setObjectName(QString::fromUtf8("customPlan"));
+
+        verticalLayout_3->addWidget(customPlan);
+
+
+        verticalLayout_6->addWidget(adminFuncs_2);
+
+
+        gridLayout->addLayout(verticalLayout_6, 0, 0, 1, 1);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 916, 21));
+        menubar->setGeometry(QRect(0, 0, 901, 26));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         MainWindow->setMenuBar(menubar);
@@ -248,12 +350,6 @@ public:
 #endif // QT_NO_TOOLTIP
         actionLog_Out->setText(QApplication::translate("MainWindow", "Log Out", nullptr));
         actionLoad_Extended->setText(QApplication::translate("MainWindow", "Load Extended", nullptr));
-        label->setText(QApplication::translate("MainWindow", "List of Cities:", nullptr));
-        label_8->setText(QApplication::translate("MainWindow", "Starting City:", nullptr));
-        buttonGenerate->setText(QApplication::translate("MainWindow", "Generate", nullptr));
-        OptimalTravel->setText(QApplication::translate("MainWindow", "Berlin Travel", nullptr));
-        OptimalTravel_2->setText(QApplication::translate("MainWindow", "Paris Travel", nullptr));
-        customPlan->setText(QApplication::translate("MainWindow", "Create Plan", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Select City to Add/Edit Food", nullptr));
         pushButton_loadFoods->setText(QApplication::translate("MainWindow", "Load Foods", nullptr));
         label_5->setText(QApplication::translate("MainWindow", "Select Food to Edit/Delete", nullptr));
@@ -263,6 +359,13 @@ public:
         label_4->setText(QApplication::translate("MainWindow", "New Food Cost", nullptr));
         pushButton->setText(QApplication::translate("MainWindow", "Add Food", nullptr));
         label_7->setText(QApplication::translate("MainWindow", "Optimal Travel Plan:", nullptr));
+        OptimalTravel->setText(QApplication::translate("MainWindow", "Berlin Travel", nullptr));
+        OptimalTravel_2->setText(QApplication::translate("MainWindow", "Paris Travel", nullptr));
+        label->setText(QApplication::translate("MainWindow", "List of Cities:", nullptr));
+        buttonGenerate->setText(QApplication::translate("MainWindow", "Generate", nullptr));
+        label_8->setText(QApplication::translate("MainWindow", "Starting City:               ", nullptr));
+        label_9->setText(QApplication::translate("MainWindow", "City Info:", nullptr));
+        customPlan->setText(QApplication::translate("MainWindow", "Create Plan", nullptr));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
 
