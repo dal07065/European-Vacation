@@ -24,6 +24,7 @@ void customPlan::addCustomCityData(QVector<City> data)
 
 void customPlan::setupMenu()
 {
+    ui->spinBox->setRange(0, customCityData.size());
     ui->startingCity->append(customCityData[0].getCityName());
 
     for(int loop = 1; loop < customCityData.size(); loop++)
@@ -114,14 +115,14 @@ void customPlan::on_generate_clicked()
         if(ui->spinBox->value() > 0)
         {
 //            This is where you should take in ui->spinBox->value() and
-//            find __5__ closest cities from Paris
+//            find __5__ closest cities including Paris
 
               City start = customCityData[0]; //start = selected city
               QVector<City> sorted; //empty vector
               sorted.push_back(start);
               QVector<City> cities = customCityData;
               recursivePathingCustomPlan(start,cities,sorted);
-              for(int i = 0;i < ui->spinBox->value()+1; i++){
+              for(int i = 0;i < ui->spinBox->value(); i++){
                   selectedCities.push_back(sorted[i]);
               }
 

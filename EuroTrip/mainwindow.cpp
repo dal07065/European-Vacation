@@ -271,6 +271,8 @@ void MainWindow::on_buttonGenerate_clicked()
 // Add food buttons and functions
 void MainWindow::on_pushButton_clicked()
 {
+    if(cityListData.size() > 0)
+    {
     QString cityName = ui->comboBox_SelectCityAddFood->currentText();
     QString foodName = ui->lineEdit_FoodName->text();
     double  foodCost = ui->doubleSpinBox_FoodCost->value();
@@ -282,8 +284,11 @@ void MainWindow::on_pushButton_clicked()
     }
     cityListData[count].addNewFoodItem(foodName, foodCost);
 
+    }
+
     ui->lineEdit_FoodName->clear();
     ui->doubleSpinBox_FoodCost->clear();
+
 
     // TESTING STUFF
 //    qDebug() << "City: " << cityListData[count].getCityName();
@@ -389,32 +394,20 @@ void MainWindow::on_customPlan_clicked()
 
 //Function for starting a trip beginning at Paris
 void MainWindow::on_OptimalTravel_2_clicked()
-{
-    ui->cityListOptimalTravel->clear();
-    if(cityListData.empty()) return; //must load file first
+{  
+    customPlan customTravel;
+    QVector<City> customCityPlan(cityListData);
+    City startingCity;
 
-    City start = cityListData[8]; //start = Paris
-    QVector<City> sorted; //empty vector
-    sorted.push_back(start);
-    QVector<City> cities = cityListData;
-    sorted = recursivePathing(start,cities,sorted);
-    double totalDistance = 0;
+    startingCity = customCityPlan[8];   // 8 - index of Paris
 
-    //ouput sorted list and total distance traveled
-    for(int i = 0; i < sorted.size(); i++){
-        ui->cityListOptimalTravel->append(sorted[i].getCityName());
-        if(i+1 < sorted.size()){
-//            totalDistance += (sorted[i].getCoordinates().distanceTo(sorted[i+1].getCoordinates()));
-            totalDistance += (sorted[i].getDistance(sorted[i+1].getCityName()));
+    customCityPlan.removeAt(8); // 8 - index of Paris
 
-        }
-    }
-     QString Distance = QString::number(totalDistance/*/1000*/);
-     ui->cityListOptimalTravel->append("Total Distance Traveled:" + Distance + "km");
-     foodPlanner finalizedTrip;
-     finalizedTrip.addTravelPlanData(sorted);
-     finalizedTrip.setupUi();
-     finalizedTrip.exec();
+    customTravel.addCity(startingCity);
+    customTravel.addCustomCityData(customCityPlan);
+    customTravel.setupMenu();
+
+    customTravel.exec();
 }
 
 //This function is called within readData function. It takes the data from distances.txt and updates the distance array in each of the city
@@ -496,19 +489,23 @@ void MainWindow::on_pushButton_loadFoods_clicked()
     ui->comboBox_EditFood->clear();
     ui->doubleSpinBox_EditFoodPrice->clear();
 
-    QString cityName = ui->comboBox_SelectCityAddFood->currentText();
-
-    int index = 0;
-    while(index < cityListData.size() - 1 && cityListData[index].getCityName() != cityName)
+    if(cityListData.size() > 0)
     {
-        index++;
+        QString cityName = ui->comboBox_SelectCityAddFood->currentText();
+
+        int index = 0;
+        while(index < cityListData.size() - 1 && cityListData[index].getCityName() != cityName)
+        {
+            index++;
+        }
+
+        QVector<QPair<QString, double>> foods = cityListData[index].getAllFood();
+
+        for(int i = 0; i < foods.size(); ++i){
+            ui->comboBox_EditFood->addItem(foods[i].first);
+        }
     }
 
-    QVector<QPair<QString, double>> foods = cityListData[index].getAllFood();
-
-    for(int i = 0; i < foods.size(); ++i){
-        ui->comboBox_EditFood->addItem(foods[i].first);
-    }
 
    //  TESTING STUFF
 //    qDebug() << "City: " << cityListData[index].getCityName();
