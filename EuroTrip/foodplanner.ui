@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>753</width>
+    <width>933</width>
     <height>422</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>731</width>
+     <width>891</width>
      <height>388</height>
     </rect>
    </property>
@@ -53,6 +53,12 @@
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <widget class="QTableWidget" name="tableWidget">
+        <property name="maximumSize">
+         <size>
+          <width>1000</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -198,6 +204,12 @@
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QTableWidget" name="tableWidgetCart">
+        <property name="minimumSize">
+         <size>
+          <width>520</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -211,7 +223,7 @@
          <bool>false</bool>
         </property>
         <property name="columnCount">
-         <number>2</number>
+         <number>3</number>
         </property>
         <attribute name="horizontalHeaderDefaultSectionSize">
          <number>178</number>
@@ -228,6 +240,11 @@
          </property>
          <property name="textAlignment">
           <set>AlignCenter</set>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Quantity</string>
          </property>
         </column>
         <column>

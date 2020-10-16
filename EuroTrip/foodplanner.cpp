@@ -45,7 +45,7 @@ void foodPlanner::setupUi()
 
     ui->tableWidget->setRowCount(foodList.size());
     ui->tableWidget->setColumnCount(2);
-    ui->tableWidgetCart->setColumnCount(2);
+    ui->tableWidgetCart->setColumnCount(3);
 
     for(int i = 0; i < foodList.size(); i++)
     {
@@ -82,7 +82,8 @@ void foodPlanner::on_addItem_clicked()
 
     //ui->tableWidgetCart->setItem(cartCount, 1, new QTableWidgetItem("$" + QString::number(foodList[selectedIndex].second)));
     //ui->tableWidgetCart->setItem(cartCount, 1, new QTableWidgetItem("Quantitiy: " + qBString + "$" + priceStr));
-    ui->tableWidgetCart->setItem((ui->tableWidgetCart->rowCount() - 1), 1, new QTableWidgetItem("Quantitiy: " + qBString + "    $" + priceStr));
+    ui->tableWidgetCart->setItem((ui->tableWidgetCart->rowCount() - 1), 1, new QTableWidgetItem(qBString));
+    ui->tableWidgetCart->setItem((ui->tableWidgetCart->rowCount() - 1), 2, new QTableWidgetItem("$" + priceStr));
 
     ui->comboBoxRemove->addItem(selectedFood);
 
