@@ -56,10 +56,10 @@ public:
     {
         if (foodPlanner->objectName().isEmpty())
             foodPlanner->setObjectName(QString::fromUtf8("foodPlanner"));
-        foodPlanner->resize(753, 422);
+        foodPlanner->resize(933, 422);
         gridLayoutWidget = new QWidget(foodPlanner);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 10, 731, 388));
+        gridLayoutWidget->setGeometry(QRect(10, 10, 891, 388));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -95,6 +95,7 @@ public:
         __qtablewidgetitem1->setTextAlignment(Qt::AlignCenter);
         tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        tableWidget->setMaximumSize(QSize(1000, 16777215));
         tableWidget->setFrameShape(QFrame::StyledPanel);
         tableWidget->setSelectionMode(QAbstractItemView::NoSelection);
         tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -174,21 +175,24 @@ public:
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         tableWidgetCart = new QTableWidget(gridLayoutWidget);
-        if (tableWidgetCart->columnCount() < 2)
-            tableWidgetCart->setColumnCount(2);
+        if (tableWidgetCart->columnCount() < 3)
+            tableWidgetCart->setColumnCount(3);
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
         __qtablewidgetitem2->setTextAlignment(Qt::AlignCenter);
         __qtablewidgetitem2->setFont(font);
         tableWidgetCart->setHorizontalHeaderItem(0, __qtablewidgetitem2);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
-        __qtablewidgetitem3->setTextAlignment(Qt::AlignCenter);
         tableWidgetCart->setHorizontalHeaderItem(1, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        __qtablewidgetitem4->setTextAlignment(Qt::AlignCenter);
+        tableWidgetCart->setHorizontalHeaderItem(2, __qtablewidgetitem4);
         tableWidgetCart->setObjectName(QString::fromUtf8("tableWidgetCart"));
+        tableWidgetCart->setMinimumSize(QSize(520, 0));
         tableWidgetCart->setFrameShape(QFrame::StyledPanel);
         tableWidgetCart->setSelectionMode(QAbstractItemView::NoSelection);
         tableWidgetCart->setSelectionBehavior(QAbstractItemView::SelectRows);
         tableWidgetCart->setShowGrid(false);
-        tableWidgetCart->setColumnCount(2);
+        tableWidgetCart->setColumnCount(3);
         tableWidgetCart->horizontalHeader()->setDefaultSectionSize(178);
 
         verticalLayout->addWidget(tableWidgetCart);
@@ -229,7 +233,9 @@ public:
         QTableWidgetItem *___qtablewidgetitem2 = tableWidgetCart->horizontalHeaderItem(0);
         ___qtablewidgetitem2->setText(QApplication::translate("foodPlanner", "Food Name", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = tableWidgetCart->horizontalHeaderItem(1);
-        ___qtablewidgetitem3->setText(QApplication::translate("foodPlanner", "Price", nullptr));
+        ___qtablewidgetitem3->setText(QApplication::translate("foodPlanner", "Quantity", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tableWidgetCart->horizontalHeaderItem(2);
+        ___qtablewidgetitem4->setText(QApplication::translate("foodPlanner", "Price", nullptr));
         removeItem->setText(QApplication::translate("foodPlanner", "Remove Item", nullptr));
     } // retranslateUi
 
