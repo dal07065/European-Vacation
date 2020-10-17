@@ -14,14 +14,6 @@ class Receipt : public QDialog
 
 public:
     explicit Receipt(QWidget *parent = nullptr);
-    void setTotalDist(double temp)
-    {
-        totalDistance = temp;
-    }
-    double getTotalDist()
-    {
-        return totalDistance;
-    }
 
     void addData(QVector<QPair<City, QVector<int>>> data);
     //void addData(QVector<QVector<QPair<QString, double>>>);
@@ -34,7 +26,6 @@ public:
 private:
     Ui::Receipt *ui;
     QVector<QPair<City, QVector<int>>> purchasedFood;
-    double totalDistance; //Total Distance of the trip
 };
 
 #endif // RECEIPT_H

@@ -9,7 +9,6 @@ foodPlanner::foodPlanner(QWidget *parent) :
     ui->setupUi(this);
     currentCity = 0;
     cartCount = 0;
-    totalDistance = 0;
 
 }
 void foodPlanner::addCity(City data)
@@ -25,21 +24,6 @@ void foodPlanner::addTravelPlanData(QVector<City> data)
     {
         travelPlan.append(data[loop]);
         purchasedFood[loop].first.setCityName(data[loop].getCityName());
-    }
-
-    City start = data[0]; //start city
-    QVector<City> sorted; //empty vector
-    sorted.push_back(start);
-    QVector<City> cities = data;
-    sorted = recursivePathing(start,cities,sorted);
-
-    for(int i = 0; i < sorted.size(); i++)
-    {
-        if(i+1 < sorted.size())
-        {
-            totalDistance += (sorted[i].getDistance(sorted[i+1].getCityName()));
-
-        }
     }
 }
 foodPlanner::~foodPlanner()
@@ -145,7 +129,6 @@ void foodPlanner::on_nextButton_clicked()
         Receipt invoice;
 
        invoice.addData(purchasedFood);
-       invoice.setTotalDist(totalDistance);
        invoice.printReceipt();
 
         invoice.exec();
@@ -174,40 +157,4 @@ void foodPlanner::on_backButton_clicked()
 void foodPlanner::on_exitButton_clicked()
 {
     close();
-}
-
-//Note: this recursive pathing function is a copy of the one in mainwindow.cpp. This copy is needed so that the totalDistance
-//      of the trip can be calculated and then sent to the recipt
-QVector<City> foodPlanner::recursivePathing(City start,QVector<City> &cities,QVector<City> &sorted ){
-    //deletes starting city from the list of cities
-    QVector<City>::iterator it = cities.begin();
-    for(int i = 0; i < cities.size(); i++)
-    {
-        if(start.getCityName() == cities[i].getCityName()){
-            cities.erase(it);
-        }
-        it++;
-    }
-
-    //find the closest city to the start city
-    City* closest = &cities[0];
-    for(int i = 0; i < cities.size();i++){
-//        if(cities[i].getCoordinates().distanceTo(start.getCoordinates()) < closest->getCoordinates().distanceTo(start.getCoordinates()))
-
-        // ---------- EDIT ------------ //
-        // I fixed it with the NEW distances bc it seemed to work with custom plan...
-        // Don't hesitate to change/improve it anytime - Lina K
-        if(cities[i].getDistance(start.getCityName()) < closest->getDistance(start.getCityName()))
-        {
-            closest = &cities[i];
-        }
-    }
-    //add to sorted
-    sorted.push_back(*closest);
-
-    //if more than 1 city remains then recurse
-    if(cities.size() > 1){
-      recursivePathing(*closest,cities,sorted);
-    }
-    return sorted;
 }
