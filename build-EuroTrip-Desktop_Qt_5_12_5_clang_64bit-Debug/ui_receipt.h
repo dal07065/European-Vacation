@@ -25,10 +25,10 @@ public:
     {
         if (Receipt->objectName().isEmpty())
             Receipt->setObjectName(QString::fromUtf8("Receipt"));
-        Receipt->resize(346, 434);
+        Receipt->resize(381, 526);
         textBrowser = new QTextBrowser(Receipt);
         textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-        textBrowser->setGeometry(QRect(20, 20, 306, 391));
+        textBrowser->setGeometry(QRect(20, 20, 341, 481));
         textBrowser->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
@@ -51,8 +51,8 @@ public:
 "<p align="
                         "\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier'; font-size:8pt; font-weight:600;\">Custom Trip Plan</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier'; font-size:8pt; font-weight:600;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier'; font-size:8pt; font-weight:600;\">   Name                      Price</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier'; font-size:8pt; font-weight:600;\">  =================================</span></p></body></html>", nullptr));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier'; font-size:8pt; font-weight:600;\">   Name                    Qty   Price</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier'; font-size:8pt; font-weight:600;\">  =====================================</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };

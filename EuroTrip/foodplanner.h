@@ -23,8 +23,17 @@ public:
 
     int findCurrentCity(QString foodName);
 
+    /********************************************************************
+     * For Nate Kim:
+     * when adding the duplicatte optimal distance function call it within
+     * addTravelPlanData(). use the argument vector that was passed in.
+     ********************************************************************/
     //This will add the travel plan created by the custom plan ui to the
     //food planner ui vector named travelPlan
+
+    //Note: this recursive pathing function is a copy of the one in mainwindow.cpp. This copy is needed so that the totalDistance
+    //      of the trip can be calculated and then sent to the recipt
+    QVector<City> recursivePathing(City start,QVector<City> &cities,QVector<City> &sorted);
 
     ~foodPlanner();
 
@@ -50,6 +59,7 @@ private:
     int currentCity;
     int cartCount;
     int tableCount;
+    double totalDistance;
 };
 
 #endif // FOODPLANNER_H
