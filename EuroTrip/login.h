@@ -34,6 +34,9 @@ private:
     Ui::login *ui;
     QVector<User*> admins;
     bool checkCorrectLogin(QString username, QString Password);
+    //This is a function to check to see if the user entered in the correct username
+    //and password.
+
     void saveUsersToFile();
     QVector<User*> getUsers();
 };
