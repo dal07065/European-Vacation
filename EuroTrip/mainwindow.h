@@ -23,18 +23,25 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
 
-    void printData();
+    void userIsAdmin();
+    // This function will change all of the adminFuncs features visiblility
+    // to true.
     bool alreadyExistingCity(QString str);
+    // This function checks to see if the data being read in by the
+    // the function "readData" is already in the data member cityListData'
+    // returns true if City object is already in QVector cityListData
     void readData(QString);
+    // This functions reads the Citys data in from a txt file for all of the
+    // and stores them into a QVector of City objects called cityListData
     void readDistances(QVector<City> &cityList);
+    // This function reads in all the distance data from the distance.txt file
+    // and  updates the distance array in each of the city objects
     ~MainWindow();
 
 private slots:
     void on_actionExit_triggered();
 
     void on_actionAdmin_triggered();
-
-    void userIsAdmin();
 
     void on_actionLoad_triggered();
 
@@ -66,6 +73,10 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QVector<City> cityListData;
+    // This data memeber of QVectors stores all of the current City objects
     QString currentDataFilePath;
+    // This data memeber is a QString that stores the extention for the file
+    // that stores the city data
+
 };
 #endif // MAINWINDOW_H
