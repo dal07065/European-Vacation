@@ -11,7 +11,7 @@ class customPlan;
 }
 
 /*!
- * \brief The customPlan class is a subclass of QDialog
+ * \brief The customPlan class is a subclass of QDialog used to generate a custom travel plan
  */
 class customPlan : public QDialog
 {
@@ -79,13 +79,23 @@ public:
     ~customPlan();
 
 private slots:
+    /*!
+     * \brief on_generate_clicked is a member function
+     *
+     * it outputs the list of cities to be traveled to in order of distance optimization to the ui
+     */
     void on_generate_clicked();
 
+    /*!
+     * \brief on_startTrip_clicked is a member function
+     *
+     * Generates the foodplanner ui to allow the purchasing of food at each city
+     */
     void on_startTrip_clicked();
 
 private:
-    Ui::customPlan *ui;
-    QVector<City> customCityData;/*!< a QVector of object City*/
+    Ui::customPlan *ui;/*!< a pointer of customPlan object */
+    QVector<City> customCityData;/*!< a QVector of object City which hold all the cities that can be possibly traveled to*/
     QVector<City> selectedCities;/*!< a QVector of object City which stores cities chosen from the user*/
     QVector<City> cityPlan;      /*!< a QVector of object City*/
 };
