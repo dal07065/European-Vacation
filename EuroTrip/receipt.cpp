@@ -7,6 +7,7 @@ Receipt::Receipt(QWidget *parent) :
     ui(new Ui::Receipt)
 {
     ui->setupUi(this);
+    totalDistance = 0;
 }
 
 void Receipt::addData(QVector<QPair<City, QVector<int>>> data)
@@ -26,6 +27,7 @@ void Receipt::printReceipt()
     QString foodPrice;
     QString qty;
     QString totalCity;
+    QString totalDist;
     float grandTotal;
     float cityTotal;
 
@@ -67,9 +69,10 @@ void Receipt::printReceipt()
     total = QString::number(grandTotal, 'f', 2);
     total = total.rightJustified(6,' ');
 
+    totalDist = QString::number(totalDistance);
     ui->textBrowser->append("  =====================================\n");
     ui->textBrowser->append("                       Total:  $" + total);
-    //ui->textBrowser->append("          Total Distance: " + "Put distance here" + "km");
+    ui->textBrowser->append("          Total Distance: " + totalDist + "km");
     ui->textBrowser->append("\n       Thank you for using EuroTrip");
     ui->textBrowser->append("             Travel Planner!!!");
     ui->textBrowser->append("           Have a Great Flight!");
