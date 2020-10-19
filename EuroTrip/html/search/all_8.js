@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['setcityname_27',['setCityName',['../class_city.html#a830e7428656698a3a58b22f6c571645d',1,'City']]],
-  ['setdisttoberlin_28',['setDistToBerlin',['../class_city.html#a8931da6fdaa50f79e97cd859fc6a6f5b',1,'City']]],
-  ['setdisttoparis_29',['setDistToParis',['../class_city.html#a7191c6e406b1db8790eb6d9d402ffc04',1,'City']]],
-  ['setlatdir_30',['setLatDir',['../class_city.html#a060d7a53a8b7ca384c23a1ceaeb6e327',1,'City']]],
-  ['setlatitude_31',['setLatitude',['../class_city.html#aad1b4f6c1e8e2ad325180adb902f53f6',1,'City']]],
-  ['setlongdir_32',['setLongDir',['../class_city.html#a782550e7622772e779a601a271c96f9e',1,'City']]],
-  ['setlongitude_33',['setLongitude',['../class_city.html#a2e374e3760de9b5f2c9ff87a08630be7',1,'City']]],
-  ['setupmenu_34',['setupMenu',['../classcustom_plan.html#ac5e962ff127236132631afdf2d47ab7e',1,'customPlan']]]
+  ['readdata_36',['readData',['../class_main_window.html#aefee4f00738edc9e0f25f7bad1a43cb7',1,'MainWindow']]],
+  ['readdistances_37',['readDistances',['../class_main_window.html#a258bfb1a8b3d9c08c13f7eb0c8c3bfd7',1,'MainWindow']]],
+  ['receipt_38',['Receipt',['../class_receipt.html',1,'Receipt'],['../class_receipt.html#a6816899364c40f599fbb6ed1798d7655',1,'Receipt::Receipt()']]],
+  ['recursivepathing_39',['recursivePathing',['../classfood_planner.html#ae5da5babfc61d66ae2491986d9b2f51c',1,'foodPlanner']]],
+  ['recursivepathingcustomplan_40',['recursivePathingCustomPlan',['../classcustom_plan.html#a974b983786d4cf5452e5fc2cc44815aa',1,'customPlan']]],
+  ['removefooditem_41',['removeFoodItem',['../class_city.html#a4f7bf917ee3f775ed8d6e3bd88d3e366',1,'City']]]
 ];

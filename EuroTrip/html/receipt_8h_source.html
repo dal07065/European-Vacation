@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MEMORY LEAK: receipt.h Source File</title>
+<title>Memory Leak: receipt.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Memory_Leak_Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">MEMORY LEAK
+   <div id="projectname">Memory Leak
+   &#160;<span id="projectnumber">1.0</span>
    </div>
+   <div id="projectbrief">Memory Leak&#39;s Travel Planner</div>
   </td>
  </tr>
  </tbody>
@@ -76,30 +78,59 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="class_receipt.html">Receipt</a>;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_receipt.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_receipt.html">Receipt</a> : <span class="keyword">public</span> QDialog</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_receipt.html">Receipt</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_receipt.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_receipt.html">Receipt</a> : <span class="keyword">public</span> QDialog</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> addData(QVector&lt;QPair&lt;<a class="code" href="class_city.html">City</a>, QVector&lt;int&gt;&gt;&gt; data);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">//void addData(QVector&lt;QVector&lt;QPair&lt;QString, double&gt;&gt;&gt;);</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">//Function to add data from foodplanner to purchasedFood vector</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> printReceipt();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">//Function to print reciept.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    ~<a class="code" href="class_receipt.html">Receipt</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Ui::Receipt *ui;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    QVector&lt;QPair&lt;City, QVector&lt;int&gt;&gt;&gt; purchasedFood;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif // RECEIPT_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_receipt.html#a6816899364c40f599fbb6ed1798d7655">Receipt</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_receipt.html#a0d03f739ea84707132d699cfa2aca3f7">   33</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_receipt.html#a0d03f739ea84707132d699cfa2aca3f7">setTotalDist</a>(<span class="keywordtype">double</span> temp)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        totalDistance = temp;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//Function that sets the total distance of the trip</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//temp is the total distance from foodplanner</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_receipt.html#a81d26c01985f7c6b1ee1f432f90e011b">   46</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_receipt.html#a81d26c01985f7c6b1ee1f432f90e011b">getTotalDist</a>()</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> totalDistance;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//Function that gets the total tdistance of the trip</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_receipt.html#a97008ddcae56030027da282233dcf939">addData</a>(QVector&lt;QPair&lt;<a class="code" href="class_city.html">City</a>, QVector&lt;int&gt;&gt;&gt; data);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">//void addData(QVector&lt;QVector&lt;QPair&lt;QString, double&gt;&gt;&gt;);</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">//Function to add data from foodplanner to purchasedFood vector</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// The argument data is a vector that contains a QPair of city and int vector.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// The city vector contains a city which will hold the name and has a internal</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// vector for purchased food, the int QVector contains the data that is in parralel</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// with the internal food vector that keeps track of the quantity.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_receipt.html#ac3a6a637b2f8d0e79e5e1a0534f667a6">printReceipt</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">//Function to print reciept.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ~<a class="code" href="class_receipt.html">Receipt</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    Ui::Receipt *ui;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    QVector&lt;QPair&lt;City, QVector&lt;int&gt;&gt;&gt; purchasedFood;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">//This is the datamember that contains the purchased food in each city.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">//for every city object, there is a int vector that acts as a parrallel</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//array in order to keep track of the qty purchased for each food.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">double</span> totalDistance; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//Total Distance of the trip</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif // RECEIPT_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_receipt_html"><div class="ttname"><a href="class_receipt.html">Receipt</a></div><div class="ttdef"><b>Definition:</b> receipt.h:12</div></div>
+<div class="ttc" id="aclass_receipt_html_ac3a6a637b2f8d0e79e5e1a0534f667a6"><div class="ttname"><a href="class_receipt.html#ac3a6a637b2f8d0e79e5e1a0534f667a6">Receipt::printReceipt</a></div><div class="ttdeci">void printReceipt()</div><div class="ttdoc">printReceipt is a member function</div><div class="ttdef"><b>Definition:</b> receipt.cpp:22</div></div>
+<div class="ttc" id="aclass_receipt_html"><div class="ttname"><a href="class_receipt.html">Receipt</a></div><div class="ttdoc">The Receipt class generates the ui for the receipt printed after the purchase of foods from each city...</div><div class="ttdef"><b>Definition:</b> receipt.h:15</div></div>
+<div class="ttc" id="aclass_receipt_html_a81d26c01985f7c6b1ee1f432f90e011b"><div class="ttname"><a href="class_receipt.html#a81d26c01985f7c6b1ee1f432f90e011b">Receipt::getTotalDist</a></div><div class="ttdeci">double getTotalDist()</div><div class="ttdoc">getTotalDist is a getter function</div><div class="ttdef"><b>Definition:</b> receipt.h:46</div></div>
+<div class="ttc" id="aclass_receipt_html_a97008ddcae56030027da282233dcf939"><div class="ttname"><a href="class_receipt.html#a97008ddcae56030027da282233dcf939">Receipt::addData</a></div><div class="ttdeci">void addData(QVector&lt; QPair&lt; City, QVector&lt; int &gt;&gt;&gt; data)</div><div class="ttdoc">addData is a member function with a parameter</div><div class="ttdef"><b>Definition:</b> receipt.cpp:13</div></div>
+<div class="ttc" id="aclass_receipt_html_a6816899364c40f599fbb6ed1798d7655"><div class="ttname"><a href="class_receipt.html#a6816899364c40f599fbb6ed1798d7655">Receipt::Receipt</a></div><div class="ttdeci">Receipt(QWidget *parent=nullptr)</div><div class="ttdoc">Receipt is a contructor with a parameter.</div><div class="ttdef"><b>Definition:</b> receipt.cpp:5</div></div>
 <div class="ttc" id="aclass_city_html"><div class="ttname"><a href="class_city.html">City</a></div><div class="ttdoc">The City class holds information about the city.</div><div class="ttdef"><b>Definition:</b> city.h:12</div></div>
+<div class="ttc" id="aclass_receipt_html_a0d03f739ea84707132d699cfa2aca3f7"><div class="ttname"><a href="class_receipt.html#a0d03f739ea84707132d699cfa2aca3f7">Receipt::setTotalDist</a></div><div class="ttdeci">void setTotalDist(double temp)</div><div class="ttdoc">setTotalDist is a member function with a parameter</div><div class="ttdef"><b>Definition:</b> receipt.h:33</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

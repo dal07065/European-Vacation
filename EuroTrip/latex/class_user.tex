@@ -1,0 +1,146 @@
+\hypertarget{class_user}{}\doxysection{User Class Reference}
+\label{class_user}\index{User@{User}}
+
+
+The \mbox{\hyperlink{class_user}{User}} class holds the login information.  
+
+
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_a4a0137053e591fbb79d9057dd7d2283d}{User}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_user}{User}} is the default contructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_adcd188a9b7b8b99866e6c13671844d16}{User}} (Q\+String username, Q\+String password, bool is\+Admin)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_user}{User}} is constructor with 3 parameters. \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{class_user_a08223b0b137e3fc264d94f2d746a4fc9}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em get\+Name is a getter function \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{class_user_a96d673c7c62ecdfdd4c509db8350262d}{get\+Password}} ()
+\begin{DoxyCompactList}\small\item\em get\+Password is a getter function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_af3a3dc4481012ab1707948d90925a9a3}{change\+Password}} (Q\+String password)
+\begin{DoxyCompactList}\small\item\em change\+Password is a member function with a parameter \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_user_abf95105abaab35afe98661426fe6516f}{admin\+Status}} ()
+\begin{DoxyCompactList}\small\item\em admin\+Status is a member function \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_user_af8abe6f219ea84b3f7972fb80bf72a80}{correct\+Login}} (Q\+String username, Q\+String password)
+\begin{DoxyCompactList}\small\item\em correct\+Login is a member function with 2 parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_user}{User}} class holds the login information. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_user_a4a0137053e591fbb79d9057dd7d2283d}\label{class_user_a4a0137053e591fbb79d9057dd7d2283d}} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_user}{User}} is the default contructor. 
+
+generates a user object \mbox{\Hypertarget{class_user_adcd188a9b7b8b99866e6c13671844d16}\label{class_user_adcd188a9b7b8b99866e6c13671844d16}} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}\item[{Q\+String}]{username,  }\item[{Q\+String}]{password,  }\item[{bool}]{is\+Admin }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_user}{User}} is constructor with 3 parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & is a Q\+String \\
+\hline
+{\em password} & is a Qstring \\
+\hline
+{\em is\+Admin} & is a boolean\\
+\hline
+\end{DoxyParams}
+this constructor populates the object with the information of a login 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_user_abf95105abaab35afe98661426fe6516f}\label{class_user_abf95105abaab35afe98661426fe6516f}} 
+\index{User@{User}!adminStatus@{adminStatus}}
+\index{adminStatus@{adminStatus}!User@{User}}
+\doxysubsubsection{\texorpdfstring{adminStatus()}{adminStatus()}}
+{\footnotesize\ttfamily bool User\+::admin\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+admin\+Status is a member function 
+
+\begin{DoxyReturn}{Returns}
+a boolean variable
+\end{DoxyReturn}
+this function checks if the user is an admin and returns a boolean \mbox{\Hypertarget{class_user_af3a3dc4481012ab1707948d90925a9a3}\label{class_user_af3a3dc4481012ab1707948d90925a9a3}} 
+\index{User@{User}!changePassword@{changePassword}}
+\index{changePassword@{changePassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{changePassword()}{changePassword()}}
+{\footnotesize\ttfamily void User\+::change\+Password (\begin{DoxyParamCaption}\item[{Q\+String}]{password }\end{DoxyParamCaption})}
+
+
+
+change\+Password is a member function with a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em password} & is a Q\+String\\
+\hline
+\end{DoxyParams}
+this function replaces the password with the passed in Q\+String \mbox{\Hypertarget{class_user_af8abe6f219ea84b3f7972fb80bf72a80}\label{class_user_af8abe6f219ea84b3f7972fb80bf72a80}} 
+\index{User@{User}!correctLogin@{correctLogin}}
+\index{correctLogin@{correctLogin}!User@{User}}
+\doxysubsubsection{\texorpdfstring{correctLogin()}{correctLogin()}}
+{\footnotesize\ttfamily bool User\+::correct\+Login (\begin{DoxyParamCaption}\item[{Q\+String}]{username,  }\item[{Q\+String}]{password }\end{DoxyParamCaption})}
+
+
+
+correct\+Login is a member function with 2 parameters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & is a Q\+String \\
+\hline
+{\em password} & is a Q\+String \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a boolean
+\end{DoxyReturn}
+this function checks if the login is correct and returns a boolean \mbox{\Hypertarget{class_user_a08223b0b137e3fc264d94f2d746a4fc9}\label{class_user_a08223b0b137e3fc264d94f2d746a4fc9}} 
+\index{User@{User}!getName@{getName}}
+\index{getName@{getName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily Q\+String User\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Name is a getter function 
+
+\begin{DoxyReturn}{Returns}
+a Q\+String
+\end{DoxyReturn}
+function returns the username of the object \mbox{\Hypertarget{class_user_a96d673c7c62ecdfdd4c509db8350262d}\label{class_user_a96d673c7c62ecdfdd4c509db8350262d}} 
+\index{User@{User}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getPassword()}{getPassword()}}
+{\footnotesize\ttfamily Q\+String User\+::get\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Password is a getter function 
+
+\begin{DoxyReturn}{Returns}
+a Q\+String
+\end{DoxyReturn}
+function returns the password of the object 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+user.\+h\item 
+user.\+cpp\end{DoxyCompactItemize}

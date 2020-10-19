@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['receipt_42',['Receipt',['../class_receipt.html',1,'']]]
+  ['user_60',['User',['../class_user.html',1,'']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MEMORY LEAK: user.h Source File</title>
+<title>Memory Leak: user.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Memory_Leak_Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">MEMORY LEAK
+   <div id="projectname">Memory Leak
+   &#160;<span id="projectnumber">1.0</span>
    </div>
+   <div id="projectbrief">Memory Leak&#39;s Travel Planner</div>
   </td>
  </tr>
  </tbody>
@@ -70,26 +72,53 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define USER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include&lt;QString&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="class_user.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_user.html">User</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    QString username;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    QString password;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">bool</span> isAdmin;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_user.html">User</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_user.html">User</a>(QString username, QString password, <span class="keywordtype">bool</span> isAdmin);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    ~<a class="code" href="class_user.html">User</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    QString getName();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    QString getPassword();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> changePassword(QString password);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">bool</span> adminStatus();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> correctLogin(QString username, QString password);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif // USER_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_user.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_user.html">User</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    QString username;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// This is the data memeber that stores the username of a user</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    QString password;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">// This is the data memeber that stores the password of a user</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">bool</span> isAdmin;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">// This is the data memeber that is true if the user is an admin</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_user.html#a4a0137053e591fbb79d9057dd7d2283d">User</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// Default constructor for the User object</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_user.html#a4a0137053e591fbb79d9057dd7d2283d">User</a>(QString username, QString password, <span class="keywordtype">bool</span> isAdmin);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Alternative Constructor for the User object. This constructor</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// allows for the username, password and isAdmin data to be passed</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// into it for initialization.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    ~<a class="code" href="class_user.html">User</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// Default Destructor</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    QString <a class="code" href="class_user.html#a08223b0b137e3fc264d94f2d746a4fc9">getName</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// This function returns a QString containing the Users objects username</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    QString <a class="code" href="class_user.html#a96d673c7c62ecdfdd4c509db8350262d">getPassword</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// This function returns a QString containing the Users objects password</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_user.html#af3a3dc4481012ab1707948d90925a9a3">changePassword</a>(QString password);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// This function reads in a QString to be used as the new</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// password for the User object</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_user.html#abf95105abaab35afe98661426fe6516f">adminStatus</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// This function returns true if the User object is an admin</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_user.html#af8abe6f219ea84b3f7972fb80bf72a80">correctLogin</a>(QString username, QString password);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// This function returns true if the passed in QStrings username and</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// password matches the User objects data members username and password</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif // USER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_user_html"><div class="ttname"><a href="class_user.html">User</a></div><div class="ttdef"><b>Definition:</b> user.h:6</div></div>
+<div class="ttc" id="aclass_user_html_af8abe6f219ea84b3f7972fb80bf72a80"><div class="ttname"><a href="class_user.html#af8abe6f219ea84b3f7972fb80bf72a80">User::correctLogin</a></div><div class="ttdeci">bool correctLogin(QString username, QString password)</div><div class="ttdoc">correctLogin is a member function with 2 parameters</div><div class="ttdef"><b>Definition:</b> user.cpp:35</div></div>
+<div class="ttc" id="aclass_user_html_a08223b0b137e3fc264d94f2d746a4fc9"><div class="ttname"><a href="class_user.html#a08223b0b137e3fc264d94f2d746a4fc9">User::getName</a></div><div class="ttdeci">QString getName()</div><div class="ttdoc">getName is a getter function</div><div class="ttdef"><b>Definition:</b> user.cpp:20</div></div>
+<div class="ttc" id="aclass_user_html_af3a3dc4481012ab1707948d90925a9a3"><div class="ttname"><a href="class_user.html#af3a3dc4481012ab1707948d90925a9a3">User::changePassword</a></div><div class="ttdeci">void changePassword(QString password)</div><div class="ttdoc">changePassword is a member function with a parameter</div><div class="ttdef"><b>Definition:</b> user.cpp:25</div></div>
+<div class="ttc" id="aclass_user_html_abf95105abaab35afe98661426fe6516f"><div class="ttname"><a href="class_user.html#abf95105abaab35afe98661426fe6516f">User::adminStatus</a></div><div class="ttdeci">bool adminStatus()</div><div class="ttdoc">adminStatus is a member function</div><div class="ttdef"><b>Definition:</b> user.cpp:30</div></div>
+<div class="ttc" id="aclass_user_html_a4a0137053e591fbb79d9057dd7d2283d"><div class="ttname"><a href="class_user.html#a4a0137053e591fbb79d9057dd7d2283d">User::User</a></div><div class="ttdeci">User()</div><div class="ttdoc">User is the default contructor.</div><div class="ttdef"><b>Definition:</b> user.cpp:3</div></div>
+<div class="ttc" id="aclass_user_html"><div class="ttname"><a href="class_user.html">User</a></div><div class="ttdoc">The User class holds the login information.</div><div class="ttdef"><b>Definition:</b> user.h:9</div></div>
+<div class="ttc" id="aclass_user_html_a96d673c7c62ecdfdd4c509db8350262d"><div class="ttname"><a href="class_user.html#a96d673c7c62ecdfdd4c509db8350262d">User::getPassword</a></div><div class="ttdeci">QString getPassword()</div><div class="ttdoc">getPassword is a getter function</div><div class="ttdef"><b>Definition:</b> user.cpp:40</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

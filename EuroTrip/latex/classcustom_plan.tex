@@ -1,0 +1,146 @@
+\hypertarget{classcustom_plan}{}\doxysection{custom\+Plan Class Reference}
+\label{classcustom_plan}\index{customPlan@{customPlan}}
+
+
+The \mbox{\hyperlink{classcustom_plan}{custom\+Plan}} class is a subclass of Q\+Dialog used to generate a custom travel plan.  
+
+
+
+
+{\ttfamily \#include $<$customplan.\+h$>$}
+
+Inheritance diagram for custom\+Plan\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcustom_plan}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcustom_plan_a767d0f729e22fcafc0541e6edae53c87}{custom\+Plan}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classcustom_plan}{custom\+Plan}} is a constructor with a parameter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcustom_plan_af461af0e6d1e71161e699831998b0ccf}{add\+City}} (\mbox{\hyperlink{class_city}{City}} data)
+\begin{DoxyCompactList}\small\item\em add\+City is member function which takes in one parameter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcustom_plan_aaadc4c503d34714b53dc940f14872dc8}{add\+Custom\+City\+Data}} (Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ data)
+\begin{DoxyCompactList}\small\item\em add\+Custom\+City\+Data is a member function that takes in a parameter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcustom_plan_ac5e962ff127236132631afdf2d47ab7e}{setup\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em setup\+Menu is a member function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcustom_plan_aeb23c4434df99dbdea951e896214f0eb}{get\+Selected\+Cities}} ()
+\begin{DoxyCompactList}\small\item\em get\+Selected\+Cities is a member function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcustom_plan_a51eb8a0f31c08b22400e3eac11593fd7}{find\+Most\+Efficient\+Path}} ()
+\begin{DoxyCompactList}\small\item\em find\+Most\+Efficient\+Path is a member function \end{DoxyCompactList}\item 
+Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ \mbox{\hyperlink{classcustom_plan_a974b983786d4cf5452e5fc2cc44815aa}{recursive\+Pathing\+Custom\+Plan}} (\mbox{\hyperlink{class_city}{City}} start, Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ \&cities, Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ \&sorted)
+\begin{DoxyCompactList}\small\item\em recursive\+Pathing\+Custom\+Plan is a member function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classcustom_plan}{custom\+Plan}} class is a subclass of Q\+Dialog used to generate a custom travel plan. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcustom_plan_a767d0f729e22fcafc0541e6edae53c87}\label{classcustom_plan_a767d0f729e22fcafc0541e6edae53c87}} 
+\index{customPlan@{customPlan}!customPlan@{customPlan}}
+\index{customPlan@{customPlan}!customPlan@{customPlan}}
+\doxysubsubsection{\texorpdfstring{customPlan()}{customPlan()}}
+{\footnotesize\ttfamily custom\+Plan\+::custom\+Plan (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{classcustom_plan}{custom\+Plan}} is a constructor with a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & is of type Q\+Widget\\
+\hline
+\end{DoxyParams}
+the function generates a new ui for custom plan 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcustom_plan_af461af0e6d1e71161e699831998b0ccf}\label{classcustom_plan_af461af0e6d1e71161e699831998b0ccf}} 
+\index{customPlan@{customPlan}!addCity@{addCity}}
+\index{addCity@{addCity}!customPlan@{customPlan}}
+\doxysubsubsection{\texorpdfstring{addCity()}{addCity()}}
+{\footnotesize\ttfamily void custom\+Plan\+::add\+City (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_city}{City}}}]{data }\end{DoxyParamCaption})}
+
+
+
+add\+City is member function which takes in one parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is of object type \mbox{\hyperlink{class_city}{City}}\\
+\hline
+\end{DoxyParams}
+this function adds a city to the vector custom\+City\+Data \mbox{\Hypertarget{classcustom_plan_aaadc4c503d34714b53dc940f14872dc8}\label{classcustom_plan_aaadc4c503d34714b53dc940f14872dc8}} 
+\index{customPlan@{customPlan}!addCustomCityData@{addCustomCityData}}
+\index{addCustomCityData@{addCustomCityData}!customPlan@{customPlan}}
+\doxysubsubsection{\texorpdfstring{addCustomCityData()}{addCustomCityData()}}
+{\footnotesize\ttfamily void custom\+Plan\+::add\+Custom\+City\+Data (\begin{DoxyParamCaption}\item[{Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$}]{data }\end{DoxyParamCaption})}
+
+
+
+add\+Custom\+City\+Data is a member function that takes in a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is a Qvector of \mbox{\hyperlink{class_city}{City}}\\
+\hline
+\end{DoxyParams}
+the function adds the contents of the vector into custom\+City\+Data \mbox{\Hypertarget{classcustom_plan_a51eb8a0f31c08b22400e3eac11593fd7}\label{classcustom_plan_a51eb8a0f31c08b22400e3eac11593fd7}} 
+\index{customPlan@{customPlan}!findMostEfficientPath@{findMostEfficientPath}}
+\index{findMostEfficientPath@{findMostEfficientPath}!customPlan@{customPlan}}
+\doxysubsubsection{\texorpdfstring{findMostEfficientPath()}{findMostEfficientPath()}}
+{\footnotesize\ttfamily void custom\+Plan\+::find\+Most\+Efficient\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+find\+Most\+Efficient\+Path is a member function 
+
+this function will find the most efficient path from the starting city to the selected cities \mbox{\Hypertarget{classcustom_plan_aeb23c4434df99dbdea951e896214f0eb}\label{classcustom_plan_aeb23c4434df99dbdea951e896214f0eb}} 
+\index{customPlan@{customPlan}!getSelectedCities@{getSelectedCities}}
+\index{getSelectedCities@{getSelectedCities}!customPlan@{customPlan}}
+\doxysubsubsection{\texorpdfstring{getSelectedCities()}{getSelectedCities()}}
+{\footnotesize\ttfamily void custom\+Plan\+::get\+Selected\+Cities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Selected\+Cities is a member function 
+
+this functions obtains the selected cities and stores them in class member function selected\+Cities \mbox{\Hypertarget{classcustom_plan_a974b983786d4cf5452e5fc2cc44815aa}\label{classcustom_plan_a974b983786d4cf5452e5fc2cc44815aa}} 
+\index{customPlan@{customPlan}!recursivePathingCustomPlan@{recursivePathingCustomPlan}}
+\index{recursivePathingCustomPlan@{recursivePathingCustomPlan}!customPlan@{customPlan}}
+\doxysubsubsection{\texorpdfstring{recursivePathingCustomPlan()}{recursivePathingCustomPlan()}}
+{\footnotesize\ttfamily Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ custom\+Plan\+::recursive\+Pathing\+Custom\+Plan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_city}{City}}}]{start,  }\item[{Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ \&}]{cities,  }\item[{Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ \&}]{sorted }\end{DoxyParamCaption})}
+
+
+
+recursive\+Pathing\+Custom\+Plan is a member function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & is of type \mbox{\hyperlink{class_city}{City}} \\
+\hline
+{\em cities} & is a Qvector of \mbox{\hyperlink{class_city}{City}} objects \\
+\hline
+{\em sorted} & is a Qvector of \mbox{\hyperlink{class_city}{City}} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Qvector of \mbox{\hyperlink{class_city}{City}} objects that are sorted bsaed off of optimal traveling distance
+\end{DoxyReturn}
+this function recursively finds the most efficient trip based off distances from one city to the next \mbox{\Hypertarget{classcustom_plan_ac5e962ff127236132631afdf2d47ab7e}\label{classcustom_plan_ac5e962ff127236132631afdf2d47ab7e}} 
+\index{customPlan@{customPlan}!setupMenu@{setupMenu}}
+\index{setupMenu@{setupMenu}!customPlan@{customPlan}}
+\doxysubsubsection{\texorpdfstring{setupMenu()}{setupMenu()}}
+{\footnotesize\ttfamily void custom\+Plan\+::setup\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+setup\+Menu is a member function 
+
+this functions outputs the name of all the cities in custom\+City\+Data to the ui 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+customplan.\+h\item 
+customplan.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,157 @@
+\hypertarget{classfood_planner}{}\doxysection{food\+Planner Class Reference}
+\label{classfood_planner}\index{foodPlanner@{foodPlanner}}
+
+
+The \mbox{\hyperlink{classfood_planner}{food\+Planner}} class help maintain and display information about the food purchases as we travel from city to city.  
+
+
+
+
+{\ttfamily \#include $<$foodplanner.\+h$>$}
+
+Inheritance diagram for food\+Planner\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfood_planner}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfood_planner_a24488e801bd49543b1d227986bfc496c}{food\+Planner}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classfood_planner}{food\+Planner}} is a constructor with a parameter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfood_planner_a680b4a94c605c320c27f58775e5a43bb}{add\+City}} (\mbox{\hyperlink{class_city}{City}} data)
+\begin{DoxyCompactList}\small\item\em add\+City is a member function with a parameters \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfood_planner_a0357895322493f1ae5d92fb0a303fa4a}{add\+Travel\+Plan\+Data}} (Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ data)
+\begin{DoxyCompactList}\small\item\em add\+Travel\+Plan\+Data is a member function with a parameter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfood_planner_ab98e80102944ecf5c14cd47be9013b00}{setup\+Ui}} ()
+\begin{DoxyCompactList}\small\item\em setup\+Ui is a member function \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfood_planner_a3c0e40bcf8fda1769ab4ee360f573ce8}{correct\+Food}} (Q\+String)
+\begin{DoxyCompactList}\small\item\em correct\+Food is a member function \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfood_planner_a0827e8f0f33813228ea747f1eb1e7d5d}{find\+Current\+City}} (Q\+String food\+Name)
+\begin{DoxyCompactList}\small\item\em find\+Current\+City is a member function with a parameter \end{DoxyCompactList}\item 
+Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ \mbox{\hyperlink{classfood_planner_ae5da5babfc61d66ae2491986d9b2f51c}{recursive\+Pathing}} (\mbox{\hyperlink{class_city}{City}} start, Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ \&cities, Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ \&sorted)
+\begin{DoxyCompactList}\small\item\em recursive\+Pathing is a member function with 3 parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classfood_planner}{food\+Planner}} class help maintain and display information about the food purchases as we travel from city to city. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfood_planner_a24488e801bd49543b1d227986bfc496c}\label{classfood_planner_a24488e801bd49543b1d227986bfc496c}} 
+\index{foodPlanner@{foodPlanner}!foodPlanner@{foodPlanner}}
+\index{foodPlanner@{foodPlanner}!foodPlanner@{foodPlanner}}
+\doxysubsubsection{\texorpdfstring{foodPlanner()}{foodPlanner()}}
+{\footnotesize\ttfamily food\+Planner\+::food\+Planner (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{classfood_planner}{food\+Planner}} is a constructor with a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & is a pointer of type Q\+Widget\\
+\hline
+\end{DoxyParams}
+this constructor generates a new Q\+Widget for food purchasing purposes 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfood_planner_a680b4a94c605c320c27f58775e5a43bb}\label{classfood_planner_a680b4a94c605c320c27f58775e5a43bb}} 
+\index{foodPlanner@{foodPlanner}!addCity@{addCity}}
+\index{addCity@{addCity}!foodPlanner@{foodPlanner}}
+\doxysubsubsection{\texorpdfstring{addCity()}{addCity()}}
+{\footnotesize\ttfamily void food\+Planner\+::add\+City (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_city}{City}}}]{data }\end{DoxyParamCaption})}
+
+
+
+add\+City is a member function with a parameters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & if of object type \mbox{\hyperlink{class_city}{City}}\\
+\hline
+\end{DoxyParams}
+this function adds the starting city data into the travelplan Q\+Vector data member \mbox{\Hypertarget{classfood_planner_a0357895322493f1ae5d92fb0a303fa4a}\label{classfood_planner_a0357895322493f1ae5d92fb0a303fa4a}} 
+\index{foodPlanner@{foodPlanner}!addTravelPlanData@{addTravelPlanData}}
+\index{addTravelPlanData@{addTravelPlanData}!foodPlanner@{foodPlanner}}
+\doxysubsubsection{\texorpdfstring{addTravelPlanData()}{addTravelPlanData()}}
+{\footnotesize\ttfamily void food\+Planner\+::add\+Travel\+Plan\+Data (\begin{DoxyParamCaption}\item[{Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$}]{data }\end{DoxyParamCaption})}
+
+
+
+add\+Travel\+Plan\+Data is a member function with a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & if a Q\+Vector of \mbox{\hyperlink{class_city}{City}} objects\\
+\hline
+\end{DoxyParams}
+this function adds the remainder of the cities into the travelplan Q\+Vector data member \mbox{\Hypertarget{classfood_planner_a3c0e40bcf8fda1769ab4ee360f573ce8}\label{classfood_planner_a3c0e40bcf8fda1769ab4ee360f573ce8}} 
+\index{foodPlanner@{foodPlanner}!correctFood@{correctFood}}
+\index{correctFood@{correctFood}!foodPlanner@{foodPlanner}}
+\doxysubsubsection{\texorpdfstring{correctFood()}{correctFood()}}
+{\footnotesize\ttfamily bool food\+Planner\+::correct\+Food (\begin{DoxyParamCaption}\item[{Q\+String}]{ }\end{DoxyParamCaption})}
+
+
+
+correct\+Food is a member function 
+
+\begin{DoxyReturn}{Returns}
+a boolean variable
+\end{DoxyReturn}
+used to determine if the food name is what we want it to be \mbox{\Hypertarget{classfood_planner_a0827e8f0f33813228ea747f1eb1e7d5d}\label{classfood_planner_a0827e8f0f33813228ea747f1eb1e7d5d}} 
+\index{foodPlanner@{foodPlanner}!findCurrentCity@{findCurrentCity}}
+\index{findCurrentCity@{findCurrentCity}!foodPlanner@{foodPlanner}}
+\doxysubsubsection{\texorpdfstring{findCurrentCity()}{findCurrentCity()}}
+{\footnotesize\ttfamily int food\+Planner\+::find\+Current\+City (\begin{DoxyParamCaption}\item[{Q\+String}]{food\+Name }\end{DoxyParamCaption})}
+
+
+
+find\+Current\+City is a member function with a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em food\+Name} & is a Q\+String \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer variable that is the index of the city we searched for
+\end{DoxyReturn}
+searches and returns the index of the city we are looking for \mbox{\Hypertarget{classfood_planner_ae5da5babfc61d66ae2491986d9b2f51c}\label{classfood_planner_ae5da5babfc61d66ae2491986d9b2f51c}} 
+\index{foodPlanner@{foodPlanner}!recursivePathing@{recursivePathing}}
+\index{recursivePathing@{recursivePathing}!foodPlanner@{foodPlanner}}
+\doxysubsubsection{\texorpdfstring{recursivePathing()}{recursivePathing()}}
+{\footnotesize\ttfamily Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ food\+Planner\+::recursive\+Pathing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_city}{City}}}]{start,  }\item[{Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ \&}]{cities,  }\item[{Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ \&}]{sorted }\end{DoxyParamCaption})}
+
+
+
+recursive\+Pathing is a member function with 3 parameters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & is a \mbox{\hyperlink{class_city}{City}} object \\
+\hline
+{\em cities} & is a Q\+Vector of \mbox{\hyperlink{class_city}{City}} object \\
+\hline
+{\em sorted} & is a Q\+Vector of \mbox{\hyperlink{class_city}{City}} objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a Q\+Vector of sorted \mbox{\hyperlink{class_city}{City}} objects
+\end{DoxyReturn}
+this function recursively finds the most optimal pathing between cities and stores them into a Q\+Vector which is returned \mbox{\Hypertarget{classfood_planner_ab98e80102944ecf5c14cd47be9013b00}\label{classfood_planner_ab98e80102944ecf5c14cd47be9013b00}} 
+\index{foodPlanner@{foodPlanner}!setupUi@{setupUi}}
+\index{setupUi@{setupUi}!foodPlanner@{foodPlanner}}
+\doxysubsubsection{\texorpdfstring{setupUi()}{setupUi()}}
+{\footnotesize\ttfamily void food\+Planner\+::setup\+Ui (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+setup\+Ui is a member function 
+
+used to set up the foodplanner ui 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+foodplanner.\+h\item 
+foodplanner.\+cpp\end{DoxyCompactItemize}

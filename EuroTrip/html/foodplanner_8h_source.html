@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MEMORY LEAK: foodplanner.h Source File</title>
+<title>Memory Leak: foodplanner.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Memory_Leak_Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">MEMORY LEAK
+   <div id="projectname">Memory Leak
+   &#160;<span id="projectnumber">1.0</span>
    </div>
+   <div id="projectbrief">Memory Leak&#39;s Travel Planner</div>
   </td>
  </tr>
  </tbody>
@@ -77,53 +79,70 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="classfood_planner.html">foodPlanner</a>;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classfood_planner.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfood_planner.html">foodPlanner</a> : <span class="keyword">public</span> QDialog</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classfood_planner.html">foodPlanner</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> addCity(<a class="code" href="class_city.html">City</a> data);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> addTravelPlanData(QVector&lt;City&gt; data);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> setupUi();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">bool</span> correctFood(QString);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> findCurrentCity(QString foodName);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">//This will add the travel plan created by the custom plan ui to the</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//food planner ui vector named travelPlan</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ~<a class="code" href="classfood_planner.html">foodPlanner</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> on_addItem_clicked();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> on_removeItem_clicked();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> on_nextButton_clicked();</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classfood_planner.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfood_planner.html">foodPlanner</a> : <span class="keyword">public</span> QDialog</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classfood_planner.html#a24488e801bd49543b1d227986bfc496c">foodPlanner</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classfood_planner.html#a680b4a94c605c320c27f58775e5a43bb">addCity</a>(<a class="code" href="class_city.html">City</a> data);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//This function is used to add city data into the travelplan class data member</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//for foodplanner. data contains city data from customplan</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//This is mainly used for adding the starting city to the travel plan vector.</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> on_backButton_clicked();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> on_exitButton_clicked();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Ui::foodPlanner *ui;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    QVector&lt;City&gt; travelPlan;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    QVector&lt;QPair&lt;City, QVector&lt;int&gt;&gt;&gt; purchasedFood;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    QVector&lt;QPair&lt;QString, double&gt;&gt; foodList;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    QVector&lt;QPair&lt;QString, double&gt;&gt; cartList;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span> currentCity;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> cartCount;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">int</span> tableCount;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif // FOODPLANNER_H</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classfood_planner.html#a0357895322493f1ae5d92fb0a303fa4a">addTravelPlanData</a>(QVector&lt;City&gt; data);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//This adds the rest of the travel plan data from customplan to the travelplan data mamber</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// The arguement data is the generated travel plan info from custom plan.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classfood_planner.html#ab98e80102944ecf5c14cd47be9013b00">setupUi</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//This is just used to set up the foodplanner ui</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classfood_planner.html#a3c0e40bcf8fda1769ab4ee360f573ce8">   62</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classfood_planner.html#a3c0e40bcf8fda1769ab4ee360f573ce8">correctFood</a>(QString);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//I dont know if this is even used in the program tbh</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classfood_planner.html#a0827e8f0f33813228ea747f1eb1e7d5d">   72</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classfood_planner.html#a0827e8f0f33813228ea747f1eb1e7d5d">findCurrentCity</a>(QString foodName);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">//I dont think this is even used either lmao</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">//Note: this recursive pathing function is a copy of the one in mainwindow.cpp. This copy is needed so that the totalDistance</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">//      of the trip can be calculated and then sent to the recipt</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"></span>    QVector&lt;City&gt; <a class="code" href="classfood_planner.html#ae5da5babfc61d66ae2491986d9b2f51c">recursivePathing</a>(<a class="code" href="class_city.html">City</a> start,QVector&lt;City&gt; &amp;cities,QVector&lt;City&gt; &amp;sorted);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    ~<a class="code" href="classfood_planner.html">foodPlanner</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> on_addItem_clicked();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> on_removeItem_clicked();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> on_nextButton_clicked();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> on_backButton_clicked();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">void</span> on_exitButton_clicked();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    Ui::foodPlanner *ui;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    QVector&lt;City&gt; travelPlan; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    QVector&lt;QPair&lt;City, QVector&lt;int&gt;&gt;&gt; purchasedFood;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    QVector&lt;QPair&lt;QString, double&gt;&gt; foodList;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    QVector&lt;QPair&lt;QString, double&gt;&gt; cartList;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">int</span> currentCity; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">int</span> cartCount;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">//int tableCount;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">double</span> totalDistance;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;};</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif // FOODPLANNER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassfood_planner_html"><div class="ttname"><a href="classfood_planner.html">foodPlanner</a></div><div class="ttdef"><b>Definition:</b> foodplanner.h:13</div></div>
+<div class="ttc" id="aclassfood_planner_html_a24488e801bd49543b1d227986bfc496c"><div class="ttname"><a href="classfood_planner.html#a24488e801bd49543b1d227986bfc496c">foodPlanner::foodPlanner</a></div><div class="ttdeci">foodPlanner(QWidget *parent=nullptr)</div><div class="ttdoc">foodPlanner is a constructor with a parameter</div><div class="ttdef"><b>Definition:</b> foodplanner.cpp:5</div></div>
+<div class="ttc" id="aclassfood_planner_html_a3c0e40bcf8fda1769ab4ee360f573ce8"><div class="ttname"><a href="classfood_planner.html#a3c0e40bcf8fda1769ab4ee360f573ce8">foodPlanner::correctFood</a></div><div class="ttdeci">bool correctFood(QString)</div><div class="ttdoc">correctFood is a member function</div></div>
+<div class="ttc" id="aclassfood_planner_html_ae5da5babfc61d66ae2491986d9b2f51c"><div class="ttname"><a href="classfood_planner.html#ae5da5babfc61d66ae2491986d9b2f51c">foodPlanner::recursivePathing</a></div><div class="ttdeci">QVector&lt; City &gt; recursivePathing(City start, QVector&lt; City &gt; &amp;cities, QVector&lt; City &gt; &amp;sorted)</div><div class="ttdoc">recursivePathing is a member function with 3 parameters</div><div class="ttdef"><b>Definition:</b> foodplanner.cpp:181</div></div>
+<div class="ttc" id="aclassfood_planner_html_a680b4a94c605c320c27f58775e5a43bb"><div class="ttname"><a href="classfood_planner.html#a680b4a94c605c320c27f58775e5a43bb">foodPlanner::addCity</a></div><div class="ttdeci">void addCity(City data)</div><div class="ttdoc">addCity is a member function with a parameters</div><div class="ttdef"><b>Definition:</b> foodplanner.cpp:15</div></div>
+<div class="ttc" id="aclassfood_planner_html_ab98e80102944ecf5c14cd47be9013b00"><div class="ttname"><a href="classfood_planner.html#ab98e80102944ecf5c14cd47be9013b00">foodPlanner::setupUi</a></div><div class="ttdeci">void setupUi()</div><div class="ttdoc">setupUi is a member function</div><div class="ttdef"><b>Definition:</b> foodplanner.cpp:53</div></div>
+<div class="ttc" id="aclassfood_planner_html"><div class="ttname"><a href="classfood_planner.html">foodPlanner</a></div><div class="ttdoc">The foodPlanner class help maintain and display information about the food purchases as we travel fro...</div><div class="ttdef"><b>Definition:</b> foodplanner.h:16</div></div>
 <div class="ttc" id="aclass_city_html"><div class="ttname"><a href="class_city.html">City</a></div><div class="ttdoc">The City class holds information about the city.</div><div class="ttdef"><b>Definition:</b> city.h:12</div></div>
+<div class="ttc" id="aclassfood_planner_html_a0827e8f0f33813228ea747f1eb1e7d5d"><div class="ttname"><a href="classfood_planner.html#a0827e8f0f33813228ea747f1eb1e7d5d">foodPlanner::findCurrentCity</a></div><div class="ttdeci">int findCurrentCity(QString foodName)</div><div class="ttdoc">findCurrentCity is a member function with a parameter</div></div>
+<div class="ttc" id="aclassfood_planner_html_a0357895322493f1ae5d92fb0a303fa4a"><div class="ttname"><a href="classfood_planner.html#a0357895322493f1ae5d92fb0a303fa4a">foodPlanner::addTravelPlanData</a></div><div class="ttdeci">void addTravelPlanData(QVector&lt; City &gt; data)</div><div class="ttdoc">addTravelPlanData is a member function with a parameter</div><div class="ttdef"><b>Definition:</b> foodplanner.cpp:19</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

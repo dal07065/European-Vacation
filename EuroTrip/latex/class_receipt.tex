@@ -1,0 +1,113 @@
+\hypertarget{class_receipt}{}\doxysection{Receipt Class Reference}
+\label{class_receipt}\index{Receipt@{Receipt}}
+
+
+The \mbox{\hyperlink{class_receipt}{Receipt}} class generates the ui for the receipt printed after the purchase of foods from each city.  
+
+
+
+
+{\ttfamily \#include $<$receipt.\+h$>$}
+
+Inheritance diagram for Receipt\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_receipt}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_receipt_a6816899364c40f599fbb6ed1798d7655}{Receipt}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_receipt}{Receipt}} is a contructor with a parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_receipt_a0d03f739ea84707132d699cfa2aca3f7}{set\+Total\+Dist}} (double temp)
+\begin{DoxyCompactList}\small\item\em set\+Total\+Dist is a member function with a parameter \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_receipt_a81d26c01985f7c6b1ee1f432f90e011b}{get\+Total\+Dist}} ()
+\begin{DoxyCompactList}\small\item\em get\+Total\+Dist is a getter function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_receipt_a97008ddcae56030027da282233dcf939}{add\+Data}} (Q\+Vector$<$ Q\+Pair$<$ \mbox{\hyperlink{class_city}{City}}, Q\+Vector$<$ int $>$$>$$>$ data)
+\begin{DoxyCompactList}\small\item\em add\+Data is a member function with a parameter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_receipt_ac3a6a637b2f8d0e79e5e1a0534f667a6}{print\+Receipt}} ()
+\begin{DoxyCompactList}\small\item\em print\+Receipt is a member function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_receipt}{Receipt}} class generates the ui for the receipt printed after the purchase of foods from each city. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_receipt_a6816899364c40f599fbb6ed1798d7655}\label{class_receipt_a6816899364c40f599fbb6ed1798d7655}} 
+\index{Receipt@{Receipt}!Receipt@{Receipt}}
+\index{Receipt@{Receipt}!Receipt@{Receipt}}
+\doxysubsubsection{\texorpdfstring{Receipt()}{Receipt()}}
+{\footnotesize\ttfamily Receipt\+::\+Receipt (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_receipt}{Receipt}} is a contructor with a parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & is a pointer of Q\+Widget\\
+\hline
+\end{DoxyParams}
+this constructor generates a new receipt ui 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_receipt_a97008ddcae56030027da282233dcf939}\label{class_receipt_a97008ddcae56030027da282233dcf939}} 
+\index{Receipt@{Receipt}!addData@{addData}}
+\index{addData@{addData}!Receipt@{Receipt}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}}
+{\footnotesize\ttfamily void Receipt\+::add\+Data (\begin{DoxyParamCaption}\item[{Q\+Vector$<$ Q\+Pair$<$ \mbox{\hyperlink{class_city}{City}}, Q\+Vector$<$ int $>$$>$$>$}]{data }\end{DoxyParamCaption})}
+
+
+
+add\+Data is a member function with a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is a Q\+Vector pair of \mbox{\hyperlink{class_city}{City}} object and a Q\+Vector of ints\\
+\hline
+\end{DoxyParams}
+this function adds data from foodplanner to the data member Q\+Vector pair purchased\+Food \mbox{\Hypertarget{class_receipt_a81d26c01985f7c6b1ee1f432f90e011b}\label{class_receipt_a81d26c01985f7c6b1ee1f432f90e011b}} 
+\index{Receipt@{Receipt}!getTotalDist@{getTotalDist}}
+\index{getTotalDist@{getTotalDist}!Receipt@{Receipt}}
+\doxysubsubsection{\texorpdfstring{getTotalDist()}{getTotalDist()}}
+{\footnotesize\ttfamily double Receipt\+::get\+Total\+Dist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Total\+Dist is a getter function 
+
+\begin{DoxyReturn}{Returns}
+a double
+\end{DoxyReturn}
+this functions returns the total distance \mbox{\Hypertarget{class_receipt_ac3a6a637b2f8d0e79e5e1a0534f667a6}\label{class_receipt_ac3a6a637b2f8d0e79e5e1a0534f667a6}} 
+\index{Receipt@{Receipt}!printReceipt@{printReceipt}}
+\index{printReceipt@{printReceipt}!Receipt@{Receipt}}
+\doxysubsubsection{\texorpdfstring{printReceipt()}{printReceipt()}}
+{\footnotesize\ttfamily void Receipt\+::print\+Receipt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+print\+Receipt is a member function 
+
+this function prints out the receipt for the trip \mbox{\Hypertarget{class_receipt_a0d03f739ea84707132d699cfa2aca3f7}\label{class_receipt_a0d03f739ea84707132d699cfa2aca3f7}} 
+\index{Receipt@{Receipt}!setTotalDist@{setTotalDist}}
+\index{setTotalDist@{setTotalDist}!Receipt@{Receipt}}
+\doxysubsubsection{\texorpdfstring{setTotalDist()}{setTotalDist()}}
+{\footnotesize\ttfamily void Receipt\+::set\+Total\+Dist (\begin{DoxyParamCaption}\item[{double}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Total\+Dist is a member function with a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & is a double\\
+\hline
+\end{DoxyParams}
+this functions sets the total distance traveled obtained from foodplanner 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+receipt.\+h\item 
+receipt.\+cpp\end{DoxyCompactItemize}

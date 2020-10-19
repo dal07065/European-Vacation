@@ -1,0 +1,118 @@
+\hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+The \mbox{\hyperlink{class_main_window}{Main\+Window}} class is the main ui for the application which appears when the project is ran.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window}{Main\+Window}} is a constructor with a parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a11f10ec7a3ccb85eb8fe832529222d1f}{user\+Is\+Admin}} ()
+\begin{DoxyCompactList}\small\item\em user\+Is\+Admin is a member function \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_main_window_aa8e18bac4d4e47742e0f4ece2ba1a4f8}{already\+Existing\+City}} (Q\+String str)
+\begin{DoxyCompactList}\small\item\em already\+Existing\+City is a member function with a parameter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_aefee4f00738edc9e0f25f7bad1a43cb7}{read\+Data}} (Q\+String)
+\begin{DoxyCompactList}\small\item\em read\+Data is a member function with a parameter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a258bfb1a8b3d9c08c13f7eb0c8c3bfd7}{read\+Distances}} (Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ \&city\+List)
+\begin{DoxyCompactList}\small\item\em read\+Distances is a member function with a parameter \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_main_window}{Main\+Window}} class is the main ui for the application which appears when the project is ran. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_main_window}{Main\+Window}} is a constructor with a parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & is a pointer of Q\+Widget that generates a mainwindow \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_aa8e18bac4d4e47742e0f4ece2ba1a4f8}\label{class_main_window_aa8e18bac4d4e47742e0f4ece2ba1a4f8}} 
+\index{MainWindow@{MainWindow}!alreadyExistingCity@{alreadyExistingCity}}
+\index{alreadyExistingCity@{alreadyExistingCity}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{alreadyExistingCity()}{alreadyExistingCity()}}
+{\footnotesize\ttfamily bool Main\+Window\+::already\+Existing\+City (\begin{DoxyParamCaption}\item[{Q\+String}]{str }\end{DoxyParamCaption})}
+
+
+
+already\+Existing\+City is a member function with a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & is a Q\+String \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+is a boolean variable
+\end{DoxyReturn}
+this function check to see if the data being read is already stored in the data and returns true or false \mbox{\Hypertarget{class_main_window_aefee4f00738edc9e0f25f7bad1a43cb7}\label{class_main_window_aefee4f00738edc9e0f25f7bad1a43cb7}} 
+\index{MainWindow@{MainWindow}!readData@{readData}}
+\index{readData@{readData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{readData()}{readData()}}
+{\footnotesize\ttfamily void Main\+Window\+::read\+Data (\begin{DoxyParamCaption}\item[{Q\+String}]{data\+File }\end{DoxyParamCaption})}
+
+
+
+read\+Data is a member function with a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & a Q\+String\\
+\hline
+\end{DoxyParams}
+this function reads the city data from a txt file and stores them in a Q\+Vector \mbox{\Hypertarget{class_main_window_a258bfb1a8b3d9c08c13f7eb0c8c3bfd7}\label{class_main_window_a258bfb1a8b3d9c08c13f7eb0c8c3bfd7}} 
+\index{MainWindow@{MainWindow}!readDistances@{readDistances}}
+\index{readDistances@{readDistances}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{readDistances()}{readDistances()}}
+{\footnotesize\ttfamily void Main\+Window\+::read\+Distances (\begin{DoxyParamCaption}\item[{Q\+Vector$<$ \mbox{\hyperlink{class_city}{City}} $>$ \&}]{city\+List }\end{DoxyParamCaption})}
+
+
+
+read\+Distances is a member function with a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+List} & is a Q\+Vector of \mbox{\hyperlink{class_city}{City}} objects\\
+\hline
+\end{DoxyParams}
+this function reads in all the distance data from the distance.\+txt file and stores it in each city objects \mbox{\Hypertarget{class_main_window_a11f10ec7a3ccb85eb8fe832529222d1f}\label{class_main_window_a11f10ec7a3ccb85eb8fe832529222d1f}} 
+\index{MainWindow@{MainWindow}!userIsAdmin@{userIsAdmin}}
+\index{userIsAdmin@{userIsAdmin}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{userIsAdmin()}{userIsAdmin()}}
+{\footnotesize\ttfamily void Main\+Window\+::user\+Is\+Admin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+user\+Is\+Admin is a member function 
+
+this function will make all the admin functions visible to the user 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mainwindow.\+h\item 
+mainwindow.\+cpp\end{DoxyCompactItemize}

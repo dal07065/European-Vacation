@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nofood_63',['noFood',['../class_city.html#a2b2bcf648eccfec702806236eaa25538',1,'City']]]
+  ['login_92',['login',['../classlogin.html#ab0ef02ae84a8c877a3da00c9bb600d44',1,'login']]]
 ];
