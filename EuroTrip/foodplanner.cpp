@@ -88,29 +88,21 @@ void foodPlanner::on_addItem_clicked()
 
     double price = (foodList[selectedIndex].second) * quantityBought;
     QString priceStr = QString::number(price);
-    //foodList[selectedIndex].second = quantityBought;
 
-    //ui->tableWidgetCart->insertRow(cartCount);
     ui->tableWidgetCart->insertRow(ui->tableWidgetCart->rowCount());
 
-    //ui->tableWidgetCart->setItem(cartCount, 0, new QTableWidgetItem(foodList[selectedIndex].first));
     ui->tableWidgetCart->setItem((ui->tableWidgetCart->rowCount() - 1), 0, new QTableWidgetItem(foodList[selectedIndex].first));
 
-    //ui->tableWidgetCart->setItem(cartCount, 1, new QTableWidgetItem("$" + QString::number(foodList[selectedIndex].second)));
-    //ui->tableWidgetCart->setItem(cartCount, 1, new QTableWidgetItem("Quantitiy: " + qBString + "$" + priceStr));
     ui->tableWidgetCart->setItem((ui->tableWidgetCart->rowCount() - 1), 1, new QTableWidgetItem(qBString));
     ui->tableWidgetCart->setItem((ui->tableWidgetCart->rowCount() - 1), 2, new QTableWidgetItem("$" + priceStr));
 
     ui->comboBoxRemove->addItem(selectedFood);
 
-
-    //purchasedFood[currentCity].addNewFoodItem(foodList[selectedIndex].first, foodList[selectedIndex].second ); // NEW STUFF
     purchasedFood[currentCity].first.addNewFoodItem(foodList[selectedIndex].first, foodList[selectedIndex].second);
     purchasedFood[currentCity].second.push_back(quantityBought);
-    //cartCount++;
+
     cartCount += quantityBought;
 
-    //cartList.append(foodList[selectedIndex]);
     QPair<QString, double> temp;
     temp.first = foodList[selectedIndex].first;
     temp.second = quantityBought;
@@ -137,11 +129,6 @@ void foodPlanner::on_nextButton_clicked()
 {
     if(currentCity + 1 == travelPlan.size())
     {
-//        for(int i = 0; i < ui->tableWidgetCart->rowCount(); i++)
-//        {
-//            purchasedFood[i].addNewFoodItem(cartList[i].first, cartList[i].second);
-
-//        }
         Receipt invoice;
 
        invoice.addData(purchasedFood);
@@ -176,8 +163,6 @@ void foodPlanner::on_exitButton_clicked()
     close();
 }
 
-//Note: this recursive pathing function is a copy of the one in mainwindow.cpp. This copy is needed so that the totalDistance
-//      of the trip can be calculated and then sent to the recipt
 QVector<City> foodPlanner::recursivePathing(City start,QVector<City> &cities,QVector<City> &sorted ){
     //deletes starting city from the list of cities
     QVector<City>::iterator it = cities.begin();
@@ -191,12 +176,9 @@ QVector<City> foodPlanner::recursivePathing(City start,QVector<City> &cities,QVe
 
     //find the closest city to the start city
     City* closest = &cities[0];
-    for(int i = 0; i < cities.size();i++){
-//        if(cities[i].getCoordinates().distanceTo(start.getCoordinates()) < closest->getCoordinates().distanceTo(start.getCoordinates()))
+    for(int i = 0; i < cities.size();i++)
+    {
 
-        // ---------- EDIT ------------ //
-        // I fixed it with the NEW distances bc it seemed to work with custom plan...
-        // Don't hesitate to change/improve it anytime - Lina K
         if(cities[i].getDistance(start.getCityName()) < closest->getDistance(start.getCityName()))
         {
             closest = &cities[i];

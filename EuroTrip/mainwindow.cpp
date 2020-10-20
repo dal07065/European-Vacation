@@ -82,18 +82,6 @@ void MainWindow::on_actionLoad_Extended_triggered()
         ui->comboBox_SelectCityAddFood->addItem(cityListData[i].getCityName());
     }
 }
-/*
-void MainWindow::on_pushButton_clicked()
-{
-    QFile file("E:\\gitRepositories\\CS1D-Memory-Leak-European-Vacation\\EuroTrip\\European Distances and Foods");
-    if(!file.open(QIODevice::ReadOnly))
-    {
-        QMessageBox::information(0, "info", file.errorString());
-    }
-    QTextStream in(&file);
-
-}*/
-// When reading in file, checks if city is already an exisiting city
 
 bool MainWindow::alreadyExistingCity(QString checkCity)
 {
@@ -163,7 +151,7 @@ void MainWindow::readData(QString dataFile)
 
             latitude = in.readLine().toDouble();
             longitude = in.readLine().toDouble();
-            /////EDIT////////////////////////////
+
             cityInfo->setLatitude(latitude);
             cityInfo->setLongitude(longitude);
 
@@ -172,8 +160,6 @@ void MainWindow::readData(QString dataFile)
 
             cityInfo->setLatDir(tempLatDir);
             cityInfo->setLongDir(tempLongDir);
-
-            //////END EDIT///////////////////////////
 
             //reads in input for the food name and price
             while(moreFood)
@@ -220,30 +206,16 @@ void MainWindow::readData(QString dataFile)
     for(int loop= 0; loop < cityListData.size(); loop++)//this loops through the main city vecotr to print the info on each city.
     {
 
-        *cityInfo = cityListData.value(loop);
-        ui->cityList->append(cityInfo->getCityName()); //this is supposed to display the city name onto the cityList text box on the gui.
+       *cityInfo = cityListData.value(loop);
+       ui->cityList->append(cityInfo->getCityName()); //this is supposed to display the city name onto the cityList text box on the gui.
 
-        tempLat = QString::number(cityInfo->getLatitude());
-        tempLong = QString::number(cityInfo->getLongitude());
+       tempLat = QString::number(cityInfo->getLatitude());
+       tempLong = QString::number(cityInfo->getLongitude());
 
-       // ui->cityList->append(tempLat + cityInfo->getLatDir() + ", " + tempLong + cityInfo->getLongDir());
-
-         ////END EDIT/////////////////////////////////////////
-        //Gets that cities distance to Berlin (always at index 1)
-        berlinDist = QString::number(cityInfo->getAllDistances()[1]);
+       berlinDist = QString::number(cityInfo->getAllDistances()[1]);
        ui->cityList->append("Distance from Berlin: " + berlinDist + "km");
 
-
-        //berlinDist = QString::number(cityInfo->getDistance("Berlin"));
-        //ui->cityList->append("Distance from Berlin: " + berlinDist + "km");
-
-
-//        for(int j = 0;j < cityInfo->getAllFood().size(); j++) //this loops through out the food vector array in each city object to print the food and price.
-//        {
-//            price = QString::number(cityInfo->getAllFood().value(j).second);//second is food price.
-//            ui->cityList->append(cityInfo->getAllFood().value(j).first + ": $" + price);//append is supposed to allow you to print multiple lines of text on the gui without it refreshing. first is food name
-//        }
-        ui->cityList->append("");
+       ui->cityList->append("");
     }
 }
 
@@ -288,16 +260,6 @@ void MainWindow::on_pushButton_clicked()
 
     ui->lineEdit_FoodName->clear();
     ui->doubleSpinBox_FoodCost->clear();
-
-
-    // TESTING STUFF
-//    qDebug() << "City: " << cityListData[count].getCityName();
-//    QVector<QPair<QString, double>> foodInfo = cityListData[count].getAllFood();
-//    qDebug() << "Food: ";
-//    for(int i = 0; i < foodInfo.size(); ++i){
-//        qDebug() << foodInfo[i].first << "  $" << foodInfo[i].second;
-//    }
-    // TESTING STUFF
 }
 
 //Function for starting a trip beginning at Berlin
@@ -347,12 +309,9 @@ QVector<City> MainWindow::recursivePathing(City start,QVector<City> &cities,QVec
 
     //find the closest city to the start city
     City* closest = &cities[0];
-    for(int i = 0; i < cities.size();i++){
-//        if(cities[i].getCoordinates().distanceTo(start.getCoordinates()) < closest->getCoordinates().distanceTo(start.getCoordinates()))
+    for(int i = 0; i < cities.size();i++)
+    {
 
-        // ---------- EDIT ------------ //
-        // I fixed it with the NEW distances bc it seemed to work with custom plan...
-        // Don't hesitate to change/improve it anytime - Lina K
         if(cities[i].getDistance(start.getCityName()) < closest->getDistance(start.getCityName()))
         {
             closest = &cities[i];
@@ -375,8 +334,6 @@ void MainWindow::on_customPlan_clicked()
         QVector<City> customCityPlan(cityListData);
         City startingCity;
 
-        //This line sucks. I couldnt do startingCity = ui->comboBoxCities->currentData() for some reason
-        //Which wouldve been better but oh well. - Nathan Tran
         //This line of code gets the information of the city selected in the drop down menu.
         startingCity = customCityPlan[(ui->comboBoxCities->currentIndex() - 1)];
 
@@ -411,7 +368,7 @@ void MainWindow::on_OptimalTravel_2_clicked()
 }
 
 //This function is called within readData function. It takes the data from distances.txt and updates the distance array in each of the city
-//objects for the first 11 cities -Nathan Kim
+//objects for the first 11 cities
 void MainWindow::readDistances(QVector<City> &cityList)
 {
     //if extended cities are loaded do this
@@ -506,15 +463,6 @@ void MainWindow::on_pushButton_loadFoods_clicked()
         }
     }
 
-
-   //  TESTING STUFF
-//    qDebug() << "City: " << cityListData[index].getCityName();
-//    QVector<QPair<QString, double>> foodInfo = cityListData[index].getAllFood();
-//    qDebug() << "Food: ";
-//    for(int i = 0; i < foodInfo.size(); ++i){
-//        qDebug() << foodInfo[i].first << "  $" << foodInfo[i].second;
-//    }
-   //  TESTING STUFF
 }
 
 void MainWindow::on_pushButton_deleteFood_clicked()
